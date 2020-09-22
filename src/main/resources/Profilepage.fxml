@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="380.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ProfilePage">
+   <children>
+      <Pane layoutY="-7.0" prefHeight="140.0" prefWidth="893.0" style="-fx-background-color: black;">
+         <children>
+            <ImageView fitHeight="140.0" fitWidth="152.0" layoutX="102.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../profile.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="297.0" layoutY="49.0" prefHeight="41.0" prefWidth="265.0" text="DULYAWAT VISITRUANGRIT" textFill="#bcb9b9">
+               <font>
+                  <Font name="Jokerman" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="92.0" fitWidth="103.0" layoutX="595.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/skull-clown_54889-397.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="297.0" layoutY="90.0" prefHeight="27.0" prefWidth="227.0" text="Kasetsart University" textFill="#b5b2b2">
+               <font>
+                  <Font name="Jokerman" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="71.0" fitWidth="92.0" layoutX="755.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/c0135c4be529cc44bbc875110f9a476c.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="71.0" fitWidth="82.0" layoutX="22.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Skull-Clown-Graphic-design-33678.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Button fx:id="Backloginbtn" layoutX="40.0" layoutY="324.0" mnemonicParsing="false" onAction="#BackLoginBtnOnAction" style="-fx-background-color: black; -fx-background-radius: 30 30 30;" text="LOGIN" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="296.0" layoutY="160.0" prefHeight="30.0" prefWidth="198.0" text="6210406572   ONG">
+         <font>
+            <Font name="Jokerman" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="293.0" layoutY="190.0" prefHeight="41.0" prefWidth="402.0" text="Love To Design Webpage">
+         <font>
+            <Font name="Jokerman" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="293.0" layoutY="306.0" prefHeight="41.0" prefWidth="333.0" text="Thanks For Visit My CondoX">
+         <font>
+            <Font name="Jokerman" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="679.0" layoutY="175.0" opacity="0.23" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/The-Joker-T-shirt-Design-by-by-nicebleed-design.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
