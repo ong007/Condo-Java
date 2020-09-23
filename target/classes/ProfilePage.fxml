@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="380.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ProfilePage">
    <children>
       <Pane layoutY="-7.0" prefHeight="140.0" prefWidth="893.0" style="-fx-background-color: black;">
@@ -50,7 +49,7 @@
             <Font size="13.0" />
          </font>
       </Button>
-      <Label layoutX="296.0" layoutY="160.0" prefHeight="30.0" prefWidth="198.0" text="6210406572">
+      <Label layoutX="296.0" layoutY="160.0" prefHeight="30.0" prefWidth="198.0" text="6210406572   ONG">
          <font>
             <Font name="Jokerman" size="18.0" />
          </font>
