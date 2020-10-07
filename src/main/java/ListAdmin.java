@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ListAdmin {
-    @FXML Button HomeAdminbtn;
+    @FXML Button HomeAdminbtn,Useradminsystembtn;
 
     @FXML public void HomeAdminBtnOnAction(ActionEvent event) throws IOException {
         Button c = (Button) event.getSource();
@@ -17,5 +17,11 @@ public class ListAdmin {
         stage_ProfilePage.setScene(new Scene(loader.load(), 882, 390));
         stage_ProfilePage.show();
     }
+    @FXML public void UserAdminSystemBtnOnAction(ActionEvent event) throws IOException {
+        Button a = (Button) event.getSource();
+        Stage stage_useradminsystem = (Stage) a.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Useradmin.fxml"));
+        stage_useradminsystem.setScene(new Scene(loader.load(), 882, 390));
+        stage_useradminsystem.show();}
     
 }

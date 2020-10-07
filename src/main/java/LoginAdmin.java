@@ -20,6 +20,7 @@ public class LoginAdmin {
         a = new setpasswordA();
     }
 
+
     @FXML public void HomeLoginAdminBtnOnAction(ActionEvent event) throws IOException {
         Button c = (Button) event.getSource();
         Stage stage_HomeAdminloginPage = (Stage) c.getScene().getWindow();

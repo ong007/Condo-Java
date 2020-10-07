@@ -37,7 +37,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" layoutY="131.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="198.0" style="-fx-background-color: black;" text="  User" textFill="#c6c4c4">
+            <Button fx:id="Useradminsystembtn" alignment="BASELINE_LEFT" layoutY="131.0" mnemonicParsing="false" onAction="#UserAdminSystemBtnOnAction" prefHeight="25.0" prefWidth="198.0" style="-fx-background-color: black;" text="  User" textFill="#c6c4c4">
                <font>
                   <Font name="Georgia" size="14.0" />
                </font>

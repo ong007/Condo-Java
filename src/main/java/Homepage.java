@@ -8,13 +8,18 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 
 public class Homepage {
+    private setpasswordC c;
     @FXML  Button Loginbtn,Profilebtn,Adminbtn;
     @FXML  TextField Userbtn;
     @FXML  PasswordField Passwordbtn;
+
+
 
 
     @FXML public void ProfileBtnOnAction(ActionEvent event) throws IOException {
@@ -31,6 +36,15 @@ public class Homepage {
         stage_AdminPage.setScene(new Scene(loader.load(), 882, 390));
         stage_AdminPage.show();}
 
+    @FXML public void LoginBtnOnAction(ActionEvent event) throws IOException {
 
+            Button d = (Button) event.getSource();
+            Stage stage_CentralloginPage = (Stage) d.getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Central.fxml"));
+            stage_CentralloginPage.setScene(new Scene(loader.load(), 882, 390));
+            stage_CentralloginPage.show();
+
+
+    }
 
 }
