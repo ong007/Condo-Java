@@ -30,16 +30,16 @@ public class Homepage {
         stage_ProfilePage.show();}
 
     @FXML public void AdminBtnOnAction(ActionEvent event) throws IOException {
-        Button c = (Button) event.getSource();
-        Stage stage_AdminPage = (Stage) c.getScene().getWindow();
+        Button b = (Button) event.getSource();
+        Stage stage_AdminPage = (Stage) b.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("LoginAdmin.fxml"));
         stage_AdminPage.setScene(new Scene(loader.load(), 882, 390));
         stage_AdminPage.show();}
 
     @FXML public void LoginBtnOnAction(ActionEvent event) throws IOException {
 
-            Button d = (Button) event.getSource();
-            Stage stage_CentralloginPage = (Stage) d.getScene().getWindow();
+            Button c = (Button) event.getSource();
+            Stage stage_CentralloginPage = (Stage) c.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Central.fxml"));
             stage_CentralloginPage.setScene(new Scene(loader.load(), 882, 390));
             stage_CentralloginPage.show();

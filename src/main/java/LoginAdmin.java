@@ -22,16 +22,16 @@ public class LoginAdmin {
 
 
     @FXML public void HomeLoginAdminBtnOnAction(ActionEvent event) throws IOException {
-        Button c = (Button) event.getSource();
-        Stage stage_HomeAdminloginPage = (Stage) c.getScene().getWindow();
+        Button a = (Button) event.getSource();
+        Stage stage_HomeAdminloginPage = (Stage) a.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Homepage.fxml"));
         stage_HomeAdminloginPage.setScene(new Scene(loader.load(), 882, 390));
         stage_HomeAdminloginPage.show();
     }
     @FXML public void LoginAdminBtnOnAction(ActionEvent event) throws IOException {
         if(a.check(UserAdminbtn.getText(), PasswordAdminbtn.getText())){
-            Button d = (Button) event.getSource();
-            Stage stage_AdminloginPage = (Stage) d.getScene().getWindow();
+            Button b = (Button) event.getSource();
+            Stage stage_AdminloginPage = (Stage) b.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("ListAdmin.fxml"));
             stage_AdminloginPage.setScene(new Scene(loader.load(), 882, 390));
             stage_AdminloginPage.show();

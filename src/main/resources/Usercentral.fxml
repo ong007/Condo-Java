@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="390.0" prefWidth="882.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Usercentral">
+   <children>
+      <AnchorPane prefHeight="79.0" prefWidth="883.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="54.0" layoutY="22.0" prefHeight="42.0" prefWidth="215.0" text="CENTRAL USER">
+               <font>
+                  <Font name="Franklin Gothic Medium Cond" size="36.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="79.0" fitWidth="92.0" layoutX="58.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/pngtree-user-person-icon-png-image_3568574.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="58.0" layoutY="183.0" prefHeight="42.0" prefWidth="92.0" text="LIST USER" textFill="#aea6a6">
+         <font>
+            <Font name="Franklin Gothic Medium Cond" size="23.0" />
+         </font>
+      </Label>
+      <TableView layoutX="240.0" layoutY="104.0" prefHeight="253.0" prefWidth="496.0">
+        <columns>
+          <TableColumn prefWidth="166.0" text="NAME" />
+          <TableColumn prefWidth="170.0" text="USER-NAME" />
+            <TableColumn prefWidth="159.0" text="PASSWORD" />
+        </columns>
+      </TableView>
+      <Button fx:id="Backusercentralbtn" layoutX="72.0" layoutY="324.0" mnemonicParsing="false" onAction="#BackUserCentralBtnOnAcion" text="BACK" />
+   </children>
+</AnchorPane>

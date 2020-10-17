@@ -12,8 +12,8 @@ public class ProfilePage {
 
 
     @FXML public void BackLoginBtnOnAction(ActionEvent event) throws IOException {
-        Button b = (Button) event.getSource();
-        Stage stage_ProfilePage = (Stage) b.getScene().getWindow();
+        Button a = (Button) event.getSource();
+        Stage stage_ProfilePage = (Stage) a.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Homepage.fxml"));
         stage_ProfilePage.setScene(new Scene(loader.load(), 882, 390));
         stage_ProfilePage.show();

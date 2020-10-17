@@ -7,6 +7,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 
 
@@ -15,7 +16,7 @@ public class Newusercentral {
     private Centraluserreader centralList;
     @FXML TextField Newuseradminbtn;
     @FXML PasswordField Newpasswordadminbtn,Newconfirmpasswordadminbtn;
-    @FXML
+    @FXML Button backcentralbtn;
     public void summitonaction(ActionEvent event) throws IOException {
         centraldata = new CentralFileDataSource("data","Centraldata.csv");
         centralList = centraldata.getCentralList();
@@ -28,5 +29,12 @@ public class Newusercentral {
         stage_backuseradmin.setScene(new Scene(loader.load(), 882, 390));
         stage_backuseradmin.show();
     }
+
+    @FXML public void BackCentralBtnOnAction(ActionEvent event) throws IOException {
+        Button b = (Button) event.getSource();
+        Stage stage_backcentral = (Stage) b.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Useradmin.fxml"));
+        stage_backcentral.setScene(new Scene(loader.load(), 882, 390));
+        stage_backcentral.show();}
 
 }
