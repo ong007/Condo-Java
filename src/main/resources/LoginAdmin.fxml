@@ -52,7 +52,7 @@
                   <Image url="@images/63541.png" />
                </image>
             </ImageView>
-            <Label layoutX="257.0" layoutY="117.0" prefHeight="37.0" prefWidth="98.0" text="Sing in">
+            <Label layoutX="257.0" layoutY="117.0" prefHeight="37.0" prefWidth="98.0" text="Sign in">
                <font>
                   <Font name="Bauhaus 93" size="33.0" />
                </font>

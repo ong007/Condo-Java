@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -32,24 +30,29 @@
       </AnchorPane>
       <AnchorPane layoutY="103.0" prefHeight="163.0" prefWidth="890.0">
          <children>
-            <Button layoutX="408.0" layoutY="46.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="74.0" text="MAIL" />
-            <Button layoutX="482.0" layoutY="46.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="74.0" text="BOX" />
-            <Button layoutX="334.0" layoutY="46.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="74.0" text="TEXT" />
-            <Button layoutX="659.0" layoutY="137.0" mnemonicParsing="false" text="NEXT" />
-            <DatePicker layoutX="358.0" layoutY="99.0" />
+            <Button fx:id="Mailbtn" layoutX="415.0" layoutY="137.0" mnemonicParsing="false" onAction="#MailBtnOnAction" prefHeight="25.0" prefWidth="74.0" text="MAIL" />
+            <Button fx:id="Boxbtn" layoutX="690.0" layoutY="137.0" mnemonicParsing="false" onAction="#BoxBtnOnAction" prefHeight="25.0" prefWidth="74.0" text="BOX" />
+            <Button fx:id="Textbtn" layoutX="133.0" layoutY="137.0" mnemonicParsing="false" onAction="#TextBtnOnAction" prefHeight="25.0" prefWidth="74.0" text="TEXT" />
+            <ImageView fitHeight="103.0" fitWidth="132.0" layoutX="119.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/text-131979013508994476.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="103.0" fitWidth="132.0" layoutX="400.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/mail-5.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="103.0" fitWidth="132.0" layoutX="676.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/Box-withFolders-icon.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
       <AnchorPane layoutY="277.0" prefHeight="103.0" prefWidth="890.0">
          <children>
-            <TextField layoutX="310.0" layoutY="39.0" prefHeight="25.0" prefWidth="174.0" promptText="NAME" />
-            <Label layoutX="556.0" layoutY="38.0" prefHeight="25.0" prefWidth="14.0" text="/">
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </Label>
-            <TextField layoutX="495.0" layoutY="39.0" prefHeight="25.0" prefWidth="54.0" promptText="FLOOR" />
-            <TextField layoutX="570.0" layoutY="40.0" prefHeight="25.0" prefWidth="54.0" promptText="ROOM" />
-            <Button fx:id="Homecentralbtn" layoutX="53.0" layoutY="39.0" mnemonicParsing="false" onAction="#HomeCentralBtnOnAction" text="HOME" />
+            <Button fx:id="Backcentralmessagebtn" layoutX="53.0" layoutY="39.0" mnemonicParsing="false" onAction="#BackCentralMessageBtnOnAction" text="BACK" />
          </children>
       </AnchorPane>
    </children>

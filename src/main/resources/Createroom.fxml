@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="390.0" prefWidth="882.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Createroom">
+   <children>
+      <AnchorPane prefHeight="74.0" prefWidth="898.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="41.0" layoutY="11.0" prefHeight="52.0" prefWidth="250.0" style="-fx-background-color: white;" text="CREATE ROOM">
+               <font>
+                  <Font name="Franklin Gothic Medium Cond" size="45.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ComboBox fx:id="buildbox" layoutX="411.0" layoutY="126.0" prefWidth="150.0" promptText="select building" />
+      <ComboBox fx:id="typebox" layoutX="411.0" layoutY="183.0" prefWidth="150.0" promptText="type" />
+      <ComboBox fx:id="floorbox" layoutX="411.0" layoutY="245.0" prefWidth="150.0" promptText="floor" />
+      <Label layoutX="267.0" layoutY="122.0" prefHeight="34.0" prefWidth="90.0" text="BUILDING" textFill="#f2ebeb">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="282.0" layoutY="179.0" prefHeight="34.0" prefWidth="61.0" text="TYPE" textFill="#f2ebeb">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="275.0" layoutY="241.0" prefHeight="34.0" prefWidth="61.0" text="FLOOR" textFill="#f2ebeb">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="275.0" layoutY="297.0" prefHeight="34.0" prefWidth="61.0" text="ROOM" textFill="#f2ebeb">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="backcreateroombtn" layoutX="72.0" layoutY="331.0" mnemonicParsing="false" onAction="#backcreateroombtn" text="BACK" />
+      <Button fx:id="createnewroombtn" layoutX="758.0" layoutY="331.0" mnemonicParsing="false" onAction="#createnewroombtnonaction" text="CREATE" />
+      <TextField fx:id="roombtn" layoutX="412.0" layoutY="302.0" promptText="ADD ROOM" />
+   </children>
+</AnchorPane>

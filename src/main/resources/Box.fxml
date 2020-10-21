@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="380.0" prefWidth="882.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Box">
+   <children>
+      <AnchorPane layoutX="-1.0" prefHeight="74.0" prefWidth="890.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="47.0" layoutY="11.0" prefHeight="52.0" prefWidth="96.0" style="-fx-background-color: white;" text="BOX">
+               <font>
+                  <Font name="Franklin Gothic Medium Cond" size="45.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="97.0" fitWidth="121.0" layoutX="395.0" layoutY="103.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/ice-backgroung.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="nameboxbtn" layoutX="246.0" layoutY="217.0" prefHeight="25.0" prefWidth="178.0" promptText="NAME/USERNAME" />
+      <Label layoutX="573.0" layoutY="259.0" prefHeight="25.0" prefWidth="40.0" text="   /" textFill="#f8f8f8">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="companyboxbtn" layoutX="246.0" layoutY="303.0" prefHeight="25.0" prefWidth="178.0" promptText="COMPANY" />
+      <MenuButton fx:id="levelboxbtn" layoutX="693.0" layoutY="217.0" mnemonicParsing="false" text="LEVEL">
+         <items>
+            <MenuItem fx:id="option1boxbtn" mnemonicParsing="false" onAction="#option1boxbtnonaction" text="ปกติ" />
+            <MenuItem fx:id="option2boxbtn" mnemonicParsing="false" onAction="#option2boxbtnonaction" text="ด่วน" />
+            <MenuItem fx:id="option3boxbtn" mnemonicParsing="false" onAction="#option3boxbtnonaction" text="ลับ" />
+         </items>
+      </MenuButton>
+      <Button fx:id="Summitboxbtn" layoutX="746.0" layoutY="328.0" mnemonicParsing="false" onAction="#Summitboxbtnonaction" prefHeight="25.0" prefWidth="63.0" text="SUMMIT" />
+      <Button fx:id="Backboxbtn" layoutX="75.0" layoutY="328.0" mnemonicParsing="false" onAction="#BackBoxBtnOnAcTion" prefHeight="25.0" prefWidth="57.0" text="BACK" />
+      <TextField fx:id="sizeboxbtn" layoutX="555.0" layoutY="139.0" prefHeight="25.0" prefWidth="75.0" promptText="     SIZE" />
+      <TextField fx:id="hourboxbtn" layoutX="506.0" layoutY="217.0" prefHeight="25.0" prefWidth="50.0" promptText="HOUR" />
+      <Label layoutX="466.0" layoutY="217.0" prefHeight="25.0" prefWidth="34.0" text="TIME" textFill="#e1e1e1" />
+      <Label layoutX="565.0" layoutY="221.0" prefHeight="17.0" prefWidth="11.0" text="  :" textFill="#f5f5f5" />
+      <TextField fx:id="minuteboxbtn" layoutX="582.0" layoutY="217.0" prefHeight="25.0" prefWidth="63.0" promptText="MINUTE" />
+      <TextField fx:id="trackingboxbtn" layoutX="43.0" layoutY="259.0" prefHeight="25.0" prefWidth="178.0" promptText="TRACKING" />
+      <TextField fx:id="senderboxbtn" layoutX="246.0" layoutY="259.0" prefHeight="25.0" prefWidth="178.0" promptText="SENDER" />
+      <ComboBox fx:id="roomboxbtn" editable="true" layoutX="487.0" layoutY="259.0" prefHeight="25.0" prefWidth="89.0" promptText="ROOM" />
+      <ComboBox fx:id="floorboxbtn" editable="true" layoutX="601.0" layoutY="259.0" prefHeight="25.0" prefWidth="89.0" promptText="FLOOR" />
+   </children>
+</AnchorPane>

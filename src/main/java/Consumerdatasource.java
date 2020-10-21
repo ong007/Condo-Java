@@ -1,22 +1,22 @@
 import java.io.*;
 
-public class CentralFileDataSource {
-    private String fileDirectoryName;
+public class Consumerdatasource {
+    private String fileDirectoryName1;
     private String fileName;
-    private Centraluserreader centralList;
+    private Consumerreader consumerList;
 
-    public CentralFileDataSource(String fileDirectoryName, String fileName) {
-        this.fileDirectoryName = fileDirectoryName;
-        this.fileName = fileName;
+    public Consumerdatasource(String fileDirectoryName1, String fileName1) {
+        this.fileDirectoryName1 = fileDirectoryName1;
+        this.fileName = fileName1;
         checkFileIsExisted();
     }
 
     private void checkFileIsExisted() {
-        File file = new File(fileDirectoryName);
+        File file = new File(fileDirectoryName1);
         if (!file.exists()) {
             file.mkdirs();
         }
-        String filePath = fileDirectoryName + File.separator + fileName;
+        String filePath = fileDirectoryName1 + File.separator + fileName;
         file = new File(filePath);
         if (!file.exists()) {
             try {
@@ -28,39 +28,39 @@ public class CentralFileDataSource {
     }
 
     private void readData() throws IOException {
-        String filePath = fileDirectoryName + File.separator + fileName;
+        String filePath = fileDirectoryName1 + File.separator + fileName;
         File file = new File(filePath);
         FileReader fileReader = new FileReader(file);
         BufferedReader reader = new BufferedReader(fileReader);
         String line = "";
         while ((line = reader.readLine()) != null) {
             String[] data = line.split(",");
-            Centraluserreader central = new Centraluserreader(data[0], data[1], data[2], data[3], data[4], data[5],data[6],data[7],Integer.parseInt(data[8]));
-            centralList.add(central);
+            Consumerreader consumer = new Consumerreader(data[0], data[1], data[2], data[3], data[4], data[5]);
+            consumerList.add(consumer);
         }
         reader.close();
     }
 
-    public Centraluserreader getCentralList() {
+    public Consumerreader getConsumerList() {
         try {
-            centralList = new Centraluserreader();
+            consumerList = new Consumerreader();
             readData();
         } catch (FileNotFoundException e) {
             System.err.println(this.fileName + " not found");
         } catch (IOException e) {
             System.err.println("IOException from reading " + this.fileName);
         }
-        return centralList;
+        return consumerList;
     }
-    public void setCentralList(Centraluserreader centrals) {
-        String filePath = fileDirectoryName + File.separator + fileName;
+    public void setConsumerList(Consumerreader consumerList) {
+        String filePath = fileDirectoryName1 + File.separator + fileName;
         File file = new File(filePath);
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            for (Centraluserreader central:centrals.getUserList()) {
-                String line = central.getName()+","+central.getSurname()+","+central.getTel()+","+central.getEmail()+","+central.getUsername()+","+central.getPassword()+","+central.getTime()+","+central.getStatus()+","+central.getAttempt();
+            for (Consumerreader consumer:consumerList.getUserList()) {
+                String line = consumer.getName()+","+consumer.getSurname()+","+consumer.getRoom()+","+consumer.getFloor()+","+consumer.getUsername()+","+consumer.getPassword();
                 writer.append(line);
                 writer.newLine();
             }

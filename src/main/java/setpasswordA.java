@@ -3,8 +3,8 @@ public class setpasswordA implements CheckAccount {
     public String AdminPassword;
 
     public setpasswordA() {
-        this.AdminUser = "6210406572";
-        this.AdminPassword = "0000";
+        this.AdminUser = "1";
+        this.AdminPassword = "1";
     }
 
     public String getUser() {

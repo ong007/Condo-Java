@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="380.0" prefWidth="882.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Room">
+   <children>
+      <AnchorPane prefHeight="74.0" prefWidth="893.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="41.0" layoutY="11.0" prefHeight="52.0" prefWidth="118.0" style="-fx-background-color: white;" text="ROOM">
+               <font>
+                  <Font name="Franklin Gothic Medium Cond" size="45.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="139.0" fitWidth="247.0" layoutX="132.0" layoutY="118.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/standarnroom.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="139.0" fitWidth="277.0" layoutX="511.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/luxuryroom.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="182.0" layoutY="271.0" prefHeight="35.0" prefWidth="148.0" text="STANDARD ROOM" textFill="#e4e4e4">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Label layoutX="568.0" layoutY="271.0" prefHeight="35.0" prefWidth="118.0" text="LUXURY ROOM" textFill="#e4e4e4">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <Button fx:id="createroombtn" layoutX="760.0" layoutY="322.0" mnemonicParsing="false" onAction="#createroombtnonaction" prefHeight="25.0" prefWidth="57.0" text="CREATE" />
+      <Button fx:id="backroombtn" layoutX="65.0" layoutY="322.0" mnemonicParsing="false" onAction="#backroombtnonaction" prefHeight="25.0" prefWidth="57.0" text="BACK" />
+   </children>
+</AnchorPane>

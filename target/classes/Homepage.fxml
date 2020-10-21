@@ -17,7 +17,7 @@
             <TextField fx:id="Userbtn" layoutX="22.0" layoutY="81.0" prefHeight="29.0" prefWidth="211.0" promptText="username" />
             <PasswordField fx:id="Passwordbtn" layoutX="22.0" layoutY="141.0" prefHeight="19.0" prefWidth="211.0" promptText="password" />
             <Button fx:id="Loginbtn" layoutX="20.0" layoutY="190.0" mnemonicParsing="false" onAction="#LoginBtnOnAction" prefHeight="25.0" prefWidth="211.0" style="-fx-background-color: #FF3333; -fx-background-radius: 10 10 10;" text="Login" textFill="#b5b5b5" />
-            <Label layoutX="98.0" layoutY="35.0" text="Sing In" textFill="#e1dfdf">
+            <Label layoutX="98.0" layoutY="35.0" text="Sign In" textFill="#e1dfdf">
                <font>
                   <Font size="18.0" />
                </font>
