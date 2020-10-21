@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="380.0" prefWidth="882.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Box">
+<AnchorPane prefHeight="380.0" prefWidth="882.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Box">
    <children>
       <AnchorPane layoutX="-1.0" prefHeight="74.0" prefWidth="890.0" style="-fx-background-color: white;">
          <children>
@@ -51,7 +51,7 @@
       <TextField fx:id="minuteboxbtn" layoutX="582.0" layoutY="217.0" prefHeight="25.0" prefWidth="63.0" promptText="MINUTE" />
       <TextField fx:id="trackingboxbtn" layoutX="43.0" layoutY="259.0" prefHeight="25.0" prefWidth="178.0" promptText="TRACKING" />
       <TextField fx:id="senderboxbtn" layoutX="246.0" layoutY="259.0" prefHeight="25.0" prefWidth="178.0" promptText="SENDER" />
-      <ComboBox fx:id="roomboxbtn" editable="true" layoutX="487.0" layoutY="259.0" prefHeight="25.0" prefWidth="89.0" promptText="ROOM" />
-      <ComboBox fx:id="floorboxbtn" editable="true" layoutX="601.0" layoutY="259.0" prefHeight="25.0" prefWidth="89.0" promptText="FLOOR" />
+<!--      <ComboBox fx:id="roomboxbtn" editable="true" layoutX="487.0" layoutY="259.0" prefHeight="25.0" prefWidth="89.0" promptText="ROOM" />-->
+<!--      <ComboBox fx:id="floorboxbtn" editable="true" layoutX="601.0" layoutY="259.0" prefHeight="25.0" prefWidth="89.0" promptText="FLOOR" />-->
    </children>
 </AnchorPane>

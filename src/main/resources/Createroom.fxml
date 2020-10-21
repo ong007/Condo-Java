@@ -3,12 +3,10 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="390.0" prefWidth="882.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Createroom">
+<AnchorPane prefHeight="390.0" prefWidth="882.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Createroom">
    <children>
       <AnchorPane prefHeight="74.0" prefWidth="898.0" style="-fx-background-color: white;">
          <children>
@@ -44,6 +42,6 @@
       </Label>
       <Button fx:id="backcreateroombtn" layoutX="72.0" layoutY="331.0" mnemonicParsing="false" onAction="#backcreateroombtn" text="BACK" />
       <Button fx:id="createnewroombtn" layoutX="758.0" layoutY="331.0" mnemonicParsing="false" onAction="#createnewroombtnonaction" text="CREATE" />
-      <TextField fx:id="roombtn" layoutX="412.0" layoutY="302.0" promptText="ADD ROOM" />
+      <ComboBox fx:id="roombtn" layoutX="411.0" layoutY="302.0" prefWidth="150.0" promptText="room" />
    </children>
 </AnchorPane>
