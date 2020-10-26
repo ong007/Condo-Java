@@ -7,6 +7,9 @@ public class Roomreader {
     private String type;
     private String floor;
     private String room;
+    private String roomnum;
+    private int maxarrival;
+    private int nowarrival;
 
 
     private ArrayList<Roomreader> userList1;
@@ -14,11 +17,17 @@ public class Roomreader {
     public Roomreader(){
         userList1 = new ArrayList<Roomreader>();
     }
-    public Roomreader(String building, String type, String floor, String room){
+
+
+
+    public Roomreader(String building, String type, String floor, String room, String roomnum, int maxarrival, int nowarrival){
         this.building = building;
         this.type = type;
         this.floor = floor;
         this.room = room;
+        this.roomnum = building + floor + room;
+        this.maxarrival = maxarrival;
+        this.nowarrival = nowarrival;
     }
     public void add(Roomreader room){
 
@@ -66,7 +75,55 @@ public class Roomreader {
         this.room = room;
     }
 
-    public ArrayList<Roomreader> getUserList() {
+    public  ArrayList<Roomreader> getUserList() {
         return userList1;
+    }
+
+    public int getMaxarrival() {
+        return maxarrival;
+    }
+
+    public void setMaxarrival(int maxarrival) {
+        this.maxarrival = maxarrival;
+    }
+
+    public int getNowarrival() {
+        return nowarrival;
+    }
+
+    public String getRoomnum() {
+        return roomnum;
+    }
+
+    public void setRoomnum(String roomnum) {
+        this.roomnum = roomnum;
+    }
+
+    public void setNowarrival(int nowarrival) {
+        this.nowarrival = nowarrival;
+    }
+
+    public boolean checkAddRoom(String roomNumber){
+        for(Roomreader room : userList1){
+            if(room.getRoomnum().equals(roomNumber)){
+                return true;
+            }
+        }return false;
+    }
+
+    public void setMaxRoom(String roomNumber){
+        for(Roomreader room : userList1){
+            if(room.getRoomnum().equals(roomNumber)){
+                room.setNowarrival(room.getNowarrival() - 1);
+            }
+        }
+    }
+
+    public void setRemoveRoom(String roomNumber){
+        for(Roomreader room : userList1){
+            if(room.getRoomnum().equals(roomNumber)){
+                room.setNowarrival(room.getNowarrival() + 1);
+            }
+        }
     }
 }

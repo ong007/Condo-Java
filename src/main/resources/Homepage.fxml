@@ -14,9 +14,9 @@
    <children>
       <AnchorPane layoutX="605.0" layoutY="42.0" prefHeight="231.0" prefWidth="251.0" style="-fx-background-color: #9C2B27;">
          <children>
-            <TextField fx:id="Userbtn" layoutX="22.0" layoutY="81.0" prefHeight="29.0" prefWidth="211.0" promptText="username" />
-            <PasswordField fx:id="Passwordbtn" layoutX="22.0" layoutY="141.0" prefHeight="19.0" prefWidth="211.0" promptText="password" />
-            <Button fx:id="Loginbtn" layoutX="20.0" layoutY="190.0" mnemonicParsing="false" onAction="#LoginBtnOnAction" prefHeight="25.0" prefWidth="211.0" style="-fx-background-color: #FF3333; -fx-background-radius: 10 10 10;" text="Login" textFill="#b5b5b5" />
+            <TextField fx:id="Userhomepagebtn" layoutX="22.0" layoutY="81.0" prefHeight="29.0" prefWidth="211.0" promptText="username" />
+            <PasswordField fx:id="Passwordhomepagebtn" layoutX="22.0" layoutY="141.0" prefHeight="19.0" prefWidth="211.0" promptText="password" />
+            <Button fx:id="LoginHomepagebtn" layoutX="20.0" layoutY="190.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="211.0" style="-fx-background-color: #FF3333; -fx-background-radius: 10 10 10;" text="Login" textFill="#b5b5b5" />
             <Label layoutX="98.0" layoutY="35.0" text="Sign In" textFill="#e1dfdf">
                <font>
                   <Font size="18.0" />
@@ -47,7 +47,7 @@
                   <Image url="@images/profile.png" />
                </image>
             </ImageView>
-            <Button layoutY="61.0" mnemonicParsing="false" style="-fx-background-color: #FF3333; -fx-background-radius: 10 10 10;" text="&lt; News" textFill="#c6c6c6" />
+            <Button fx:id="Centralbtn" layoutY="61.0" mnemonicParsing="false" onAction="#Centralbtnonaction" style="-fx-background-color: #FF3333; -fx-background-radius: 10 10 10;" text="&lt; Centrals" textFill="#c6c6c6" />
          </children>
       </Pane>
       <Label layoutX="96.0" layoutY="246.0" prefHeight="40.0" prefWidth="391.0" text="Exclusivity Complements A Successful Life " textFill="#979595">

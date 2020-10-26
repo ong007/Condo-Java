@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="390.0" prefWidth="882.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginCentral">
+   <children>
+      <AnchorPane prefHeight="395.0" prefWidth="284.0" style="-fx-background-color: white;">
+         <children>
+            <ImageView fitHeight="312.0" fitWidth="225.0" layoutX="55.0" layoutY="-40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/S__8962638.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="41.0" layoutY="163.0" prefHeight="27.0" prefWidth="217.0" text=" Welcome back Central" textFill="#aeaeae">
+               <font>
+                  <Font name="Bauhaus 93" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="67.0" layoutY="233.0" prefHeight="20.0" prefWidth="191.0" text="space make possible" textFill="#5e5e5e">
+               <font>
+                  <Font name="Bauhaus 93" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="74.0" layoutY="262.0" text="The best 3 locations" textFill="#686868">
+               <font>
+                  <Font name="Bauhaus 93" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="105.0" layoutY="295.0" text="Condo X" textFill="#6f6f6f">
+               <font>
+                  <Font name="Bauhaus 93" size="20.0" />
+               </font>
+            </Label>
+            <Button fx:id="backhomecentralbtn" layoutY="341.0" mnemonicParsing="false" onAction="#backhomecentralbtnonaction" prefHeight="37.0" prefWidth="284.0" style="-fx-background-color: white;" text="HOME" textFill="#d78d8d">
+               <font>
+                  <Font name="Bauhaus 93" size="19.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="274.0" layoutY="5.0" prefHeight="169.0" prefWidth="610.0">
+         <children>
+            <ImageView fitHeight="40.0" fitWidth="37.0" layoutX="288.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/63541.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="257.0" layoutY="117.0" prefHeight="37.0" prefWidth="98.0" text="Sign in" textFill="#f5f4f4">
+               <font>
+                  <Font name="Bauhaus 93" size="33.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="Userbtn" layoutX="505.0" layoutY="195.0" promptText="username" />
+      <PasswordField fx:id="Passwordbtn" layoutX="505.0" layoutY="241.0" promptText="password" />
+      <Button fx:id="Loginbtn" layoutX="505.0" layoutY="281.0" mnemonicParsing="false" onAction="#LoginBtnOnAction" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white;" text="Login" textFill="#111010">
+         <font>
+            <Font name="Bodoni MT" size="13.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

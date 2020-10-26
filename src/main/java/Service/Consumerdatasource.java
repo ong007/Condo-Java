@@ -39,7 +39,7 @@ public class Consumerdatasource {
         String line = "";
         while ((line = reader.readLine()) != null) {
             String[] data = line.split(",");
-            Consumerreader consumer = new Consumerreader(data[0], data[1], data[2], data[3], data[4], data[5]);
+            Consumerreader consumer = new Consumerreader(data[0], data[1], data[2], data[3], data[4], data[5], data[6],data[7]);
             consumerList.add(consumer);
         }
         reader.close();
@@ -64,7 +64,7 @@ public class Consumerdatasource {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
             for (Consumerreader consumer:consumerList.getUserList()) {
-                String line = consumer.getName()+","+consumer.getSurname()+","+consumer.getRoom()+","+consumer.getFloor()+","+consumer.getUsername()+","+consumer.getPassword();
+                String line = consumer.getName()+","+consumer.getSurname()+","+consumer.getRoom()+","+consumer.getFloor()+","+consumer.getBuilding()+","+(consumer.getBuilding()+consumer.getFloor()+consumer.getRoom())+","+consumer.getUsername()+","+consumer.getPassword();
                 writer.append(line);
                 writer.newLine();
             }

@@ -20,10 +20,10 @@ public class ListAdmin {
     Label namebtn,surnamebtn;
     @FXML Button HomeAdminbtn,Useradminsystembtn,banbtn,unbanbtn;
     @FXML
-    TableView<Centraluserreader> table;  //copy
+    TableView<Centraluserreader> table;
     private Centraluserreader centraluserreader,selectedCentral;
     private CentralFileDataSource centralFileDataSource;
-    private ObservableList<Centraluserreader> list;  //copy
+    private ObservableList<Centraluserreader> list;
 
     public void initialize(){
         banbtn.setDisable(true);
@@ -44,7 +44,7 @@ public class ListAdmin {
                 showCentralData(newValue);
             }
         }));
-    }  // ถึงตรงนี้
+    }
     @FXML public void HomeAdminBtnOnAction(ActionEvent event) throws IOException {
         Button a = (Button) event.getSource();
         Stage stage_ProfilePage = (Stage) a.getScene().getWindow();
@@ -94,7 +94,7 @@ public class ListAdmin {
 
 
 
-    public void showData(){ //copy
+    public void showData(){
         list = FXCollections.observableList(centraluserreader.getUserList());
         table.setItems(list);
 
@@ -117,7 +117,7 @@ public class ListAdmin {
         table.getColumns().addAll(name,surname,username,password,time,status,attempt);
         table.getSortOrder().add(time);
 
-    } //ถึงตรงนี้
+    }
     public void showCentralData(Centraluserreader central){
         selectedCentral = central;
         namebtn.setText(central.getName());

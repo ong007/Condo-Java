@@ -13,6 +13,7 @@ public class Centraluserreader {
     private String status;
     private int attempt;
 
+
     private ArrayList<Centraluserreader> userList;
 
     public Centraluserreader(){
@@ -42,9 +43,13 @@ public class Centraluserreader {
         return false;
     }
 
-    public boolean checkUser(String username){
-        if (username.equals("6210406572")){
+    public boolean checkUser(String username,Consumerreader consumer){
+        if (username.equals(new setpasswordA().getUser())){
             return  false;
+        }
+        for(Consumerreader acc : consumer.getUserList()){
+            if (acc.getUsername().equals(username))
+                return false;
         }
         for(Centraluserreader acc : userList){
             if (acc.getUsername().equals(username))
@@ -116,6 +121,7 @@ public class Centraluserreader {
     }
 
     public boolean checkStatus(String username){
+
         for (Centraluserreader acc:userList) {
             if (acc.getUsername().equals(username)){
                 if (acc.getStatus().equals("Banned")){

@@ -58,7 +58,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="HomeAdminbtn" alignment="BASELINE_LEFT" layoutY="325.0" mnemonicParsing="false" onAction="#HomeAdminBtnOnAction" prefHeight="25.0" prefWidth="198.0" style="-fx-background-color: black;" text=" HOME" textFill="#cdcccc">
+            <Button fx:id="HomeAdminbtn" alignment="BASELINE_LEFT" layoutY="325.0" mnemonicParsing="false" onAction="#HomeAdminBtnOnAction" prefHeight="25.0" prefWidth="198.0" style="-fx-background-color: black;" text="LOG OUT" textFill="#cdcccc">
                <font>
                   <Font name="Georgia" size="14.0" />
                </font>

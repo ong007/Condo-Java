@@ -40,7 +40,7 @@ public class Boxdatasource {
             String line = "";
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(",");
-                Boxreader box = new Boxreader(data[0], data[1], data[2], data[3], data[4], data[5],data[6],data[7],data[8],data[9]);
+                Boxreader box = new Boxreader(data[0], data[1], data[2], data[3], data[4], data[5],data[6],data[7]);
                 boxlist.add(box);
             }
             reader.close();
@@ -65,7 +65,7 @@ public class Boxdatasource {
                 fileWriter = new FileWriter(file);
                 BufferedWriter writer = new BufferedWriter(fileWriter);
                 for (Boxreader box:boxlist.getUserList()) {
-                    String line = box.getUsername()+","+box.getSender()+","+box.getSize()+","+box.getCompany()+","+box.getLevel()+","+box.getFloor()+","+box.getRoom()+","+box.getHour()+","+box.getMinute()+","+box.getTracking();
+                    String line = box.getUsername()+","+box.getSender()+","+box.getSize()+","+box.getCompany()+","+box.getLevel()+","+box.getRoomnum()+","+box.getTracking()+","+box.getTime();
                     writer.append(line);
                     writer.newLine();
                 }

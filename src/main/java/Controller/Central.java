@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Central {
-    @FXML Button Backcentralmessagebtn,Textbtn,Mailbtn,Boxbtn;
+    @FXML Button Backcentralmessagebtn,Textbtn,Mailbtn,Boxbtn,checkcentralbtn;
 
     @FXML public void BackCentralMessageBtnOnAction(ActionEvent event) throws IOException {
         Button a = (Button) event.getSource();
@@ -39,6 +39,13 @@ public class Central {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Box.fxml"));
         stage_Box.setScene(new Scene(loader.load(), 882, 390));
         stage_Box.show();}
+
+    @FXML public void checkcentralbtnonaction(ActionEvent event) throws IOException {
+        Button e = (Button) event.getSource();
+        Stage stage_checkitem = (Stage) e.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/HomeCheckMessage.fxml"));
+        stage_checkitem.setScene(new Scene(loader.load(), 882, 390));
+        stage_checkitem.show();}
 
 
 }

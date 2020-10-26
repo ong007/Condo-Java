@@ -1,7 +1,11 @@
 package Controller;
 
 import Model.Boxreader;
+import Model.Consumerreader;
+
 import Service.Boxdatasource;
+import Service.Consumerdatasource;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,22 +14,33 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class Box {
-    @FXML ComboBox<String> roomboxbtn,floorboxbtn;
+    @FXML ComboBox<String> roomnumboxbtn;
     @FXML MenuButton levelboxbtn;
     @FXML MenuItem option1boxbtn,option2boxbtn,option3boxbtn;
-    @FXML TextField sizeboxbtn,nameboxbtn,companyboxbtn,hourboxbtn,minuteboxbtn,trackingboxbtn,senderboxbtn;
+    @FXML TextField sizeboxbtn,nameboxbtn,companyboxbtn,trackingboxbtn,senderboxbtn;
     @FXML Button Backboxbtn,Summitboxbtn;
     private Boxdatasource boxdata;
     private Boxreader boxlist;
+
+    private Consumerdatasource consumerdata;
+    private Consumerreader consumerlist;
 
     public void initialize(){
         boxlist = new Boxreader();
         boxdata = new Boxdatasource("data","/box.csv");
         boxlist = boxdata.getBoxlist();
-        roomboxbtn.getItems().addAll("STANDARD","LUXURY");
-        floorboxbtn.getItems().addAll("1","2","3","4","5","6","7","8");
+
+        consumerdata = new Consumerdatasource("data","Consumerdata.csv");
+        consumerlist = consumerdata.getConsumerList();
+        for (Consumerreader consumerreader1: consumerlist.getUserList()){
+
+            roomnumboxbtn.getItems().add(consumerreader1.getName() + " : " + consumerreader1.getRoomnum());
+
+        }
     }
 
     @FXML public void BackBoxBtnOnAcTion(ActionEvent event) throws IOException {
@@ -52,16 +67,21 @@ public class Box {
 
 
     public void Summitboxbtnonaction(ActionEvent event) throws IOException {
-
-            //centraldata = new Service.CentralFileDataSource("data", "Service.Centraldata.csv");
-            //centralList = centraldata.getCentralList();
-            Boxreader boxreader = new Boxreader(nameboxbtn.getText(),senderboxbtn.getText(),sizeboxbtn.getText(),companyboxbtn.getText(),levelboxbtn.getText(),floorboxbtn.getValue(), roomboxbtn.getValue(),hourboxbtn.getText(),minuteboxbtn.getText(),trackingboxbtn.getText());
-            boxlist.add(boxreader);
-            boxdata.setBoxlist(boxlist);
-            Button a = (Button) event.getSource();
-            Stage stage_summitconsumer = (Stage) a.getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Central.fxml"));
-            stage_summitconsumer.setScene(new Scene(loader.load(), 882, 390));
-            stage_summitconsumer.show();
+            if(sizeboxbtn.getText().equals("") || nameboxbtn.getText().equals("") || trackingboxbtn.getText().equals("") || senderboxbtn.getText().equals("") || companyboxbtn.getText().equals("") || roomnumboxbtn.getValue() == null || levelboxbtn.getText().equals("")){
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("ERROR");
+                alert.setContentText("Please filling all information.");
+                alert.showAndWait();}
+            else {
+                String time = new SimpleDateFormat("dd/MM/yy HH:mm:ss").format(Calendar.getInstance().getTime());
+                String[] roomNum = roomnumboxbtn.getValue().split(" : ");
+                Boxreader boxreader = new Boxreader(nameboxbtn.getText(),senderboxbtn.getText(),sizeboxbtn.getText(),companyboxbtn.getText(),levelboxbtn.getText(),roomNum[1],trackingboxbtn.getText(),time);
+                boxlist.add(boxreader);
+                boxdata.setBoxlist(boxlist);
+                Button a = (Button) event.getSource();
+                Stage stage_summitconsumer = (Stage) a.getScene().getWindow();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/Central.fxml"));
+                stage_summitconsumer.setScene(new Scene(loader.load(), 882, 390));
+                stage_summitconsumer.show();}
         }
 }

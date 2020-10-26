@@ -11,6 +11,8 @@ public class MainProject extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("Homepage.fxml"));
         primaryStage.setTitle("6210406572");
         primaryStage.setScene(new Scene(root, 882, 390));
+        primaryStage.setResizable(false);
+        primaryStage.sizeToScene();
         primaryStage.show();
     }
 

@@ -9,10 +9,11 @@ public class Boxreader {
         private String size;
         private String company;
         private String level;
-        private String floor;
         private String room;
-        private String hour;
-        private String minute;
+        private String building;
+        private String floor;
+        private String roomnum;
+        private String time;
         private String tracking;
         private String sender;
 
@@ -21,18 +22,27 @@ public class Boxreader {
         public Boxreader(){
             userListbox = new ArrayList<>();
         }
-        public Boxreader(String username,String sender, String size, String company, String level, String floor, String room,String hour,String minute,String tracking){
+
+    public String getBuilding() {
+        return building;
+    }
+
+    public void setBuilding(String building) {
+        this.building = building;
+    }
+
+    public Boxreader(String username, String sender, String size, String company, String level, String roomnum, String tracking,String time){
             this.username = username;
             this.sender = sender;
             this.size = size;
             this.company = company;
             this.level = level;
-            this.floor = floor;
+            this.building = building;
             this.room = room;
-            this.hour = hour;
-            this.minute = minute;
+            this.floor = floor;
+            this.roomnum = roomnum;
             this.tracking = tracking;
-
+            this.time = time;
         }
         public void add(Boxreader box){
             userListbox.add(box);
@@ -52,31 +62,36 @@ public class Boxreader {
 
         public String getSender(){return sender;}
 
-        public String getRoom() {
-            return room;
-        }
+
 
         public String getSize() {
             return size;
         }
 
-        public String getFloor() {
-            return floor;
-        }
+    public String getRoom() {
+        return room;
+    }
 
-        public String getCompany() {
+    public void setRoom(String room) {
+        this.room = room;
+    }
+
+    public String getFloor() {
+        return floor;
+    }
+
+    public void setFloor(String floor) {
+        this.floor = floor;
+    }
+
+    public String getCompany() {
             return company;
         }
 
         public String getLevel() {
             return level;
         }
-        public String getHour(){
-            return hour;
-        }
-        public String getMinute(){
-            return minute;
-        }
+
         public String getTracking(){
             return tracking;
         }
@@ -106,27 +121,32 @@ public class Boxreader {
         this.level = level;
     }
 
-    public void setFloor(String floor) {
-        this.floor = floor;
+    public String getRoomnum() {
+        return roomnum;
     }
 
-    public void setRoom(String room) {
-        this.room = room;
+
+    public void setRoomnum(String roomnum) {
+        this.roomnum = roomnum;
     }
 
-    public void setHour(String hour) {
-        this.hour = hour;
+    public String getTime() {
+            return time;
     }
 
-    public void setMinute(String minute) {
-        this.minute = minute;
+    public void setTime(String time) {
+            this.time = time;
     }
 
     public void setTracking(String tracking) {
-        this.tracking = tracking;
+            this.tracking = tracking;
     }
 
     public void setUserListbox(ArrayList<Boxreader> userListbox) {
-        this.userListbox = userListbox;
+            this.userListbox = userListbox;
+    }
+
+    public void removeBox(Boxreader box){
+            userListbox.remove(box);
     }
 }

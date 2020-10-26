@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="390.0" prefWidth="882.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Stockitem">
+   <children>
+      <AnchorPane prefHeight="74.0" prefWidth="895.0" style="-fx-background-color: white;">
+         <children>
+            <Label layoutX="74.0" layoutY="11.0" prefHeight="52.0" prefWidth="124.0" style="-fx-background-color: white;" text="STOCK">
+               <font>
+                  <Font name="Franklin Gothic Medium Cond" size="45.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button fx:id="backstockbtn" layoutX="27.0" layoutY="350.0" mnemonicParsing="false" onAction="#backstockbtnonaction" text="BACK" />
+      <AnchorPane fx:id="showliststock" layoutX="28.0" layoutY="91.0" prefHeight="243.0" prefWidth="840.0">
+         <children>
+            <Label layoutX="204.0" layoutY="90.0" text="Select List down below" textFill="WHITE">
+               <font>
+                  <Font size="43.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <ComboBox fx:id="selectlist" layoutX="375.0" layoutY="350.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>

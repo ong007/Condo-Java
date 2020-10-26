@@ -67,6 +67,11 @@
                   <Font size="18.0" />
                </font>
             </Label>
+            <Label layoutX="68.0" layoutY="216.0" prefHeight="39.0" prefWidth="109.0" text="SIGN-UP" textFill="#222121">
+               <font>
+                  <Font size="21.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

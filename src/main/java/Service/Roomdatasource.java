@@ -1,6 +1,5 @@
 package Service;
 
-import Model.Consumerreader;
 import Model.Roomreader;
 
 import java.io.*;
@@ -40,7 +39,7 @@ public class Roomdatasource {
         String line = "";
         while ((line = reader.readLine()) != null) {
             String[] data = line.split(",");
-            Roomreader room = new Roomreader(data[0], data[1], data[2], data[3]);
+            Roomreader room = new Roomreader(data[0], data[1], data[2], data[3],data[4],Integer.parseInt(data[5]),Integer.parseInt(data[6]));
             roomlist.add(room);
         }
         reader.close();
@@ -65,7 +64,7 @@ public class Roomdatasource {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
             for (Roomreader room:roomlist.getUserList()) {
-                String line = room.getBuilding()+","+room.getType()+","+room.getFloor()+","+room.getRoom();
+                String line = room.getBuilding()+","+room.getType()+","+room.getFloor()+","+room.getRoom()+","+(room.getBuilding()+room.getFloor()+room.getRoom())+","+room.getMaxarrival()+","+room.getNowarrival();
                 writer.append(line);
                 writer.newLine();
             }

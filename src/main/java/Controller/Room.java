@@ -10,7 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Room {
-    @FXML Button createroombtn,backroombtn;
+    @FXML Button createroombtn,backroombtn,checkroombtn;
 
     @FXML public void backroombtnonaction(ActionEvent event) throws IOException {
         Button a = (Button) event.getSource();
@@ -25,5 +25,13 @@ public class Room {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Createroom.fxml"));
         stage_createroom.setScene(new Scene(loader.load(), 882, 390));
         stage_createroom.show();
+    }
+
+    @FXML public void checkroombtnonaction(ActionEvent event) throws IOException {
+        Button c = (Button) event.getSource();
+        Stage stage_checkroom = (Stage) c.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Listroom.fxml"));
+        stage_checkroom.setScene(new Scene(loader.load(), 882, 390));
+        stage_checkroom.show();
     }
 }
