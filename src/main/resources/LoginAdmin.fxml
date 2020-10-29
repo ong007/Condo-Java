@@ -9,9 +9,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="380.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginAdmin">
+<AnchorPane prefHeight="390.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LoginAdmin">
    <children>
-      <AnchorPane prefHeight="380.0" prefWidth="284.0" style="-fx-background-color: black;">
+      <AnchorPane prefHeight="390.0" prefWidth="284.0" style="-fx-background-color: black;">
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="42.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -38,7 +38,7 @@
                   <Font name="Bauhaus 93" size="20.0" />
                </font>
             </Label>
-            <Button fx:id="Homeloginadminbtn" layoutY="341.0" mnemonicParsing="false" onAction="#HomeLoginAdminBtnOnAction" prefHeight="37.0" prefWidth="284.0" style="-fx-background-color: black;" text="HOME" textFill="#d78d8d">
+            <Button fx:id="Homeloginadminbtn" layoutY="353.0" mnemonicParsing="false" onAction="#HomeLoginAdminBtnOnAction" prefHeight="37.0" prefWidth="284.0" style="-fx-background-color: black;" text="HOME" textFill="#d78d8d">
                <font>
                   <Font name="Bauhaus 93" size="19.0" />
                </font>

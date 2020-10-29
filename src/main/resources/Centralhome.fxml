@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
@@ -9,9 +10,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="380.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Centealhome">
+<AnchorPane prefHeight="390.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Centealhome">
    <children>
-      <AnchorPane prefHeight="380.0" prefWidth="162.0" style="-fx-background-color: black;">
+      <AnchorPane prefHeight="390.0" prefWidth="162.0" style="-fx-background-color: black;">
          <children>
             <Label layoutX="19.0" layoutY="35.0" text="CENTRAL HOME" textFill="#a4a2a2">
                <font>
@@ -33,7 +34,7 @@
                   <Font size="9.0" />
                </font>
             </Button>
-            <Button fx:id="Homecentralhomebtn" layoutY="345.0" mnemonicParsing="false" onAction="#HomeCentralHomeBtnOnAction" prefHeight="34.0" prefWidth="153.0" style="-fx-background-color: black;" text="LOG OUT" textFill="WHITE" />
+            <Button fx:id="Homecentralhomebtn" layoutX="3.0" layoutY="364.0" mnemonicParsing="false" onAction="#HomeCentralHomeBtnOnAction" prefHeight="25.0" prefWidth="153.0" style="-fx-background-color: black;" text="LOG OUT" textFill="WHITE" />
             <ImageView fitHeight="97.0" fitWidth="115.0" layoutX="31.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/istockphoto-1161361737-170667a.jpg" />
@@ -46,7 +47,13 @@
             </Button>
          </children>
       </AnchorPane>
-      <TableView fx:id="table" layoutX="193.0" layoutY="106.0" prefHeight="200.0" prefWidth="454.0" />
+      <TableView fx:id="table" layoutX="193.0" layoutY="106.0" prefHeight="200.0" prefWidth="454.0">
+         <columns>
+            <TableColumn prefWidth="113.5" resizable="false" text="Column X" />
+            <TableColumn prefWidth="113.5" resizable="false" text="Column X" />
+            <TableColumn prefWidth="113.5" resizable="false" text="Column X" />
+            <TableColumn prefWidth="113.5" resizable="false" text="Column X" />
+         </columns></TableView>
       <Label layoutX="206.0" layoutY="41.0" prefHeight="38.0" prefWidth="153.0" text="CUSTOMER">
          <font>
             <Font name="Franklin Gothic Medium Cond" size="32.0" />

@@ -49,7 +49,7 @@ public class Newconsumer {
 
     }
 
-    public void backnewconsumerbtnonaction(ActionEvent event) throws IOException {
+    @FXML public void backnewconsumerbtnonaction(ActionEvent event) throws IOException {
         Button a = (Button) event.getSource();
         Stage stage_backcentral = (Stage) a.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Centralhome.fxml"));
@@ -61,7 +61,7 @@ public class Newconsumer {
         if(nameconsumerbtn.getText().equals("") || surnameconsumerbtn.getText().equals("") || Newuserconsumerbtn.getText().equals("") || Newpasswordconsumerbtn.getText().equals("") || Newconfirmpasswordconsumerbtn.getText().equals("") || roomconsumerbtn.getValue() == null){
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("ERROR");
-            alert.setContentText("Please filling all information.");
+            alert.setContentText("Please fill all information.");
             alert.showAndWait();}
         else{
             if (Newpasswordconsumerbtn.getText().equals(Newconfirmpasswordconsumerbtn.getText()) && consumerlist.checkUser(Newuserconsumerbtn.getText(),centrallist) ) {

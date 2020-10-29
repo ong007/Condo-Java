@@ -32,6 +32,7 @@ public class Centealhome {
     private Roomdatasource roomdata;
 
 
+
     public void initialize(){
         Removeconsumerbtn.setDisable(true);
         consumerreader = new Consumerreader();
@@ -83,6 +84,7 @@ public class Centealhome {
         Stage stage_newmessage = (Stage) a.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/Central.fxml"));
         stage_newmessage.setScene(new Scene(loader.load(), 882, 390));
+
         stage_newmessage.show();}
 
 
@@ -145,6 +147,7 @@ public class Centealhome {
         roomnum.setSortType(TableColumn.SortType.ASCENDING);
         table.getColumns().addAll(name,surname,username,roomnum);
         table.getSortOrder().add(roomnum);
+
     }
 
     public void showCentralData(Consumerreader consumer){

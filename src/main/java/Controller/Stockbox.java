@@ -4,9 +4,11 @@ import Model.Boxreader;
 import Model.Centraluserreader;
 import Model.Consumerreader;
 
+import Model.ReceiveBoxReader;
 import Service.Boxdatasource;
 import Service.CentralFileDataSource;
 import Service.Consumerdatasource;
+import Service.ReceiveBoxDataSource;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -27,6 +29,9 @@ public class Stockbox {
     private Consumerdatasource consumerdatasource;
     private Centraluserreader centralList;
     private CentralFileDataSource centralFileDataSource;
+    private ReceiveBoxDataSource receiveBoxDataSource;
+    private ReceiveBoxReader receiveboxlist;
+
     @FXML
     private TextField searchstockbtn, usernamestockbtn;
     @FXML
@@ -39,6 +44,8 @@ public class Stockbox {
 
     public void initialize (){
         recievestockbtn.setDisable(true);
+        receiveBoxDataSource = new ReceiveBoxDataSource("data", "checkreceivebox.csv");
+        receiveboxlist = receiveBoxDataSource.getReceiveboxlist();
         boxdatasource = new Boxdatasource("data", "box.csv");
         boxList = boxdatasource.getBoxlist();
         consumerdatasource = new Consumerdatasource("data", "Consumerdata.csv");
@@ -117,18 +124,20 @@ public class Stockbox {
         if(usernamestockbtn.getText().equals("") || passwordstockbtn.getText().equals("") || officestockbtn.getValue() == null){
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("ERROR");
-            alert.setContentText("Please filling all information.");
+            alert.setContentText("Please fill all information.");
             alert.showAndWait();
 
         }else{
             if(consumerList.checkReceived(usernamestockbtn.getText(), passwordstockbtn.getText())) {
                 Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-
                 alert.setTitle("Confirmation.");
                 alert.setHeaderText("");
                 alert.setContentText("CONFIRM?");
-                Optional<ButtonType> confirmation = null;
+                Optional<ButtonType> confirmation = alert.showAndWait();
                 if (confirmation.get() == ButtonType.OK) {
+                    ReceiveBoxReader box = new ReceiveBoxReader(selectedBox.getSender(), selectedBox.getUsername(), selectedBox.getCompany(), selectedBox.getRoomnum(), selectedBox.getLevel(), selectedBox.getSize(), selectedBox.getTracking(),selectedBox.getTime(),officestockbtn.getValue());
+                    receiveboxlist.add(box);
+                    receiveBoxDataSource.setlist(receiveboxlist);
                     boxList.removeBox(selectedBox);
                     boxdatasource.setBoxlist(boxList);
                     clearData();

@@ -37,9 +37,6 @@ public class Boxreader {
             this.size = size;
             this.company = company;
             this.level = level;
-            this.building = building;
-            this.room = room;
-            this.floor = floor;
             this.roomnum = roomnum;
             this.tracking = tracking;
             this.time = time;

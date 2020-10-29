@@ -46,7 +46,7 @@ public class Createroom {
         if(buildbox.getValue() == null || typebox.getValue() == null || floorbox.getValue() == null || roombtn.getValue() == null){
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("ERROR");
-            alert.setContentText("Please filling all information.");
+            alert.setContentText("Please fill all information.");
             alert.showAndWait();}
         else{
             if(roomlist.checkAddRoom(roomNum)){

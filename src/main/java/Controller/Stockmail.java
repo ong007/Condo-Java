@@ -1,12 +1,7 @@
 package Controller;
 
-import Model.Boxreader;
-import Model.Centraluserreader;
-import Model.Consumerreader;
-import Model.Mailreader;
-import Service.MailDataSource;
-import Service.CentralFileDataSource;
-import Service.Consumerdatasource;
+import Model.*;
+import Service.*;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -26,6 +21,8 @@ public class Stockmail {
     private Consumerdatasource consumerdatasource;
     private Centraluserreader centralList;
     private CentralFileDataSource centralFileDataSource;
+    private ReceiveMailDataSource receiveMailDataSource;
+    private ReceiveMailReader receivemaillist;
     @FXML
     private TextField searchstockmailbtn, usernamestockmailbtn;
     @FXML
@@ -38,6 +35,8 @@ public class Stockmail {
 
     public void initialize (){
         recievestockbtn.setDisable(true);
+        receiveMailDataSource = new ReceiveMailDataSource("data","checkreceivemail.csv");
+        receivemaillist = receiveMailDataSource.getReceiveboxlist();
         mailDataSource = new MailDataSource("data", "mail.csv");
         maillist = mailDataSource.getMaillist();
         consumerdatasource = new Consumerdatasource("data", "Consumerdata.csv");
@@ -114,7 +113,7 @@ public class Stockmail {
         if(usernamestockmailbtn.getText().equals("") || passwordstockbtn.getText().equals("") || officestockbtn.getValue() == null){
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("ERROR");
-            alert.setContentText("Please filling all information.");
+            alert.setContentText("Please fill all information.");
             alert.showAndWait();
         }else{
             if(consumerList.checkReceived(usernamestockmailbtn.getText(), passwordstockbtn.getText())){
@@ -123,8 +122,11 @@ public class Stockmail {
                 alert.setTitle("Confirmation.");
                 alert.setHeaderText("");
                 alert.setContentText("CONFIRM?");
-                Optional<ButtonType> confirmation = null;
+                Optional<ButtonType> confirmation = alert.showAndWait();
                 if (confirmation.get() == ButtonType.OK) {
+                    ReceiveMailReader mail = new ReceiveMailReader(selectedMail.getSender(), selectedMail.getUsername(), selectedMail.getCompany(), selectedMail.getRoomnum(), selectedMail.getSize(),selectedMail.getTime(),officestockbtn.getValue());
+                    receivemaillist.add(mail);
+                    receiveMailDataSource.setMaillist(receivemaillist);
                     maillist.removeBox(selectedMail);
                     mailDataSource.setMaillist(maillist);
                     clearData();

@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Centraluserreader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -11,6 +12,7 @@ import java.io.IOException;
 
 public class Central {
     @FXML Button Backcentralmessagebtn,Textbtn,Mailbtn,Boxbtn,checkcentralbtn;
+
 
     @FXML public void BackCentralMessageBtnOnAction(ActionEvent event) throws IOException {
         Button a = (Button) event.getSource();
@@ -45,6 +47,7 @@ public class Central {
         Stage stage_checkitem = (Stage) e.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/HomeCheckMessage.fxml"));
         stage_checkitem.setScene(new Scene(loader.load(), 882, 390));
+
         stage_checkitem.show();}
 
 

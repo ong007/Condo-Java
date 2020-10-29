@@ -18,11 +18,16 @@ import java.util.Calendar;
 
 public class LoginCentral {
     private CentralFileDataSource centraldata;
-    private Centraluserreader centralList, nowCentral;
+    private Centraluserreader centralList;
     @FXML TextField Userbtn;
     @FXML PasswordField Passwordbtn;
-    @FXML  Button backhomecentralbtn;
+    @FXML Button backhomecentralbtn;
     @FXML Button Loginbtn;
+    private Centraluserreader nowCentral;
+
+    public void setNowCentral(Centraluserreader nowCentral){
+        this.nowCentral = nowCentral;
+    }
 
     public void initialize(){
         centralList = new Centraluserreader();
@@ -41,6 +46,7 @@ public class LoginCentral {
             Stage stage_CentralloginPage = (Stage) c.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Centralhome.fxml"));
             stage_CentralloginPage.setScene(new Scene(loader.load(), 882, 390));
+
             stage_CentralloginPage.show();
         }
         else if (!centralList.checkStatus(Userbtn.getText())){

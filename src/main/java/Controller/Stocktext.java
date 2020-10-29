@@ -1,13 +1,8 @@
 package Controller;
 
-import Model.Boxreader;
-import Model.Centraluserreader;
-import Model.Consumerreader;
+import Model.*;
 
-import Model.Textreader;
-import Service.CentralFileDataSource;
-import Service.Consumerdatasource;
-import Service.TextDataSource;
+import Service.*;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -27,6 +22,8 @@ public class Stocktext {
     private Consumerdatasource consumerdatasource;
     private Centraluserreader centralList;
     private CentralFileDataSource centralFileDataSource;
+    private ReceiveTextDataSource receiveTextDataSource;
+    private ReceiveTextReader receivetextlist;
     @FXML
     private TextField searchstockbtn, usernamestockbtn;
     @FXML
@@ -39,6 +36,8 @@ public class Stocktext {
 
     public void initialize (){
         recievestockbtn.setDisable(true);
+        receiveTextDataSource = new ReceiveTextDataSource("data", "checkreceivetext.csv");
+        receivetextlist = receiveTextDataSource.getReceiveTextlist();
         textDataSource = new TextDataSource("data", "text.csv");
         textList = textDataSource.getTextlist();
         consumerdatasource = new Consumerdatasource("data", "Consumerdata.csv");
@@ -116,7 +115,7 @@ public class Stocktext {
         if(usernamestockbtn.getText().equals("") || passwordstockbtn.getText().equals("") || officestockbtn.getValue() == null){
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("ERROR");
-            alert.setContentText("Please filling all information.");
+            alert.setContentText("Please fill all information.");
             alert.showAndWait();
 
         }else{
@@ -126,8 +125,11 @@ public class Stocktext {
                 alert.setTitle("Confirmation.");
                 alert.setHeaderText("");
                 alert.setContentText("CONFIRM?");
-                Optional<ButtonType> confirmation = null;
+                Optional<ButtonType> confirmation = alert.showAndWait();
                 if (confirmation.get() == ButtonType.OK) {
+                    ReceiveTextReader text = new ReceiveTextReader(selectedText.getSender(), selectedText.getUsername(), selectedText.getCompany(), selectedText.getRoomnum(), selectedText.getLevel(), selectedText.getSize(),selectedText.getTime(),officestockbtn.getValue());
+                    receivetextlist.add(text);
+                    receiveTextDataSource.setTextlist(receivetextlist);
                     textList.removeText(selectedText);
                     textDataSource.setTextlist(textList);
                     clearData();

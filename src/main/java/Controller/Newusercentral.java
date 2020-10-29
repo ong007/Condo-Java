@@ -41,7 +41,7 @@ public class Newusercentral {
         if(nameuserbtn.getText().equals("") || surnameuserbtn.getText().equals("") || teluserbtn.getText().equals("") || emailuserbtn.getText().equals("") || Newuseradminbtn.getText().equals("") || Newpasswordadminbtn.getText().equals("") || Newconfirmpasswordadminbtn.getText().equals("")){
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("ERROR");
-            alert.setContentText("Please filling all information.");
+            alert.setContentText("Please fill all information.");
             alert.showAndWait();}
         else{
             if (Newpasswordadminbtn.getText().equals(Newconfirmpasswordadminbtn.getText()) && centralList.checkUser(Newuseradminbtn.getText(),consumerlist)) {

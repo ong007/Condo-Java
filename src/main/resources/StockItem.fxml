@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="390.0" prefWidth="882.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Stockitem">
    <children>
       <AnchorPane prefHeight="74.0" prefWidth="895.0" style="-fx-background-color: white;">
@@ -19,7 +18,7 @@
          </children>
       </AnchorPane>
       <Button fx:id="backstockbtn" layoutX="27.0" layoutY="350.0" mnemonicParsing="false" onAction="#backstockbtnonaction" text="BACK" />
-      <AnchorPane fx:id="showliststock" layoutX="28.0" layoutY="91.0" prefHeight="243.0" prefWidth="840.0">
+      <AnchorPane fx:id="showlistreceive" layoutX="28.0" layoutY="91.0" prefHeight="243.0" prefWidth="840.0">
          <children>
             <Label layoutX="204.0" layoutY="90.0" text="Select List down below" textFill="WHITE">
                <font>
