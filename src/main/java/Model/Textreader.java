@@ -2,8 +2,29 @@ package Model;
 
 import java.util.ArrayList;
 
-public class Textreader {
-    private String username;
+public class Textreader extends Item{
+    private String level;
+    private ArrayList<Textreader> userListBox;
+    public Textreader(){
+        userListBox = new ArrayList<>();
+    }
+    public Textreader(String receiver,String sender,String size,String company,String roomNumber,String dateTime,String level){
+        super(receiver,sender,size,company,roomNumber,dateTime);
+        this.level = level;
+    }
+    public void add(Textreader tr){
+        userListBox.add(tr);
+    }
+    public String getLevel() {
+        return level;
+    }
+    public ArrayList<Textreader> getUserList() {
+        return userListBox;
+    }
+    public void removeText(Textreader text){
+        userListBox.remove(text);
+    }
+    /*private String username;
     private String size;
     private String company;
     private String level;
@@ -143,5 +164,5 @@ public class Textreader {
     }
     public void removeText(Textreader text){
         userListbox.remove(text);
-    }
+    }*/
 }

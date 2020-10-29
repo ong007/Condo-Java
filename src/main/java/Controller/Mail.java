@@ -1,5 +1,5 @@
 package Controller;
-
+import Model.Item;
 import Model.Consumerreader;
 import Model.Mailreader;
 
@@ -31,8 +31,9 @@ public class Mail {
     private Mailreader maillist,nowmail;
     private Consumerdatasource consumerdata;
     private Consumerreader consumerlist;
-
+    private Item item;
     public void initialize(){
+        item = new Item();
         maillist = new Mailreader();
         maildata = new MailDataSource("data","/mail.csv");
         maillist = maildata.getMaillist();
@@ -60,11 +61,16 @@ public class Mail {
             alert.setContentText("Please filling all information.");
             alert.showAndWait();}
         else{
+
             String time = new SimpleDateFormat("dd/MM/yy HH:mm:ss").format(Calendar.getInstance().getTime());
             String[] roomNum = roomconsumermailbtn.getValue().split(" : ");
-            Mailreader mailreader = new Mailreader(namemailbtn.getText(),sendermailbtn.getText(),sizemailbtn.getText(),companymailbtn.getText(),roomNum[1],time);
+
+            Mailreader mailreader = new Mailreader(sendermailbtn.getText(),namemailbtn.getText(),sizemailbtn.getText(),companymailbtn.getText(),roomNum[1],time);
             maillist.add(mailreader);
+            item.add(mailreader);
+            System.out.println(maillist.getUserList());
             maildata.setMaillist(maillist);
+
             Button a = (Button) event.getSource();
             Stage stage_summitconsumer = (Stage) a.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Central.fxml"));

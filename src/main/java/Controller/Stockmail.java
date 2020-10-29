@@ -124,7 +124,7 @@ public class Stockmail {
                 alert.setContentText("CONFIRM?");
                 Optional<ButtonType> confirmation = alert.showAndWait();
                 if (confirmation.get() == ButtonType.OK) {
-                    ReceiveMailReader mail = new ReceiveMailReader(selectedMail.getSender(), selectedMail.getUsername(), selectedMail.getCompany(), selectedMail.getRoomnum(), selectedMail.getSize(),selectedMail.getTime(),officestockbtn.getValue());
+                    ReceiveMailReader mail = new ReceiveMailReader(selectedMail.getSender(),selectedMail.getUsername(), selectedMail.getCompany(), selectedMail.getRoomnum(),selectedMail.getSize(),selectedMail.getTime(),officestockbtn.getValue());
                     receivemaillist.add(mail);
                     receiveMailDataSource.setMaillist(receivemaillist);
                     maillist.removeBox(selectedMail);

@@ -1,5 +1,7 @@
 package Service;
 
+import Controller.ReceiveBox;
+import Model.Boxreader;
 import Model.ReceiveBoxReader;
 import Model.ReceiveBoxReader;
 
@@ -32,7 +34,8 @@ public class ReceiveBoxDataSource {
         }
     }
 
-    private void readData() throws IOException {
+    private void readData() throws IOException
+    {
         String filePath = fileDirectoryNamebox + File.separator + fileNamebox;
         File file = new File(filePath);
         FileReader fileReader = new FileReader(file);
@@ -41,6 +44,7 @@ public class ReceiveBoxDataSource {
         while ((line = reader.readLine()) != null) {
             String[] data = line.split(",");
             ReceiveBoxReader box= new ReceiveBoxReader(data[0], data[1], data[2], data[3], data[4],data[5],data[6],data[7],data[8]);
+
             receiveboxlist.add(box);
         }
         reader.close();
@@ -64,7 +68,8 @@ public class ReceiveBoxDataSource {
         try {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            for (ReceiveBoxReader box:receiveboxlist.getUserList1()) {
+            for (ReceiveBoxReader box:maillist.getUserList1())
+            {
                 String line = box.getSender()+","+box.getUsername()+","+box.getCompany()+","+box.getRoomnum()+","+box.getLevel()+","+box.getSize()+","+box.getTracking()+","+box.getTime()+","+box.getNameofficer();
                 writer.append(line);
                 writer.newLine();

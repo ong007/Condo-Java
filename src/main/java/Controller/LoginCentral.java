@@ -37,7 +37,6 @@ public class LoginCentral {
 
     @FXML public void LoginBtnOnAction(ActionEvent event) throws IOException {
         if(centralList.checkPassword(Userbtn.getText(),Passwordbtn.getText()) && centralList.checkStatus(Userbtn.getText())) {
-
             nowCentral = centralList.getAcc(Userbtn.getText());
             String time = new SimpleDateFormat("dd/MM/yy HH:mm:ss").format(Calendar.getInstance().getTime());
             nowCentral.setTime(time);

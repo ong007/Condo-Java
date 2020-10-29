@@ -1,10 +1,12 @@
 package Controller;
 
 import Model.Consumerreader;
+import Model.Item;
 import Model.Textreader;
 import Service.Boxdatasource;
 import Service.Consumerdatasource;
 import Service.TextDataSource;
+import com.sun.glass.ui.Size;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,8 +29,9 @@ public class Text {
     private Consumerreader consumerlist;
     private TextDataSource textdata;
     private Textreader textlist;
-
+    private Item item;
     public void initialize(){
+        item = new Item();
         textlist = new Textreader();
         textdata = new TextDataSource("data","/text.csv");
         textlist = textdata.getTextlist();
@@ -70,8 +73,11 @@ public class Text {
             alert.showAndWait();}
         else{
             String time = new SimpleDateFormat("dd/MM/yy HH:mm:ss").format(Calendar.getInstance().getTime());
-            Textreader textreader = new Textreader(nametextbtn.getText(),sendertextbtn.getText(),Sizetextbtn.getText(),companytextbtn.getText(),leveltextbtn.getText(),roomconsumertextbtn.getValue(),time);
-            textlist.add(textreader);
+            String[] roomNum = roomconsumertextbtn.getValue().split(" : ");
+            //Textreader textreader = new Textreader(nametextbtn.getText(),sendertextbtn.getText(),Sizetextbtn.getText(),companytextbtn.getText(),leveltextbtn.getText(),roomconsumertextbtn.getValue(),time);
+            Textreader textReader = new Textreader(sendertextbtn.getText(),nametextbtn.getText(), Sizetextbtn.getText(),companytextbtn.getText(),roomNum[1],time,leveltextbtn.getText());
+            textlist.add(textReader);
+            item.add(textReader);
             textdata.setTextlist(textlist);
             Button a = (Button) event.getSource();
             Stage stage_summitconsumer = (Stage) a.getScene().getWindow();

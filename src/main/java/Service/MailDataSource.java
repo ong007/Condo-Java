@@ -65,7 +65,7 @@ public class MailDataSource {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
             for (Mailreader mail:maillist.getUserList()) {
-                String line = mail.getUsername()+","+mail.getSender()+","+mail.getSize()+","+mail.getCompany()+","+mail.getRoomnum()+","+mail.getTime();
+                String line = mail.getSender()+","+mail.getUsername()+","+mail.getSize()+","+mail.getCompany()+","+mail.getRoomnum()+","+mail.getTime();
                 writer.append(line);
                 writer.newLine();
             }

@@ -68,6 +68,7 @@ public class ReceiveBox {
 
             tablestockbox.setItems(list);
 
+
             TableColumn sender = new TableColumn("SENDER");
             sender.setCellValueFactory(new PropertyValueFactory<ReceiveBoxReader,String>("sender"));
             TableColumn username = new TableColumn("USERNAME");

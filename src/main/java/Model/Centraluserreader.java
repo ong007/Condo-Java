@@ -42,7 +42,13 @@ public class Centraluserreader {
         }
         return false;
     }
-
+    public void changePassword(String username,String password,String newPassword){
+        for(Centraluserreader acc:userList){
+            if (acc.getUsername().equals(username) && acc.getPassword().equals(password)){
+                acc.setPassword(newPassword);
+            }
+        }
+    }
     public boolean checkUser(String username,Consumerreader consumer){
         if (username.equals(new setpasswordA().getUser())){
             return  false;
@@ -98,6 +104,9 @@ public class Centraluserreader {
 
     public void setTime(String time) {
         this.time = time;
+    }
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getStatus() {

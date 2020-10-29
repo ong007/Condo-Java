@@ -82,6 +82,7 @@ public class Stockbox {
 
         tablestockbox.setItems(list);
 
+
         TableColumn sender = new TableColumn("SENDER");
         sender.setCellValueFactory(new PropertyValueFactory<Boxreader,String>("sender"));
         TableColumn username = new TableColumn("USERNAME");
@@ -95,7 +96,7 @@ public class Stockbox {
         TableColumn size= new TableColumn("SIZE");
         size.setCellValueFactory(new PropertyValueFactory<Boxreader,String>("size"));
         TableColumn tracking= new TableColumn("TRACKING");
-        tracking.setCellValueFactory(new PropertyValueFactory<Boxreader,String>("tracking"));
+        tracking.setCellValueFactory(new PropertyValueFactory<Boxreader,String>("tacking"));
         TableColumn time= new TableColumn("TIME");
         time.setCellValueFactory(new PropertyValueFactory<Boxreader,String>("time"));
 
@@ -135,7 +136,8 @@ public class Stockbox {
                 alert.setContentText("CONFIRM?");
                 Optional<ButtonType> confirmation = alert.showAndWait();
                 if (confirmation.get() == ButtonType.OK) {
-                    ReceiveBoxReader box = new ReceiveBoxReader(selectedBox.getSender(), selectedBox.getUsername(), selectedBox.getCompany(), selectedBox.getRoomnum(), selectedBox.getLevel(), selectedBox.getSize(), selectedBox.getTracking(),selectedBox.getTime(),officestockbtn.getValue());
+                    ReceiveBoxReader box = new ReceiveBoxReader(selectedBox.getSender(),selectedBox.getUsername(),selectedBox.getCompany(), selectedBox.getRoomnum(), selectedBox.getLevel(),selectedBox.getSize(), selectedBox.getTacking(), selectedBox.getTime(),officestockbtn.getValue());
+
                     receiveboxlist.add(box);
                     receiveBoxDataSource.setlist(receiveboxlist);
                     boxList.removeBox(selectedBox);

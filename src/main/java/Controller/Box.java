@@ -3,6 +3,7 @@ package Controller;
 import Model.Boxreader;
 import Model.Consumerreader;
 
+import Model.Item;
 import Service.Boxdatasource;
 import Service.Consumerdatasource;
 
@@ -25,11 +26,12 @@ public class Box {
     @FXML Button Backboxbtn,Summitboxbtn;
     private Boxdatasource boxdata;
     private Boxreader boxlist;
-
+    private Item item;
     private Consumerdatasource consumerdata;
     private Consumerreader consumerlist;
 
     public void initialize(){
+        item = new Item();
         boxlist = new Boxreader();
         boxdata = new Boxdatasource("data","/box.csv");
         boxlist = boxdata.getBoxlist();
@@ -75,8 +77,10 @@ public class Box {
             else {
                 String time = new SimpleDateFormat("dd/MM/yy HH:mm:ss").format(Calendar.getInstance().getTime());
                 String[] roomNum = roomnumboxbtn.getValue().split(" : ");
-                Boxreader boxreader = new Boxreader(nameboxbtn.getText(),senderboxbtn.getText(),sizeboxbtn.getText(),companyboxbtn.getText(),levelboxbtn.getText(),roomNum[1],trackingboxbtn.getText(),time);
-                boxlist.add(boxreader);
+                //Boxreader boxreader = new Boxreader(nameboxbtn.getText(),senderboxbtn.getText(),sizeboxbtn.getText(),companyboxbtn.getText(),levelboxbtn.getText(),roomNum[1],trackingboxbtn.getText(),time);
+                Boxreader boxReader = new Boxreader(nameboxbtn.getText(),senderboxbtn.getText(),sizeboxbtn.getText(),companyboxbtn.getText(),roomNum[1],time,levelboxbtn.getText(),trackingboxbtn.getText());
+                boxlist.add(boxReader);
+                item.add(boxReader);
                 boxdata.setBoxlist(boxlist);
                 Button a = (Button) event.getSource();
                 Stage stage_summitconsumer = (Stage) a.getScene().getWindow();

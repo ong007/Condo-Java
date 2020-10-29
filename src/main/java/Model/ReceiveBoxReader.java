@@ -12,8 +12,10 @@ public class ReceiveBoxReader {
     private String tracking;
     private String time;
     private String nameofficer;
+    private ArrayList<ReceiveBoxReader> userList1;
 
-    public ReceiveBoxReader(String sender,String username, String company, String roomnum, String level, String size, String tracking,String time, String nameofficer){
+    public ReceiveBoxReader(String sender,String username, String company, String roomnum, String level, String size, String tracking,String time, String nameofficer)
+    {
         this.sender = sender;
         this.username = username;
         this.company = company;
@@ -97,7 +99,6 @@ public class ReceiveBoxReader {
         this.nameofficer = nameofficer;
     }
 
-    private ArrayList<ReceiveBoxReader> userList1;
 
     public ArrayList<ReceiveBoxReader> getUserList1() {
         return userList1;
@@ -109,5 +110,21 @@ public class ReceiveBoxReader {
 
     public void add(ReceiveBoxReader box){
         userList1.add(box);
+    }
+
+    @Override
+    public String toString() {
+        return "ReceiveBoxReader{" +
+                "sender='" + sender + '\'' +
+                ", username='" + username + '\'' +
+                ", company='" + company + '\'' +
+                ", roomnum='" + roomnum + '\'' +
+                ", level='" + level + '\'' +
+                ", size='" + size + '\'' +
+                ", tracking='" + tracking + '\'' +
+                ", time='" + time + '\'' +
+                ", nameofficer='" + nameofficer + '\'' +
+                ", userList1=" + userList1 +
+                '}';
     }
 }

@@ -65,7 +65,7 @@ public class Boxdatasource {
                 fileWriter = new FileWriter(file);
                 BufferedWriter writer = new BufferedWriter(fileWriter);
                 for (Boxreader box:boxlist.getUserList()) {
-                    String line = box.getUsername()+","+box.getSender()+","+box.getSize()+","+box.getCompany()+","+box.getLevel()+","+box.getRoomnum()+","+box.getTracking()+","+box.getTime();
+                    String line = box.getUsername()+","+box.getSender()+","+box.getSize()+","+box.getCompany()+","+box.getRoomnum()+","+box.getTime()+","+box.getLevel()+","+box.getTacking();
                     writer.append(line);
                     writer.newLine();
                 }

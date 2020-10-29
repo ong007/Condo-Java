@@ -127,7 +127,7 @@ public class Stocktext {
                 alert.setContentText("CONFIRM?");
                 Optional<ButtonType> confirmation = alert.showAndWait();
                 if (confirmation.get() == ButtonType.OK) {
-                    ReceiveTextReader text = new ReceiveTextReader(selectedText.getSender(), selectedText.getUsername(), selectedText.getCompany(), selectedText.getRoomnum(), selectedText.getLevel(), selectedText.getSize(),selectedText.getTime(),officestockbtn.getValue());
+                    ReceiveTextReader text = new ReceiveTextReader(selectedText.getSender(),selectedText.getUsername(), selectedText.getCompany(), selectedText.getRoomnum(), selectedText.getLevel(),selectedText.getSize(),selectedText.getTime(),officestockbtn.getValue());
                     receivetextlist.add(text);
                     receiveTextDataSource.setTextlist(receivetextlist);
                     textList.removeText(selectedText);

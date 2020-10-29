@@ -1,11 +1,36 @@
 package Model;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
-public class Boxreader {
-
-
-        private String username;
+public class Boxreader extends Item{
+    private String tacking;
+    private String level;
+    private ArrayList<Boxreader> userListBox;
+    public Boxreader(){
+        userListBox = new ArrayList<>();
+    }
+    public Boxreader(String receiver,String sender,String size,String company,String roomNumber,String dateTime,String level,String tacking){
+        super(receiver,sender,size,company,roomNumber,dateTime);
+        this.tacking = tacking;
+        this.level = level;
+    }
+    public void add(Boxreader br){
+        userListBox.add(br);
+    }
+    public ArrayList<Boxreader> getUserList() {
+        return userListBox;
+    }
+    public void removeBox(Boxreader box){
+        userListBox.remove(box);
+    }
+    public String getTacking() {
+        return tacking;
+    }
+    public String getLevel() {
+        return level;
+    }
+    /*private String username;
         private String size;
         private String company;
         private String level;
@@ -145,5 +170,14 @@ public class Boxreader {
 
     public void removeBox(Boxreader box){
             userListbox.remove(box);
+    }*/
+
+    @Override
+    public String toString() {
+        return "Boxreader{" +
+                "tacking='" + tacking + '\'' +
+                ", level='" + level + '\'' +
+                ", userListBox=" + userListBox +
+                '}';
     }
 }
