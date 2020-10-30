@@ -52,7 +52,7 @@ public class Createroom {
             if(roomlist.checkAddRoom(roomNum)){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("");
-            alert.setTitle("FULL");
+            alert.setTitle("CAN NOT ADD");
             alert.setContentText("Can't reserve a room");
             alert.showAndWait();
             }else {

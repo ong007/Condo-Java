@@ -2,10 +2,8 @@ package Controller;
 
 import Model.ReceiveBoxReader;
 
-import Model.ReceiveBoxReader;
 import Service.Boxdatasource;
 
-import Service.Consumerdatasource;
 import Service.ReceiveBoxDataSource;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
@@ -13,8 +11,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-
-import java.util.Optional;
 
 public class ReceiveBox {
     @FXML
@@ -38,7 +34,7 @@ public class ReceiveBox {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                if(!receiveboxlist.getUserList1().isEmpty()){
+                if(!receiveboxlist.getUserListBox().isEmpty()){
                     showData("");
                 }
             }
@@ -54,16 +50,16 @@ public class ReceiveBox {
     public void showData(String search){
             ReceiveBoxReader box = new ReceiveBoxReader();
             tablestockbox.getColumns().clear();
-            for (ReceiveBoxReader consumerreader1:receiveboxlist.getUserList1()){
+            for (ReceiveBoxReader consumerreader1:receiveboxlist.getUserListBox()){
             if (consumerreader1.getRoomnum().contains(search)){
             box.add(consumerreader1);
             }
             }
             if (search.equals("Search") || search.equals("")){
-            list = FXCollections.observableList(receiveboxlist.getUserList1());
+            list = FXCollections.observableList(receiveboxlist.getUserListBox());
             }
             else{
-            list = FXCollections.observableList(box.getUserList1());
+            list = FXCollections.observableList(box.getUserListBox());
             }
 
             tablestockbox.setItems(list);

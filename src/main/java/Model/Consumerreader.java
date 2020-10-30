@@ -32,18 +32,6 @@ public class Consumerreader {
         this.roomnum = roomnum;
 
     }
-    public void add(Consumerreader consumer){
-
-        userList1.add(consumer);
-    }
-    //public boolean checkPassword(String username,String password){
-    //    for(Model.Consumerreader acc:userList1){
-    //        if(acc.getUsername().equals(username) && acc.getPassword().equals(password)){
-    //            return true;
-     //       }
-     //   }
-     //   return false;
-    //}
 
     public String getUsername() {
         return username;
@@ -77,6 +65,10 @@ public class Consumerreader {
         return roomnum;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public void setRoomnum(String roomnum) {
         this.roomnum = roomnum;
     }
@@ -108,12 +100,34 @@ public class Consumerreader {
         return true;
     }
 
+
     public boolean checkReceived(String username, String password){
         for(Consumerreader acc : userList1){
             if(acc.getUsername().equals(username) && acc.getPassword().equals(password)){
                 return true;
             }
         }return false;
+    }
+
+    public void changePassword(String username,String password,String newPassword){
+        for(Consumerreader acc:userList1){
+            if (acc.getUsername().equals(username) && acc.getPassword().equals(password)){
+                acc.setPassword(newPassword);
+            }
+        }
+    }
+
+    public Consumerreader getAcc(String username){
+        for(Consumerreader acc:userList1){
+            if(acc.getUsername().equals(username)){
+                return acc;
+            }
+        }
+        return null;
+    }
+
+    public void add(Consumerreader consumer){
+        userList1.add(consumer);
     }
 }
 

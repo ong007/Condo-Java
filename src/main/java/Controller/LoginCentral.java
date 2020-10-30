@@ -58,11 +58,8 @@ public class LoginCentral {
             alert.showAndWait();
 
         }
-
-
-
-
     }
+
     @FXML public void backhomecentralbtnonaction(ActionEvent event) throws IOException {
         Button b = (Button) event.getSource();
         Stage stage_ProfilePage = (Stage) b.getScene().getWindow();

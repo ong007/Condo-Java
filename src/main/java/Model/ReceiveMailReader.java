@@ -22,7 +22,7 @@ public class ReceiveMailReader {
     }
 
     public ReceiveMailReader (){
-        userList1 = new ArrayList<>();
+        userListMail = new ArrayList<>();
     }
 
     public String getSender() {
@@ -81,17 +81,29 @@ public class ReceiveMailReader {
         this.nameofficer = nameofficer;
     }
 
-    private ArrayList<ReceiveMailReader> userList1;
+    private ArrayList<ReceiveMailReader> userListMail;
 
     public ArrayList<ReceiveMailReader> getUserList1() {
-        return userList1;
+        return userListMail;
     }
 
     public void setUserList1(ArrayList<ReceiveMailReader> userList1) {
-        this.userList1 = userList1;
+        this.userListMail = userList1;
     }
 
     public void add(ReceiveMailReader box){
-        userList1.add(box);
+        userListMail.add(box);
+    }
+
+    public ReceiveMailReader getListByRoomNum(String roomNum) {
+        String[] room = roomNum.split(" : ");
+        ReceiveMailReader receiveMailList = new ReceiveMailReader();
+        for (ReceiveMailReader mail : userListMail) {
+            if (mail.getRoomnum().equals(room[0])) {
+                receiveMailList.add(mail);
+            }
+        }
+        return receiveMailList;
     }
 }
+

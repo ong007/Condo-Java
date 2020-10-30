@@ -9,6 +9,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Optional;
 
 public class Stockmail {
@@ -36,7 +38,7 @@ public class Stockmail {
     public void initialize (){
         recievestockbtn.setDisable(true);
         receiveMailDataSource = new ReceiveMailDataSource("data","checkreceivemail.csv");
-        receivemaillist = receiveMailDataSource.getReceiveboxlist();
+        receivemaillist = receiveMailDataSource.getReceivemaillist();
         mailDataSource = new MailDataSource("data", "mail.csv");
         maillist = mailDataSource.getMaillist();
         consumerdatasource = new Consumerdatasource("data", "Consumerdata.csv");
@@ -124,7 +126,8 @@ public class Stockmail {
                 alert.setContentText("CONFIRM?");
                 Optional<ButtonType> confirmation = alert.showAndWait();
                 if (confirmation.get() == ButtonType.OK) {
-                    ReceiveMailReader mail = new ReceiveMailReader(selectedMail.getSender(),selectedMail.getUsername(), selectedMail.getCompany(), selectedMail.getRoomnum(),selectedMail.getSize(),selectedMail.getTime(),officestockbtn.getValue());
+                    String time = new SimpleDateFormat("dd/MM/yy HH:mm:ss").format(Calendar.getInstance().getTime());
+                    ReceiveMailReader mail = new ReceiveMailReader(selectedMail.getSender(),selectedMail.getUsername(), selectedMail.getCompany(), selectedMail.getRoomnum(),selectedMail.getSize(),time,officestockbtn.getValue());
                     receivemaillist.add(mail);
                     receiveMailDataSource.setMaillist(receivemaillist);
                     maillist.removeBox(selectedMail);

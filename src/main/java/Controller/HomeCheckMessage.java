@@ -36,4 +36,12 @@ public class HomeCheckMessage {
         stage_recieve.setScene(new Scene(loader.load(), 882, 390));
 
         stage_recieve.show();}
+
+    @FXML public void checkreceivebtnonaction(ActionEvent event) throws IOException {
+        Button c = (Button) event.getSource();
+        Stage stage_recieve = (Stage) c.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Recieveitem.fxml"));
+        stage_recieve.setScene(new Scene(loader.load(), 882, 390));
+
+        stage_recieve.show();}
 }

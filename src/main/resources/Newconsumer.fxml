@@ -19,9 +19,9 @@
                   <Image url="@images/user.png" />
                </image>
             </ImageView>
-            <TextField fx:id="Newuserconsumerbtn" layoutX="385.0" layoutY="146.0" prefHeight="25.0" prefWidth="181.0" />
-            <PasswordField fx:id="Newpasswordconsumerbtn" layoutX="385.0" layoutY="180.0" prefHeight="25.0" prefWidth="181.0" />
-            <PasswordField fx:id="Newconfirmpasswordconsumerbtn" layoutX="385.0" layoutY="214.0" prefHeight="25.0" prefWidth="181.0" />
+            <TextField fx:id="Newuserconsumerbtn" layoutX="417.0" layoutY="146.0" prefHeight="25.0" prefWidth="181.0" />
+            <PasswordField fx:id="Newpasswordconsumerbtn" layoutX="417.0" layoutY="180.0" prefHeight="25.0" prefWidth="181.0" />
+            <PasswordField fx:id="Newconfirmpasswordconsumerbtn" layoutX="417.0" layoutY="214.0" prefHeight="25.0" prefWidth="181.0" />
             <Button fx:id="summitnewconsumerbtn" layoutX="764.0" layoutY="319.0" mnemonicParsing="false" onAction="#summitnewconsumerbtnonaction" text="SUBMIT" />
             <Button fx:id="backnewconsumerbtn" layoutX="85.0" layoutY="319.0" mnemonicParsing="false" onAction="#backnewconsumerbtnonaction" prefHeight="25.0" prefWidth="57.0" text="Back" />
             <Label layoutX="37.0" layoutY="172.0" prefHeight="39.0" prefWidth="153.0" text="New-Consumer" textFill="#dddbdb">
@@ -51,7 +51,7 @@
                   <Font size="17.0" />
                </font>
             </Label>
-            <Label layoutX="221.0" layoutY="213.0" prefHeight="26.0" prefWidth="137.0" text="NEW-PASSWORD" textFill="#e8e8e8">
+            <Label layoutX="221.0" layoutY="213.0" prefHeight="26.0" prefWidth="181.0" text="CONFIRM-PASSWORD" textFill="#e8e8e8">
                <font>
                   <Font size="17.0" />
                </font>

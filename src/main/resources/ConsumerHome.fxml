@@ -16,7 +16,7 @@
       </ImageView>
       <AnchorPane layoutX="69.0" layoutY="64.0" prefHeight="231.0" prefWidth="251.0" style="-fx-background-color: #9C2B27;">
          <children>
-            <Button fx:id="checkreceivebtn" layoutX="20.0" layoutY="190.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="211.0" style="-fx-background-color: #FF3333; -fx-background-radius: 10 10 10;" text="CHECK" textFill="#b5b5b5" />
+            <Button fx:id="checkreceivebtn" layoutX="20.0" layoutY="190.0" mnemonicParsing="false" onAction="#checkreceivebtnonaction" prefHeight="25.0" prefWidth="211.0" style="-fx-background-color: #FF3333; -fx-background-radius: 10 10 10;" text="CHECK" textFill="#b5b5b5" />
             <Label layoutX="98.0" layoutY="35.0" text="RECEIVE" textFill="#e1dfdf">
                <font>
                   <Font size="18.0" />
@@ -31,8 +31,8 @@
       </AnchorPane>
       <AnchorPane layoutX="566.0" layoutY="64.0" prefHeight="231.0" prefWidth="251.0" style="-fx-background-color: #9C2B27;">
          <children>
-            <Button fx:id="checkstockbtn" layoutX="20.0" layoutY="190.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="211.0" style="-fx-background-color: #FF3333; -fx-background-radius: 10 10 10;" text="CHECK" textFill="#b5b5b5" />
-            <Label layoutX="98.0" layoutY="35.0" text="STROCK" textFill="#e1dfdf">
+            <Button fx:id="checkstockbtn" layoutX="20.0" layoutY="190.0" mnemonicParsing="false" onAction="#checkstockbtnonaction" prefHeight="25.0" prefWidth="211.0" style="-fx-background-color: #FF3333; -fx-background-radius: 10 10 10;" text="CHECK" textFill="#b5b5b5" />
+            <Label layoutX="98.0" layoutY="35.0" text="STOCK" textFill="#e1dfdf">
                <font>
                   <Font size="18.0" />
                </font>

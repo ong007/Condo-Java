@@ -46,8 +46,6 @@ public class Newusercentral {
         else{
             if (Newpasswordadminbtn.getText().equals(Newconfirmpasswordadminbtn.getText()) && centralList.checkUser(Newuseradminbtn.getText(),consumerlist)) {
 
-                //centraldata = new Service.CentralFileDataSource("data", "Service.Centraldata.csv");
-                //centralList = centraldata.getCentralList();
                 Centraluserreader central = new Centraluserreader(nameuserbtn.getText(), surnameuserbtn.getText(), teluserbtn.getText(), emailuserbtn.getText(), Newuseradminbtn.getText(), Newpasswordadminbtn.getText(), "-","Access",0);
                 centralList.add(central);
 

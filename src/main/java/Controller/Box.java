@@ -77,7 +77,7 @@ public class Box {
             else {
                 String time = new SimpleDateFormat("dd/MM/yy HH:mm:ss").format(Calendar.getInstance().getTime());
                 String[] roomNum = roomnumboxbtn.getValue().split(" : ");
-                //Boxreader boxreader = new Boxreader(nameboxbtn.getText(),senderboxbtn.getText(),sizeboxbtn.getText(),companyboxbtn.getText(),levelboxbtn.getText(),roomNum[1],trackingboxbtn.getText(),time);
+
                 Boxreader boxReader = new Boxreader(nameboxbtn.getText(),senderboxbtn.getText(),sizeboxbtn.getText(),companyboxbtn.getText(),roomNum[1],time,levelboxbtn.getText(),trackingboxbtn.getText());
                 boxlist.add(boxReader);
                 item.add(boxReader);

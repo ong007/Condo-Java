@@ -1,8 +1,5 @@
 package Service;
 
-import Controller.ReceiveBox;
-import Model.Boxreader;
-import Model.ReceiveBoxReader;
 import Model.ReceiveBoxReader;
 
 import java.io.*;
@@ -68,7 +65,7 @@ public class ReceiveBoxDataSource {
         try {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            for (ReceiveBoxReader box:maillist.getUserList1())
+            for (ReceiveBoxReader box:maillist.getUserListBox())
             {
                 String line = box.getSender()+","+box.getUsername()+","+box.getCompany()+","+box.getRoomnum()+","+box.getLevel()+","+box.getSize()+","+box.getTracking()+","+box.getTime()+","+box.getNameofficer();
                 writer.append(line);

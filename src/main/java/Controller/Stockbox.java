@@ -16,6 +16,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Optional;
 
 public class Stockbox {
@@ -136,7 +138,8 @@ public class Stockbox {
                 alert.setContentText("CONFIRM?");
                 Optional<ButtonType> confirmation = alert.showAndWait();
                 if (confirmation.get() == ButtonType.OK) {
-                    ReceiveBoxReader box = new ReceiveBoxReader(selectedBox.getSender(),selectedBox.getUsername(),selectedBox.getCompany(), selectedBox.getRoomnum(), selectedBox.getLevel(),selectedBox.getSize(), selectedBox.getTacking(), selectedBox.getTime(),officestockbtn.getValue());
+                    String time = new SimpleDateFormat("dd/MM/yy HH:mm:ss").format(Calendar.getInstance().getTime());
+                    ReceiveBoxReader box = new ReceiveBoxReader(selectedBox.getSender(),selectedBox.getUsername(),selectedBox.getCompany(), selectedBox.getRoomnum(), selectedBox.getLevel(),selectedBox.getSize(), selectedBox.getTacking(), time,officestockbtn.getValue());
 
                     receiveboxlist.add(box);
                     receiveBoxDataSource.setlist(receiveboxlist);

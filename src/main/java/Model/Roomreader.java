@@ -11,14 +11,11 @@ public class Roomreader {
     private int maxarrival;
     private int nowarrival;
 
-
     private ArrayList<Roomreader> userList1;
 
     public Roomreader(){
         userList1 = new ArrayList<Roomreader>();
     }
-
-
 
     public Roomreader(String building, String type, String floor, String room, String roomnum, int maxarrival, int nowarrival){
         this.building = building;
@@ -33,15 +30,6 @@ public class Roomreader {
 
         userList1.add(room);
     }
-    //public boolean checkPassword(String username,String password){
-    //    for(Model.Consumerreader acc:userList1){
-    //        if(acc.getUsername().equals(username) && acc.getPassword().equals(password)){
-    //            return true;
-    //       }
-    //   }
-    //   return false;
-    //}
-
 
     public String getBuilding() {
         return building;

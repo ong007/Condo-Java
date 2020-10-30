@@ -31,48 +31,6 @@ public class Centraluserreader {
         this.attempt = attempt;
 
     }
-    public void add(Centraluserreader central){
-        userList.add(central);
-    }
-    public boolean checkPassword(String username,String password){
-        for(Centraluserreader acc:userList){
-            if(acc.getUsername().equals(username) && acc.getPassword().equals(password)){
-                return true;
-            }
-        }
-        return false;
-    }
-    public void changePassword(String username,String password,String newPassword){
-        for(Centraluserreader acc:userList){
-            if (acc.getUsername().equals(username) && acc.getPassword().equals(password)){
-                acc.setPassword(newPassword);
-            }
-        }
-    }
-    public boolean checkUser(String username,Consumerreader consumer){
-        if (username.equals(new setpasswordA().getUser())){
-            return  false;
-        }
-        for(Consumerreader acc : consumer.getUserList()){
-            if (acc.getUsername().equals(username))
-                return false;
-        }
-        for(Centraluserreader acc : userList){
-            if (acc.getUsername().equals(username))
-                return false;
-        }
-        return true;
-    }
-
-    public Centraluserreader getAcc(String username){
-        for(Centraluserreader acc:userList){
-            if(acc.getUsername().equals(username)){
-                return acc;
-            }
-        }
-        return null;
-    }
-
 
     public String getUsername() {
         return username;
@@ -138,5 +96,50 @@ public class Centraluserreader {
                 }
             }
         }return true;
+    }
+
+    public void add(Centraluserreader central){
+        userList.add(central);
+    }
+
+    public boolean checkPassword(String username,String password){
+        for(Centraluserreader acc:userList){
+            if(acc.getUsername().equals(username) && acc.getPassword().equals(password)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void changePassword(String username,String password,String newPassword){
+        for(Centraluserreader acc:userList){
+            if (acc.getUsername().equals(username) && acc.getPassword().equals(password)){
+                acc.setPassword(newPassword);
+            }
+        }
+    }
+
+    public boolean checkUser(String username,Consumerreader consumer){
+        if (username.equals(new setpasswordA().getUser())){
+            return  false;
+        }
+        for(Consumerreader acc : consumer.getUserList()){
+            if (acc.getUsername().equals(username))
+                return false;
+        }
+        for(Centraluserreader acc : userList){
+            if (acc.getUsername().equals(username))
+                return false;
+        }
+        return true;
+    }
+
+    public Centraluserreader getAcc(String username){
+        for(Centraluserreader acc:userList){
+            if(acc.getUsername().equals(username)){
+                return acc;
+            }
+        }
+        return null;
     }
 }

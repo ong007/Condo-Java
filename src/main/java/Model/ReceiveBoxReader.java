@@ -12,7 +12,7 @@ public class ReceiveBoxReader {
     private String tracking;
     private String time;
     private String nameofficer;
-    private ArrayList<ReceiveBoxReader> userList1;
+    private ArrayList<ReceiveBoxReader> userListBox;
 
     public ReceiveBoxReader(String sender,String username, String company, String roomnum, String level, String size, String tracking,String time, String nameofficer)
     {
@@ -28,7 +28,7 @@ public class ReceiveBoxReader {
     }
 
     public ReceiveBoxReader (){
-        userList1 = new ArrayList<>();
+        userListBox = new ArrayList<>();
     }
 
     public String getSender() {
@@ -100,31 +100,26 @@ public class ReceiveBoxReader {
     }
 
 
-    public ArrayList<ReceiveBoxReader> getUserList1() {
-        return userList1;
+    public ArrayList<ReceiveBoxReader> getUserListBox() {
+        return userListBox;
     }
 
-    public void setUserList1(ArrayList<ReceiveBoxReader> userList1) {
-        this.userList1 = userList1;
+    public void setUserListBox(ArrayList<ReceiveBoxReader> userListBox) {
+        this.userListBox = userListBox;
     }
 
     public void add(ReceiveBoxReader box){
-        userList1.add(box);
+        userListBox.add(box);
     }
 
-    @Override
-    public String toString() {
-        return "ReceiveBoxReader{" +
-                "sender='" + sender + '\'' +
-                ", username='" + username + '\'' +
-                ", company='" + company + '\'' +
-                ", roomnum='" + roomnum + '\'' +
-                ", level='" + level + '\'' +
-                ", size='" + size + '\'' +
-                ", tracking='" + tracking + '\'' +
-                ", time='" + time + '\'' +
-                ", nameofficer='" + nameofficer + '\'' +
-                ", userList1=" + userList1 +
-                '}';
+    public ReceiveBoxReader getListByRoomNum(String roomNum) {
+        String[] room = roomNum.split(" : ");
+        ReceiveBoxReader receiveBoxList = new ReceiveBoxReader();
+        for (ReceiveBoxReader box : userListBox) {
+            if (box.getRoomnum().equals(room[0])) {
+                receiveBoxList.add(box);
+            }
+        }
+        return receiveBoxList;
     }
 }

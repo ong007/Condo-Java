@@ -24,7 +24,7 @@ public class ReceiveTextReader {
     }
 
     public ReceiveTextReader (){
-        userList1 = new ArrayList<>();
+        userListMail = new ArrayList<>();
     }
 
     public String getSender() {
@@ -91,17 +91,28 @@ public class ReceiveTextReader {
         this.nameofficer = nameofficer;
     }
 
-    private ArrayList<ReceiveTextReader> userList1;
+    private ArrayList<ReceiveTextReader> userListMail;
 
     public ArrayList<ReceiveTextReader> getUserList1() {
-        return userList1;
+        return userListMail;
     }
 
     public void setUserList1(ArrayList<ReceiveTextReader> userList1) {
-        this.userList1 = userList1;
+        this.userListMail = userList1;
     }
 
     public void add(ReceiveTextReader box){
-        userList1.add(box);
+        userListMail.add(box);
+    }
+
+    public ReceiveTextReader getListByRoomNum(String roomNum) {
+        String[] room = roomNum.split(" : ");
+        ReceiveTextReader receiveTextList = new ReceiveTextReader();
+        for (ReceiveTextReader text : userListMail) {
+            if (text.getRoomnum().equals(room[0])) {
+                receiveTextList.add(text);
+            }
+        }
+        return receiveTextList;
     }
 }

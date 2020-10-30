@@ -1,14 +1,12 @@
 package Model;
 
-import Service.CheckAccount;
-
 public class setpasswordA implements CheckAccount {
     public String AdminUser;
     public String AdminPassword;
 
     public setpasswordA() {
-        this.AdminUser = "1";
-        this.AdminPassword = "1";
+        this.AdminUser = "6210406572";
+        this.AdminPassword = "0000";
     }
 
     public String getUser() {

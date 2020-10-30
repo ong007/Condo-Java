@@ -10,6 +10,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Optional;
 
 public class Stocktext {
@@ -86,7 +88,6 @@ public class Stocktext {
         level.setCellValueFactory(new PropertyValueFactory<Boxreader,String>("level"));
         TableColumn size= new TableColumn("SIZE");
         size.setCellValueFactory(new PropertyValueFactory<Boxreader,String>("size"));
-
         TableColumn time= new TableColumn("TIME");
         time.setCellValueFactory(new PropertyValueFactory<Boxreader,String>("time"));
 
@@ -127,7 +128,8 @@ public class Stocktext {
                 alert.setContentText("CONFIRM?");
                 Optional<ButtonType> confirmation = alert.showAndWait();
                 if (confirmation.get() == ButtonType.OK) {
-                    ReceiveTextReader text = new ReceiveTextReader(selectedText.getSender(),selectedText.getUsername(), selectedText.getCompany(), selectedText.getRoomnum(), selectedText.getLevel(),selectedText.getSize(),selectedText.getTime(),officestockbtn.getValue());
+                    String time = new SimpleDateFormat("dd/MM/yy HH:mm:ss").format(Calendar.getInstance().getTime());
+                    ReceiveTextReader text = new ReceiveTextReader(selectedText.getSender(),selectedText.getUsername(), selectedText.getCompany(), selectedText.getRoomnum(), selectedText.getLevel(),selectedText.getSize(),time,officestockbtn.getValue());
                     receivetextlist.add(text);
                     receiveTextDataSource.setTextlist(receivetextlist);
                     textList.removeText(selectedText);

@@ -74,8 +74,7 @@ public class Text {
         else{
             String time = new SimpleDateFormat("dd/MM/yy HH:mm:ss").format(Calendar.getInstance().getTime());
             String[] roomNum = roomconsumertextbtn.getValue().split(" : ");
-            //Textreader textreader = new Textreader(nametextbtn.getText(),sendertextbtn.getText(),Sizetextbtn.getText(),companytextbtn.getText(),leveltextbtn.getText(),roomconsumertextbtn.getValue(),time);
-            Textreader textReader = new Textreader(sendertextbtn.getText(),nametextbtn.getText(), Sizetextbtn.getText(),companytextbtn.getText(),roomNum[1],time,leveltextbtn.getText());
+            Textreader textReader = new Textreader(nametextbtn.getText(),sendertextbtn.getText(), Sizetextbtn.getText(),companytextbtn.getText(),roomNum[1],time,leveltextbtn.getText());
             textlist.add(textReader);
             item.add(textReader);
             textdata.setTextlist(textlist);

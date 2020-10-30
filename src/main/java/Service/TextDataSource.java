@@ -67,7 +67,7 @@ public class TextDataSource {
 
             for (Textreader text:textlist.getUserList()) {
 
-                String line = text.getSender()+","+text.getUsername()+","+text.getSize()+","+text.getCompany()+","+text.getRoomnum()+","+text.getTime()+","+text.getLevel();
+                String line = text.getUsername()+","+text.getSender()+","+text.getSize()+","+text.getCompany()+","+text.getRoomnum()+","+text.getTime()+","+text.getLevel();
                 writer.append(line);
                 writer.newLine();
             }

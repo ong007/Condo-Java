@@ -29,7 +29,8 @@ public class Homepage {
     @FXML  TextField Userhomepagebtn;
     @FXML  PasswordField Passwordhomepagebtn;
     private Consumerdatasource consumerdata;
-    private Consumerreader consumerlist;
+    private Consumerreader consumerlist,consumer;
+
 
     public void initialize(){
         consumerlist = new Consumerreader();
@@ -60,15 +61,16 @@ public class Homepage {
 
     @FXML public void LoginHomepagebtnonaction(ActionEvent event) throws IOException {
         if(consumerlist.checkReceived(Userhomepagebtn.getText(),Passwordhomepagebtn.getText())) {
+            consumer = consumerlist.getAcc(Userhomepagebtn.getText());
             consumerdata.setConsumerList(consumerlist);;
             Button d = (Button) event.getSource();
             Stage stage_consumerlogin = (Stage) d.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/ConsumerHome.fxml"));
             stage_consumerlogin.setScene(new Scene(loader.load(), 882, 390));
+            ConsumerHome home = loader.getController();
+            home.setConsumer(consumer);
             stage_consumerlogin.show();
         }
-
-
-        }
+    }
 
 }

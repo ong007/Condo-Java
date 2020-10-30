@@ -46,7 +46,7 @@ public class ReceiveMailDataSource {
         reader.close();
     }
 
-    public ReceiveMailReader getReceiveboxlist() {
+    public ReceiveMailReader getReceivemaillist() {
         try {
             receivemaillist = new ReceiveMailReader();
             readData();

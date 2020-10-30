@@ -32,7 +32,7 @@ public class ReceiveMail {
 
     public void initialize (){
         receiveMailDataSource = new ReceiveMailDataSource("data", "checkreceivemail.csv");
-        receiveMaillist = receiveMailDataSource.getReceiveboxlist();
+        receiveMaillist = receiveMailDataSource.getReceivemaillist();
 
         Platform.runLater(new Runnable() {
             @Override

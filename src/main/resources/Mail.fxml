@@ -22,7 +22,7 @@
       </AnchorPane>
       <ImageView fitHeight="97.0" fitWidth="121.0" layoutX="397.0" layoutY="93.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/ice-backgroung.jpg" />
+            <Image url="@images/gmail.png" />
          </image>
       </ImageView>
       <TextField fx:id="sizemailbtn" layoutX="555.0" layoutY="142.0" prefHeight="25.0" prefWidth="75.0" promptText="     SIZE" />

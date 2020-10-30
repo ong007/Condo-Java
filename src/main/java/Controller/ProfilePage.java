@@ -10,8 +10,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ProfilePage {
-    @FXML Button HomeAdminbtn ;
-
+    @FXML Button Backloginbtn ;
 
     @FXML public void BackLoginBtnOnAction(ActionEvent event) throws IOException {
         Button a = (Button) event.getSource();

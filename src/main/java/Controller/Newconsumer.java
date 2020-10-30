@@ -43,10 +43,7 @@ public class Newconsumer {
             if(room1.getNowarrival() > 0) {
                 roomconsumerbtn.getItems().add(room1.getBuilding() + room1.getFloor() + room1.getRoom() + " : " + room1.getType());
             }
-
         }
-
-
     }
 
     @FXML public void backnewconsumerbtnonaction(ActionEvent event) throws IOException {
@@ -65,8 +62,7 @@ public class Newconsumer {
             alert.showAndWait();}
         else{
             if (Newpasswordconsumerbtn.getText().equals(Newconfirmpasswordconsumerbtn.getText()) && consumerlist.checkUser(Newuserconsumerbtn.getText(),centrallist) ) {
-                //centraldata = new Service.CentralFileDataSource("data", "Service.Centraldata.csv");
-                //centralList = centraldata.getCentralList();
+
                 Consumerreader consumer = new Consumerreader(nameconsumerbtn.getText(),surnameconsumerbtn.getText(),roomconsumerbtn.getValue(),"","",roomconsumerbtn.getValue(),Newuserconsumerbtn.getText(),Newpasswordconsumerbtn.getText());
                 String[] roomNum = roomconsumerbtn.getValue().split(" : ");
                 consumerlist.add(consumer);
@@ -83,6 +79,7 @@ public class Newconsumer {
                 alert.setTitle("Wrong password");
                 alert.setContentText("INCORRECT USERNAME OR password");
                 alert.showAndWait();
-        }}
+            }
+        }
     }
 }

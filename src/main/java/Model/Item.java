@@ -7,8 +7,6 @@ public class Item {
     private String size;
     private String company;
     private String room;
-    private String building;
-    private String floor;
     private String roomnum;
     private String time;
     private String sender;
@@ -16,17 +14,16 @@ public class Item {
     public Item(){
         items = new ArrayList<>();
     }
+
     public Item(String username, String sender, String size, String company, String roomnum,String time){
         this.username = username;
         this.sender = sender;
         this.size = size;
         this.company = company;
-//        this.building = building;
-//        this.room = room;
-//        this.floor = floor;
         this.roomnum = roomnum;
         this.time = time;
     }
+
     public void add(Item it){
         items.add(it);
     }
@@ -60,22 +57,6 @@ public class Item {
 
     public void setRoom(String room) {
         this.room = room;
-    }
-
-    public String getBuilding() {
-        return building;
-    }
-
-    public void setBuilding(String building) {
-        this.building = building;
-    }
-
-    public String getFloor() {
-        return floor;
-    }
-
-    public void setFloor(String floor) {
-        this.floor = floor;
     }
 
     public String getRoomnum() {
