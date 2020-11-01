@@ -47,7 +47,7 @@
                   <Image url="@images/profile.png" />
                </image>
             </ImageView>
-            <Button fx:id="Centralbtn" layoutY="61.0" mnemonicParsing="false" onAction="#Centralbtnonaction" style="-fx-background-color: #FF3333; -fx-background-radius: 10 10 10;" text="&lt; Centrals" textFill="#c6c6c6" />
+            <Button fx:id="Centralbtn" layoutY="61.0" mnemonicParsing="false" onAction="#Centralbtnonaction" style="-fx-background-color: #FF3333; -fx-background-radius: 10 10 10;" text="&lt; Central" textFill="#c6c6c6" />
          </children>
       </Pane>
       <Label layoutX="96.0" layoutY="246.0" prefHeight="40.0" prefWidth="391.0" text="Exclusivity Complements A Successful Life " textFill="#979595">
