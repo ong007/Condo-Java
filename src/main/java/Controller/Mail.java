@@ -1,11 +1,10 @@
 package Controller;
 import Model.Item;
-import Model.Consumerreader;
-import Model.Mailreader;
+import Model.CustomerReader;
 
-import Service.Consumerdatasource;
-import Service.MailDataSource;
+import Service.CustomerData;
 
+import Service.MailData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,21 +26,21 @@ public class Mail {
     @FXML TextField sizemailbtn,namemailbtn,sendermailbtn,companymailbtn;
     @FXML Button Backmailbtn,Summitmailbtn;
 
-    private MailDataSource maildata;
-    private Mailreader maillist,nowmail;
-    private Consumerdatasource consumerdata;
-    private Consumerreader consumerlist;
+    private MailData maildata;
+    private Model.Mail maillist,nowmail;
+    private CustomerData consumerdata;
+    private CustomerReader consumerlist;
     private Item item;
     public void initialize(){
         item = new Item();
-        maillist = new Mailreader();
-        maildata = new MailDataSource("data","/mail.csv");
+        maillist = new Model.Mail();
+        maildata = new MailData("data","/Mail.csv");
         maillist = maildata.getMaillist();
-        consumerdata = new Consumerdatasource("data","Consumerdata.csv");
+        consumerdata = new CustomerData("data","Customer.csv");
         consumerlist = consumerdata.getConsumerList();
-        for (Consumerreader consumerreader1: consumerlist.getUserList()){
+        for (CustomerReader customerReader1 : consumerlist.getUserList()){
 
-            roomconsumermailbtn.getItems().add(consumerreader1.getName() + " : " + consumerreader1.getRoomnum());
+            roomconsumermailbtn.getItems().add(customerReader1.getName() + " : " + customerReader1.getRoomnum());
 
         }
     }
@@ -65,14 +64,14 @@ public class Mail {
             String time = new SimpleDateFormat("dd/MM/yy HH:mm:ss").format(Calendar.getInstance().getTime());
             String[] roomNum = roomconsumermailbtn.getValue().split(" : ");
 
-            Mailreader mailreader = new Mailreader(namemailbtn.getText(),sendermailbtn.getText(),sizemailbtn.getText(),companymailbtn.getText(),roomNum[1],time);
-            maillist.add(mailreader);
-            item.add(mailreader);
+            Model.Mail mail = new Model.Mail(namemailbtn.getText(),sendermailbtn.getText(),sizemailbtn.getText(),companymailbtn.getText(),roomNum[1],time);
+            maillist.add(mail);
+            item.add(mail);
             maildata.setMaillist(maillist);
             Button a = (Button) event.getSource();
-            Stage stage_summitconsumer = (Stage) a.getScene().getWindow();
+            Stage stage_submitcustomer = (Stage) a.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/Central.fxml"));
-            stage_summitconsumer.setScene(new Scene(loader.load(), 882, 390));
-            stage_summitconsumer.show();}
+            stage_submitcustomer.setScene(new Scene(loader.load(), 882, 390));
+            stage_submitcustomer.show();}
     }
 }

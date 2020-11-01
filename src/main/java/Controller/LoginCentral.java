@@ -1,7 +1,7 @@
 package Controller;
 
-import Model.Centraluserreader;
-import Service.CentralFileDataSource;
+import Model.CentralOfficer;
+import Service.CentralOfficerData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,21 +17,21 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 public class LoginCentral {
-    private CentralFileDataSource centraldata;
-    private Centraluserreader centralList;
+    private CentralOfficerData centraldata;
+    private CentralOfficer centralList;
     @FXML TextField Userbtn;
     @FXML PasswordField Passwordbtn;
     @FXML Button backhomecentralbtn;
     @FXML Button Loginbtn;
-    private Centraluserreader nowCentral;
+    private CentralOfficer nowCentral;
 
-    public void setNowCentral(Centraluserreader nowCentral){
+    public void setNowCentral(CentralOfficer nowCentral){
         this.nowCentral = nowCentral;
     }
 
     public void initialize(){
-        centralList = new Centraluserreader();
-        centraldata = new CentralFileDataSource("data","Centraldata.csv");
+        centralList = new CentralOfficer();
+        centraldata = new CentralOfficerData("data","CentralOfficer.csv");
         centralList = centraldata.getCentralList();
     }
 
@@ -43,7 +43,7 @@ public class LoginCentral {
             centraldata.setCentralList(centralList);
             Button c = (Button) event.getSource();
             Stage stage_CentralloginPage = (Stage) c.getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/Centralhome.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CentralHome.fxml"));
             stage_CentralloginPage.setScene(new Scene(loader.load(), 882, 390));
 
             stage_CentralloginPage.show();

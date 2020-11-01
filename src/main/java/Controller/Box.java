@@ -1,11 +1,10 @@
 package Controller;
 
-import Model.Boxreader;
-import Model.Consumerreader;
+import Model.CustomerReader;
 
 import Model.Item;
-import Service.Boxdatasource;
-import Service.Consumerdatasource;
+import Service.BoxData;
+import Service.CustomerData;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,23 +23,23 @@ public class Box {
     @FXML MenuItem option1boxbtn,option2boxbtn,option3boxbtn;
     @FXML TextField sizeboxbtn,nameboxbtn,companyboxbtn,trackingboxbtn,senderboxbtn;
     @FXML Button Backboxbtn,Summitboxbtn;
-    private Boxdatasource boxdata;
-    private Boxreader boxlist;
+    private BoxData boxdata;
+    private Model.Box boxlist;
     private Item item;
-    private Consumerdatasource consumerdata;
-    private Consumerreader consumerlist;
+    private CustomerData consumerdata;
+    private CustomerReader consumerlist;
 
     public void initialize(){
         item = new Item();
-        boxlist = new Boxreader();
-        boxdata = new Boxdatasource("data","/box.csv");
+        boxlist = new Model.Box();
+        boxdata = new BoxData("data","/Box.csv");
         boxlist = boxdata.getBoxlist();
 
-        consumerdata = new Consumerdatasource("data","Consumerdata.csv");
+        consumerdata = new CustomerData("data","Customer.csv");
         consumerlist = consumerdata.getConsumerList();
-        for (Consumerreader consumerreader1: consumerlist.getUserList()){
+        for (CustomerReader customerReader1 : consumerlist.getUserList()){
 
-            roomnumboxbtn.getItems().add(consumerreader1.getName() + " : " + consumerreader1.getRoomnum());
+            roomnumboxbtn.getItems().add(customerReader1.getName() + " : " + customerReader1.getRoomnum());
 
         }
     }
@@ -78,7 +77,7 @@ public class Box {
                 String time = new SimpleDateFormat("dd/MM/yy HH:mm:ss").format(Calendar.getInstance().getTime());
                 String[] roomNum = roomnumboxbtn.getValue().split(" : ");
 
-                Boxreader boxReader = new Boxreader(nameboxbtn.getText(),senderboxbtn.getText(),sizeboxbtn.getText(),companyboxbtn.getText(),roomNum[1],time,levelboxbtn.getText(),trackingboxbtn.getText());
+                Model.Box boxReader = new Model.Box(nameboxbtn.getText(),senderboxbtn.getText(),sizeboxbtn.getText(),companyboxbtn.getText(),roomNum[1],time,levelboxbtn.getText(),trackingboxbtn.getText());
                 boxlist.add(boxReader);
                 item.add(boxReader);
                 boxdata.setBoxlist(boxlist);

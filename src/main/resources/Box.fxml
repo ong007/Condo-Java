@@ -31,9 +31,9 @@
       <TextField fx:id="companyboxbtn" layoutX="246.0" layoutY="303.0" prefHeight="25.0" prefWidth="178.0" promptText="COMPANY" />
       <MenuButton fx:id="levelboxbtn" layoutX="745.0" layoutY="217.0" mnemonicParsing="false" text="LEVEL">
          <items>
-            <MenuItem fx:id="option1boxbtn" mnemonicParsing="false" onAction="#option1boxbtnonaction" text="ปกติ" />
-            <MenuItem fx:id="option2boxbtn" mnemonicParsing="false" onAction="#option2boxbtnonaction" text="ด่วน" />
-            <MenuItem fx:id="option3boxbtn" mnemonicParsing="false" onAction="#option3boxbtnonaction" text="ลับ" />
+            <MenuItem fx:id="option1boxbtn" mnemonicParsing="false" onAction="#option1boxbtnonaction" text="NORMAI" />
+            <MenuItem fx:id="option2boxbtn" mnemonicParsing="false" onAction="#option2boxbtnonaction" text="EXPRESS" />
+            <MenuItem fx:id="option3boxbtn" mnemonicParsing="false" onAction="#option3boxbtnonaction" text="RECEIVED" />
          </items>
       </MenuButton>
       <Button fx:id="Summitboxbtn" layoutX="746.0" layoutY="328.0" mnemonicParsing="false" onAction="#Summitboxbtnonaction" prefHeight="25.0" prefWidth="63.0" text="SUMMIT" />

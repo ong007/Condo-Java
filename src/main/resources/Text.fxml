@@ -35,9 +35,9 @@
       <ComboBox fx:id="roomconsumertextbtn" editable="true" layoutX="462.0" layoutY="207.0" prefHeight="25.0" prefWidth="276.0" promptText="ROOM CUSTOMER" />
       <MenuButton fx:id="leveltextbtn" layoutX="770.0" layoutY="207.0" mnemonicParsing="false" text="LEVEL">
          <items>
-            <MenuItem fx:id="option1boxbtn" mnemonicParsing="false" onAction="#option1boxbtnonaction" text="ปกติ" />
-            <MenuItem fx:id="option2boxbtn" mnemonicParsing="false" onAction="#option2boxbtnonaction" text="ด่วน" />
-            <MenuItem fx:id="option3boxbtn" mnemonicParsing="false" onAction="#option3boxbtnonaction" text="ลับ" />
+            <MenuItem fx:id="option1boxbtn" mnemonicParsing="false" onAction="#option1boxbtnonaction" text="NORMAL" />
+            <MenuItem fx:id="option2boxbtn" mnemonicParsing="false" onAction="#option2boxbtnonaction" text="EXPRESS" />
+            <MenuItem fx:id="option3boxbtn" mnemonicParsing="false" onAction="#option3boxbtnonaction" text="RECEIVED" />
          </items>
       </MenuButton>
    </children>

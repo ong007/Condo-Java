@@ -1,10 +1,8 @@
 package Controller;
 
-import Model.ReceiveBoxReader;
+import Service.BoxData;
 
-import Service.Boxdatasource;
-
-import Service.ReceiveBoxDataSource;
+import Service.ReceiveBoxData;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -14,22 +12,22 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ReceiveBox {
     @FXML
-    private TableView<ReceiveBoxReader> tablestockbox;
-    private ObservableList<ReceiveBoxReader> list;
-    private Boxdatasource boxdatasource;
-    private ReceiveBoxReader boxList,selectedBox;
+    private TableView<Model.ReceiveBox> tablestockbox;
+    private ObservableList<Model.ReceiveBox> list;
+    private BoxData boxData;
+    private Model.ReceiveBox boxList,selectedBox;
 
 
-    private ReceiveBoxDataSource receiveBoxDataSource;
-    private ReceiveBoxReader receiveboxlist;
+    private ReceiveBoxData receiveBoxDataDataSource;
+    private Model.ReceiveBox receiveboxlist;
 
     @FXML private TextField searchreceivebtn, namebtn,surnamenamestockbtn,nameofficerreceive;
     @FXML private Button okreceivrbtn;
 
 
     public void initialize (){
-        receiveBoxDataSource = new ReceiveBoxDataSource("data", "checkreceivebox.csv");
-        receiveboxlist = receiveBoxDataSource.getReceiveboxlist();
+        receiveBoxDataDataSource = new ReceiveBoxData("data", "ReceiveBox.csv");
+        receiveboxlist = receiveBoxDataDataSource.getReceiveboxlist();
 
         Platform.runLater(new Runnable() {
             @Override
@@ -48,9 +46,9 @@ public class ReceiveBox {
 
 
     public void showData(String search){
-            ReceiveBoxReader box = new ReceiveBoxReader();
+            Model.ReceiveBox box = new Model.ReceiveBox();
             tablestockbox.getColumns().clear();
-            for (ReceiveBoxReader consumerreader1:receiveboxlist.getUserListBox()){
+            for (Model.ReceiveBox consumerreader1:receiveboxlist.getUserListBox()){
             if (consumerreader1.getRoomnum().contains(search)){
             box.add(consumerreader1);
             }
@@ -66,30 +64,30 @@ public class ReceiveBox {
 
 
             TableColumn sender = new TableColumn("SENDER");
-            sender.setCellValueFactory(new PropertyValueFactory<ReceiveBoxReader,String>("sender"));
+            sender.setCellValueFactory(new PropertyValueFactory<Model.ReceiveBox,String>("sender"));
             TableColumn username = new TableColumn("USERNAME");
-            username.setCellValueFactory(new PropertyValueFactory<ReceiveBoxReader,String>("username"));
+            username.setCellValueFactory(new PropertyValueFactory<Model.ReceiveBox,String>("username"));
             TableColumn company = new TableColumn("company");
-            company.setCellValueFactory(new PropertyValueFactory<ReceiveBoxReader,String>("company"));
+            company.setCellValueFactory(new PropertyValueFactory<Model.ReceiveBox,String>("company"));
             TableColumn roomnum = new TableColumn("ROOM NUMBER");
-            roomnum.setCellValueFactory(new PropertyValueFactory<ReceiveBoxReader,String>("roomnum"));
+            roomnum.setCellValueFactory(new PropertyValueFactory<Model.ReceiveBox,String>("roomnum"));
             TableColumn level = new TableColumn("LEVEL");
-            level.setCellValueFactory(new PropertyValueFactory<ReceiveBoxReader,String>("level"));
+            level.setCellValueFactory(new PropertyValueFactory<Model.ReceiveBox,String>("level"));
             TableColumn size = new TableColumn("SIZE");
-            size.setCellValueFactory(new PropertyValueFactory<ReceiveBoxReader,String>("size"));
+            size.setCellValueFactory(new PropertyValueFactory<Model.ReceiveBox,String>("size"));
             TableColumn tracking = new TableColumn("TRACKING");
-            tracking.setCellValueFactory(new PropertyValueFactory<ReceiveBoxReader,String>("tracking"));
+            tracking.setCellValueFactory(new PropertyValueFactory<Model.ReceiveBox,String>("tracking"));
             TableColumn time = new TableColumn("TIME");
-            time.setCellValueFactory(new PropertyValueFactory<ReceiveBoxReader,String>("time"));
+            time.setCellValueFactory(new PropertyValueFactory<Model.ReceiveBox,String>("time"));
             TableColumn nameofficer = new TableColumn("OFFICER");
-            nameofficer.setCellValueFactory(new PropertyValueFactory<ReceiveBoxReader,String>("nameofficer"));
+            nameofficer.setCellValueFactory(new PropertyValueFactory<Model.ReceiveBox,String>("nameofficer"));
 
             roomnum.setSortType(TableColumn.SortType.ASCENDING);
             tablestockbox.getColumns().addAll(sender,username,company,roomnum,level,size,tracking,time,nameofficer);
             tablestockbox.getSortOrder().add(roomnum);
             }
 
-    public void showSelectData(ReceiveBoxReader box){
+    public void showSelectData(Model.ReceiveBox box){
         selectedBox = box;
         nameofficerreceive.setText(box.getNameofficer());
         namebtn.setText(box.getUsername());

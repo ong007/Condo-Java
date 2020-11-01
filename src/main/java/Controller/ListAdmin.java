@@ -1,7 +1,7 @@
 package Controller;
 
-import Model.Centraluserreader;
-import Service.CentralFileDataSource;
+import Model.CentralOfficer;
+import Service.CentralOfficerData;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,21 +20,21 @@ public class ListAdmin {
     Label namebtn,surnamebtn;
     @FXML Button HomeAdminbtn,Useradminsystembtn,banbtn,unbanbtn;
     @FXML
-    TableView<Centraluserreader> table;
-    private Centraluserreader centraluserreader,selectedCentral;
-    private CentralFileDataSource centralFileDataSource;
-    private ObservableList<Centraluserreader> list;
+    TableView<CentralOfficer> table;
+    private CentralOfficer centralOfficer,selectedCentral;
+    private CentralOfficerData centralOfficerData;
+    private ObservableList<CentralOfficer> list;
 
     public void initialize(){
         banbtn.setDisable(true);
         unbanbtn.setDisable(true);
-        centraluserreader = new Centraluserreader();
-        centralFileDataSource = new CentralFileDataSource("data","Centraldata.csv");
-        centraluserreader = centralFileDataSource.getCentralList();
+        centralOfficer = new CentralOfficer();
+        centralOfficerData = new CentralOfficerData("data","CentralOfficer.csv");
+        centralOfficer = centralOfficerData.getCentralList();
         Platform .runLater(new Runnable() {
             @Override
             public void run() {
-                if(!centraluserreader.getUserList().isEmpty()){
+                if(!centralOfficer.getUserList().isEmpty()){
                     showData();
                 }
             }
@@ -55,12 +55,12 @@ public class ListAdmin {
     @FXML public void UserAdminSystemBtnOnAction(ActionEvent event) throws IOException {
         Button b = (Button) event.getSource();
         Stage stage_useradminsystem = (Stage) b.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Newuseradmin.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/NewUserCentral.fxml"));
         stage_useradminsystem.setScene(new Scene(loader.load(), 882, 390));
         stage_useradminsystem.show();}
     @FXML public void banbtnonaction(ActionEvent event) throws IOException {
         selectedCentral.setStatus("Banned");
-        centralFileDataSource.setCentralList(centraluserreader);
+        centralOfficerData.setCentralList(centralOfficer);
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText("");
         alert.setTitle("Ban");
@@ -77,7 +77,7 @@ public class ListAdmin {
         selectedCentral.setStatus("Access");
 
         selectedCentral.setAttempt(0);
-        centralFileDataSource.setCentralList(centraluserreader);
+        centralOfficerData.setCentralList(centralOfficer);
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setHeaderText("");
         alert.setTitle("Unban");
@@ -95,30 +95,30 @@ public class ListAdmin {
 
 
     public void showData(){
-        list = FXCollections.observableList(centraluserreader.getUserList());
+        list = FXCollections.observableList(centralOfficer.getUserList());
         table.setItems(list);
 
         TableColumn username = new TableColumn("USERNAME");
-        username.setCellValueFactory(new PropertyValueFactory<Centraluserreader,String>("username"));
+        username.setCellValueFactory(new PropertyValueFactory<CentralOfficer,String>("username"));
         TableColumn password = new TableColumn("PASSWORD");
-        password.setCellValueFactory(new PropertyValueFactory<Centraluserreader,String>("password"));
+        password.setCellValueFactory(new PropertyValueFactory<CentralOfficer,String>("password"));
         TableColumn name = new TableColumn("NAME");
-        name.setCellValueFactory(new PropertyValueFactory<Centraluserreader,String>("name"));
+        name.setCellValueFactory(new PropertyValueFactory<CentralOfficer,String>("name"));
         TableColumn surname = new TableColumn("SURNAME");
-        surname.setCellValueFactory(new PropertyValueFactory<Centraluserreader,String>("surname"));
+        surname.setCellValueFactory(new PropertyValueFactory<CentralOfficer,String>("surname"));
         TableColumn time = new TableColumn("TIME");
-        time.setCellValueFactory(new PropertyValueFactory<Centraluserreader,String>("time"));
+        time.setCellValueFactory(new PropertyValueFactory<CentralOfficer,String>("time"));
         TableColumn status = new TableColumn("STATUS");
-        status.setCellValueFactory(new PropertyValueFactory<Centraluserreader,String>("status"));
+        status.setCellValueFactory(new PropertyValueFactory<CentralOfficer,String>("status"));
         TableColumn attempt = new TableColumn("ATTEMPT");
-        attempt.setCellValueFactory(new PropertyValueFactory<Centraluserreader,String>("attempt"));
+        attempt.setCellValueFactory(new PropertyValueFactory<CentralOfficer,String>("attempt"));
 
         time.setSortType(TableColumn.SortType.DESCENDING);
         table.getColumns().addAll(name,surname,username,password,time,status,attempt);
         table.getSortOrder().add(time);
 
     }
-    public void showCentralData(Centraluserreader central){
+    public void showCentralData(CentralOfficer central){
         selectedCentral = central;
         namebtn.setText(central.getName());
         surnamebtn.setText(central.getSurname());

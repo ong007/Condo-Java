@@ -1,12 +1,9 @@
 package Controller;
 
-import Model.Consumerreader;
+import Model.CustomerReader;
 import Model.Item;
-import Model.Textreader;
-import Service.Boxdatasource;
-import Service.Consumerdatasource;
-import Service.TextDataSource;
-import com.sun.glass.ui.Size;
+import Service.CustomerData;
+import Service.TextData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -25,21 +22,21 @@ public class Text {
     @FXML MenuItem option1textbtn,option2textbtn,option3textbtn;
     @FXML TextField nametextbtn,Sizetextbtn,sendertextbtn,companytextbtn;
     @FXML Button Backtextbtn,Summittextbtn;
-    private Consumerdatasource consumerdata;
-    private Consumerreader consumerlist;
-    private TextDataSource textdata;
-    private Textreader textlist;
+    private CustomerData consumerdata;
+    private CustomerReader consumerlist;
+    private TextData textdata;
+    private Model.Text textlist;
     private Item item;
     public void initialize(){
         item = new Item();
-        textlist = new Textreader();
-        textdata = new TextDataSource("data","/text.csv");
+        textlist = new Model.Text();
+        textdata = new TextData("data","/Text.csv");
         textlist = textdata.getTextlist();
-        consumerdata = new Consumerdatasource("data","Consumerdata.csv");
+        consumerdata = new CustomerData("data","Customer.csv");
         consumerlist = consumerdata.getConsumerList();
-        for (Consumerreader consumerreader1: consumerlist.getUserList()){
+        for (CustomerReader customerReader1 : consumerlist.getUserList()){
 
-            roomconsumertextbtn.getItems().add(consumerreader1.getName() + " : " + consumerreader1.getRoomnum());
+            roomconsumertextbtn.getItems().add(customerReader1.getName() + " : " + customerReader1.getRoomnum());
 
         }
     }
@@ -74,7 +71,7 @@ public class Text {
         else{
             String time = new SimpleDateFormat("dd/MM/yy HH:mm:ss").format(Calendar.getInstance().getTime());
             String[] roomNum = roomconsumertextbtn.getValue().split(" : ");
-            Textreader textReader = new Textreader(nametextbtn.getText(),sendertextbtn.getText(), Sizetextbtn.getText(),companytextbtn.getText(),roomNum[1],time,leveltextbtn.getText());
+            Model.Text textReader = new Model.Text(nametextbtn.getText(),sendertextbtn.getText(), Sizetextbtn.getText(),companytextbtn.getText(),roomNum[1],time,leveltextbtn.getText());
             textlist.add(textReader);
             item.add(textReader);
             textdata.setTextlist(textlist);

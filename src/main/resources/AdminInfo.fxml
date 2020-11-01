@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="390.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminInfo">
+   <children>
+      <ImageView fitHeight="399.0" fitWidth="716.0" opacity="0.33" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/989f26bb992f6426fb6a50845ef329d9.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="103.0" fitWidth="131.0" layoutX="84.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/iconfinder_teacher_5267445.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="230.0" layoutY="62.0" prefHeight="44.0" prefWidth="356.0" text="Information for Admin">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="156.0" layoutY="145.0" prefHeight="156.0" prefWidth="530.0" style="-fx-background-color: white;">
+         <children>
+            <Label prefHeight="51.0" prefWidth="519.0" text="1. สามารถ ลงทะเบียนให้เจ้าหน้าที่ส่วนกลางได้">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <Label layoutY="102.0" prefHeight="51.0" prefWidth="519.0" text="3. สามารถ BAN เเละ UNBAN เจ้าหน้าที่ส่วนกลางได้">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <Label layoutY="51.0" prefHeight="51.0" prefWidth="519.0" text="2. ดู รายละเอียดเเละสถานะของเจ้าหน้าที่ส่วนกลางได้">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button layoutX="115.0" layoutY="335.0" mnemonicParsing="false" onAction="#BackBtnOnAction" text="Back" />
+   </children>
+</AnchorPane>

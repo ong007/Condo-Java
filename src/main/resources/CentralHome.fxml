@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="390.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CentralHome">
+   <children>
+      <AnchorPane prefHeight="390.0" prefWidth="162.0" style="-fx-background-color: black;">
+         <children>
+            <Label layoutX="19.0" layoutY="35.0" text="CENTRAL HOME" textFill="#a4a2a2">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="Newmessengerbtn" layoutY="241.0" mnemonicParsing="false" onAction="#NewMessengerBtnOnAction" prefHeight="25.0" prefWidth="153.0" style="-fx-background-color: black;" text="ITEM" textFill="#b2a5a5">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Button>
+            <Button fx:id="Newroomconsumerbtn" layoutY="195.0" mnemonicParsing="false" onAction="#Newroomconsumerbtnonaction" prefHeight="25.0" prefWidth="153.0" style="-fx-background-color: black;" text="ROOM" textFill="#a19898">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Button>
+            <Button fx:id="Newconsumerbtn" layoutX="5.0" layoutY="216.0" mnemonicParsing="false" onAction="#NewConSumerBtnOnAcTion" prefHeight="25.0" prefWidth="153.0" style="-fx-background-color: black;" text="CUSTOMER" textFill="#a19c9c">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Button>
+            <Button fx:id="Homecentralhomebtn" layoutX="3.0" layoutY="364.0" mnemonicParsing="false" onAction="#HomeCentralHomeBtnOnAction" prefHeight="25.0" prefWidth="153.0" style="-fx-background-color: black;" text="LOG OUT" textFill="WHITE" />
+            <ImageView fitHeight="97.0" fitWidth="115.0" layoutX="31.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/istockphoto-1161361737-170667a.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="Newpasswordcentralhomebtn" layoutY="266.0" mnemonicParsing="false" onAction="#Newpasswordcentralhomebtnonaction" prefHeight="25.0" prefWidth="153.0" style="-fx-background-color: black;" text="NEW PASSWORD" textFill="#b2a5a5">
+               <font>
+                  <Font size="9.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <TableView fx:id="table" layoutX="193.0" layoutY="106.0" prefHeight="200.0" prefWidth="454.0" />
+      <Label layoutX="206.0" layoutY="41.0" prefHeight="38.0" prefWidth="153.0" text="CUSTOMER">
+         <font>
+            <Font name="Franklin Gothic Medium Cond" size="32.0" />
+         </font>
+      </Label>
+      <Label layoutX="727.0" layoutY="124.0" prefHeight="25.0" prefWidth="54.0" text="NAME">
+         <font>
+            <Font name="Franklin Gothic Medium" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameconsumertext" layoutX="679.0" layoutY="152.0" promptText="                   -" />
+      <Label layoutX="719.0" layoutY="184.0" prefHeight="25.0" prefWidth="72.0" text="SURNAME">
+         <font>
+            <Font name="Franklin Gothic Medium" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="surnamecomsumertext" layoutX="679.0" layoutY="209.0" prefHeight="25.0" prefWidth="149.0" promptText="                   -" />
+      <Label layoutX="712.0" layoutY="239.0" prefHeight="25.0" prefWidth="86.0" text="USERNAME">
+         <font>
+            <Font name="Franklin Gothic Medium" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="usernameconsumertext" layoutX="679.0" layoutY="264.0" prefHeight="25.0" prefWidth="149.0" promptText="                   -" />
+      <Button fx:id="Removeconsumerbtn" layoutX="718.0" layoutY="315.0" mnemonicParsing="false" onAction="#RemoveconsumerbtnOnaction" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: red; -fx-background-radius: 30 30 30;" text="REMOVE" textFill="#ebebeb">
+         <font>
+            <Font name="Franklin Gothic Medium Cond" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="searchCentralhomebtn" layoutX="420.0" layoutY="67.0" promptText="Search" style="-fx-background-radius: 30 30 30;" />
+      <Button layoutX="583.0" layoutY="67.0" mnemonicParsing="false" onAction="#oksearchcentralhomebtnonaction" text="OK" />
+   </children>
+</AnchorPane>

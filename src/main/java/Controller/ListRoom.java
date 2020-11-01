@@ -1,10 +1,8 @@
 package Controller;
 
-import Model.Centraluserreader;
-import Model.Consumerreader;
-import Model.Roomreader;
-import Service.Consumerdatasource;
-import Service.Roomdatasource;
+import Model.CentralOfficer;
+import Model.Room;
+import Service.RoomData;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -24,15 +22,15 @@ import java.io.IOException;
 public class ListRoom {
     @FXML Button okroomlistbtn,backroomlistbtn;
     @FXML TextField searchroomlistbtn;
-    @FXML TableView<Roomreader> tableroomlistbtn;
-    private ObservableList<Roomreader> list;
+    @FXML TableView<Room> tableroomlistbtn;
+    private ObservableList<Room> list;
 
-    private Roomreader roomlist;
-    private Roomdatasource roomdata;
+    private Room roomlist;
+    private RoomData roomdata;
 
     public void initialize(){
 
-        roomdata = new Roomdatasource("data","createroom.csv");
+        roomdata = new RoomData("data","Room.csv");
         roomlist = roomdata.getRoomlist();
         Platform.runLater(new Runnable() {
             @Override
@@ -48,15 +46,15 @@ public class ListRoom {
     @FXML public void backroomlistbtnonaction(ActionEvent event) throws IOException {
         Button a = (Button) event.getSource();
         Stage stage_ProfilePage = (Stage) a.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/room.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Room.fxml"));
         stage_ProfilePage.setScene(new Scene(loader.load(), 882, 390));
         stage_ProfilePage.show();
     }
 
     public void showData(String search){
-        Roomreader room = new Roomreader();
+        Room room = new Room();
         tableroomlistbtn.getColumns().clear();
-        for (Roomreader room1:roomlist.getUserList()){
+        for (Room room1:roomlist.getUserList()){
             if (room1.getRoomnum().contains(search)){
                 room.add(room1);
             }
@@ -71,17 +69,17 @@ public class ListRoom {
         tableroomlistbtn.setItems(list);
 
         TableColumn building = new TableColumn("BUILDING");
-        building.setCellValueFactory(new PropertyValueFactory<Centraluserreader,String>("building"));
+        building.setCellValueFactory(new PropertyValueFactory<CentralOfficer,String>("building"));
         TableColumn type = new TableColumn("TYPE");
-        type.setCellValueFactory(new PropertyValueFactory<Centraluserreader,String>("type"));
+        type.setCellValueFactory(new PropertyValueFactory<CentralOfficer,String>("type"));
         TableColumn floor = new TableColumn("FLOOR");
-        floor.setCellValueFactory(new PropertyValueFactory<Centraluserreader,String>("floor"));
+        floor.setCellValueFactory(new PropertyValueFactory<CentralOfficer,String>("floor"));
         TableColumn roomnum = new TableColumn("ROOM NUMBER");
-        roomnum.setCellValueFactory(new PropertyValueFactory<Centraluserreader,String>("roomnum"));
+        roomnum.setCellValueFactory(new PropertyValueFactory<CentralOfficer,String>("roomnum"));
         TableColumn max= new TableColumn("MAX");
-        max.setCellValueFactory(new PropertyValueFactory<Centraluserreader,String>("maxarrival"));
+        max.setCellValueFactory(new PropertyValueFactory<CentralOfficer,String>("maxarrival"));
         TableColumn arrival= new TableColumn("AVAILABILITY");
-        arrival.setCellValueFactory(new PropertyValueFactory<Centraluserreader,String>("nowarrival"));
+        arrival.setCellValueFactory(new PropertyValueFactory<CentralOfficer,String>("nowarrival"));
 
 
         roomnum.setSortType(TableColumn.SortType.ASCENDING);

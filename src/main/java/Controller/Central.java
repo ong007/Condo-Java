@@ -1,6 +1,5 @@
 package Controller;
 
-import Model.Centraluserreader;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,7 +16,7 @@ public class Central {
     @FXML public void BackCentralMessageBtnOnAction(ActionEvent event) throws IOException {
         Button a = (Button) event.getSource();
         Stage stage_BackhomeCentralPage = (Stage) a.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Centralhome.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/CentralHome.fxml"));
         stage_BackhomeCentralPage.setScene(new Scene(loader.load(), 882, 390));
         stage_BackhomeCentralPage.show();}
 

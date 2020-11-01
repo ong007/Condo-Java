@@ -15,14 +15,14 @@ public class Room {
     @FXML public void backroombtnonaction(ActionEvent event) throws IOException {
         Button a = (Button) event.getSource();
         Stage stage_backroom = (Stage) a.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Centralhome.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/CentralHome.fxml"));
         stage_backroom.setScene(new Scene(loader.load(), 882, 390));
         stage_backroom.show();
     }
     @FXML public void createroombtnonaction(ActionEvent event) throws IOException {
         Button b = (Button) event.getSource();
         Stage stage_createroom = (Stage) b.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Createroom.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/CreateRoom.fxml"));
         stage_createroom.setScene(new Scene(loader.load(), 882, 390));
         stage_createroom.show();
     }
@@ -30,7 +30,7 @@ public class Room {
     @FXML public void checkroombtnonaction(ActionEvent event) throws IOException {
         Button c = (Button) event.getSource();
         Stage stage_checkroom = (Stage) c.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Listroom.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ListRoom.fxml"));
         stage_checkroom.setScene(new Scene(loader.load(), 882, 390));
         stage_checkroom.show();
     }

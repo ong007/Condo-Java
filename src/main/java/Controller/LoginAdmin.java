@@ -1,6 +1,6 @@
 package Controller;
 
-import Model.setpasswordA;
+import Model.SetPasswordAdmin;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,13 +14,13 @@ import java.io.IOException;
 
 public class LoginAdmin {
 
-    private setpasswordA a;
+    private SetPasswordAdmin a;
     @FXML Button Homeloginadminbtn,LoginAdmin;
     @FXML TextField UserAdminbtn;
     @FXML PasswordField PasswordAdminbtn;
 
     @FXML public void initialize(){
-        a = new setpasswordA();
+        a = new SetPasswordAdmin();
     }
 
 

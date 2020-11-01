@@ -44,7 +44,7 @@
             </ImageView>
          </children>
       </Pane>
-      <Button fx:id="Backloginbtn" layoutX="40.0" layoutY="324.0" mnemonicParsing="false" onAction="#BackLoginBtnOnAction" style="-fx-background-color: black; -fx-background-radius: 30 30 30;" text="LOGIN" textFill="WHITE">
+      <Button fx:id="Backloginbtn" layoutX="40.0" layoutY="324.0" mnemonicParsing="false" onAction="#BackLoginBtnOnAction" style="-fx-background-color: black; -fx-background-radius: 30 30 30;" text="BACK" textFill="WHITE">
          <font>
             <Font size="13.0" />
          </font>

@@ -1,16 +1,13 @@
 package Controller;
 
 
-import Model.Centraluserreader;
-import Model.Consumerreader;
-import Service.CentralFileDataSource;
-import Service.Consumerdatasource;
+import Model.CustomerReader;
+import Service.CustomerData;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -19,22 +16,20 @@ import javafx.stage.Stage;
 
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 
 public class Homepage {
 
-    @FXML  Button LoginHomepagebtn,Profilebtn,Adminbtn,Centralbtn;
+    @FXML  Button LoginHomepagebtn,Profilebtn,Adminbtn,Centralbtn,InformationBtn;
     @FXML  TextField Userhomepagebtn;
     @FXML  PasswordField Passwordhomepagebtn;
-    private Consumerdatasource consumerdata;
-    private Consumerreader consumerlist,consumer;
+    private CustomerData consumerdata;
+    private CustomerReader consumerlist,consumer;
 
 
     public void initialize(){
-        consumerlist = new Consumerreader();
-        consumerdata = new Consumerdatasource("data","Consumerdata.csv");
+        consumerlist = new CustomerReader();
+        consumerdata = new CustomerData("data","Customer.csv");
         consumerlist = consumerdata .getConsumerList();
     }
 
@@ -55,19 +50,26 @@ public class Homepage {
     @FXML public void Centralbtnonaction(ActionEvent event) throws IOException {
         Button c = (Button) event.getSource();
         Stage stage_CentralloginPage = (Stage) c.getScene().getWindow();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Logincentral.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/LoginCentral.fxml"));
         stage_CentralloginPage.setScene(new Scene(loader.load(), 882, 390));
         stage_CentralloginPage.show();}
+
+    @FXML public void InformationBtnOnAction(ActionEvent event) throws IOException {
+        Button d = (Button) event.getSource();
+        Stage stage_Information = (Stage) d.getScene().getWindow();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Information.fxml"));
+        stage_Information.setScene(new Scene(loader.load(), 882, 390));
+        stage_Information.show();}
 
     @FXML public void LoginHomepagebtnonaction(ActionEvent event) throws IOException {
         if(consumerlist.checkReceived(Userhomepagebtn.getText(),Passwordhomepagebtn.getText())) {
             consumer = consumerlist.getAcc(Userhomepagebtn.getText());
             consumerdata.setConsumerList(consumerlist);;
-            Button d = (Button) event.getSource();
-            Stage stage_consumerlogin = (Stage) d.getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/ConsumerHome.fxml"));
+            Button e = (Button) event.getSource();
+            Stage stage_consumerlogin = (Stage) e.getScene().getWindow();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CustomerHome.fxml"));
             stage_consumerlogin.setScene(new Scene(loader.load(), 882, 390));
-            ConsumerHome home = loader.getController();
+            CustomerHome home = loader.getController();
             home.setConsumer(consumer);
             stage_consumerlogin.show();
         }

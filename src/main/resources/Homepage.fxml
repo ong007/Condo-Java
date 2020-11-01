@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="380.0" prefWidth="882.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Homepage">
+<AnchorPane prefHeight="390.0" prefWidth="882.0" style="-fx-background-color: #20120F;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.Homepage">
    <children>
       <AnchorPane layoutX="605.0" layoutY="42.0" prefHeight="231.0" prefWidth="251.0" style="-fx-background-color: #9C2B27;">
          <children>
@@ -66,5 +66,14 @@
          </font>
       </Label>
       <Button fx:id="Adminbtn" layoutX="790.0" layoutY="353.0" mnemonicParsing="false" onAction="#AdminBtnOnAction" style="-fx-background-color: #FF3333; -fx-background-radius: 10 10 10;" text=" Admin &gt;" textFill="#d3d2d2" />
+      <Button fx:id="InformationBtn" layoutX="823.0" layoutY="6.0" mnemonicParsing="false" onAction="#InformationBtnOnAction" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: transparent;">
+         <graphic>
+            <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/iconfinder_info_1282960.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </AnchorPane>
