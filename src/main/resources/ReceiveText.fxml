@@ -19,12 +19,12 @@
             <Font size="23.0" />
          </font>
       </Label>
-      <TextField fx:id="namebtn" layoutX="614.0" layoutY="90.0" prefHeight="25.0" prefWidth="190.0" text="                          -" />
+      <TextField fx:id="namebtn" editable="false" layoutX="614.0" layoutY="90.0" prefHeight="25.0" prefWidth="190.0" text="                          -" />
       <TextField fx:id="searchreceivebtn" layoutX="283.0" layoutY="21.0" prefHeight="25.0" prefWidth="220.0" promptText="Search" style="-fx-background-radius: 30 30 30;" />
       <Button fx:id="okreceivrbtn" layoutX="522.0" layoutY="21.0" mnemonicParsing="false" onAction="#okreceivrbtnonaction" text="OK" />
       <TableView fx:id="tablestockbox" layoutX="-3.0" layoutY="56.0" prefHeight="197.0" prefWidth="557.0" />
-      <TextField fx:id="surnamenamestockbtn" layoutX="614.0" layoutY="142.0" prefHeight="25.0" prefWidth="190.0" text="                          -" />
-      <TextField fx:id="nameofficerreceive" layoutX="614.0" layoutY="208.0" prefHeight="25.0" prefWidth="190.0" text="                          -" />
+      <TextField fx:id="surnamenamestockbtn" editable="false" layoutX="614.0" layoutY="142.0" prefHeight="25.0" prefWidth="190.0" text="                          -" />
+      <TextField fx:id="nameofficerreceive" editable="false" layoutX="614.0" layoutY="208.0" prefHeight="25.0" prefWidth="190.0" text="                          -" />
       <Label layoutX="686.0" layoutY="53.0" prefHeight="25.0" prefWidth="47.0" text="NAME" textFill="WHITE">
          <font>
             <Font size="14.0" />

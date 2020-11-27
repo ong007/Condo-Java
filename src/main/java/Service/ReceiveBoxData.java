@@ -1,13 +1,16 @@
 package Service;
 
+import Model.Box;
+import Model.BucketReceiveItem;
 import Model.ReceiveBox;
+import Model.ReceiveMail;
 
 import java.io.*;
 
 public class ReceiveBoxData {
     private String fileDirectoryNamebox;
     private String fileNamebox;
-    private ReceiveBox receiveboxlist;
+    private BucketReceiveItem receiveboxlist;
 
     public ReceiveBoxData(String fileDirectoryNamebox, String fileNamebox) {
         this.fileDirectoryNamebox = fileDirectoryNamebox;
@@ -42,14 +45,14 @@ public class ReceiveBoxData {
             String[] data = line.split(",");
             ReceiveBox box= new ReceiveBox(data[0], data[1], data[2], data[3], data[4],data[5],data[6],data[7],data[8]);
 
-            receiveboxlist.add(box);
+            receiveboxlist.addItem(box);
         }
         reader.close();
     }
 
-    public ReceiveBox getReceiveboxlist() {
+    public BucketReceiveItem getReceiveboxlist() {
         try {
-           receiveboxlist = new ReceiveBox();
+           receiveboxlist = new BucketReceiveItem();
             readData();
         } catch (FileNotFoundException e) {
             System.err.println(this.fileNamebox + " not found");
@@ -58,18 +61,19 @@ public class ReceiveBoxData {
         }
         return receiveboxlist;
     }
-    public void setlist(ReceiveBox maillist) {
+    public void setlist(BucketReceiveItem maillist) {
         String filePath = fileDirectoryNamebox + File.separator + fileNamebox;
         File file = new File(filePath);
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            for (ReceiveBox box:maillist.getUserListBox())
+            for (ReceiveMail box:receiveboxlist.getBucketReceiveItem())
             {
-                String line = box.getSender()+","+box.getUsername()+","+box.getCompany()+","+box.getRoomnum()+","+box.getLevel()+","+box.getSize()+","+box.getTracking()+","+box.getTime()+","+box.getNameofficer();
+                if (box instanceof ReceiveBox){
+                String line = box.getSender()+","+box.getUsername()+","+box.getCompany()+","+box.getRoomnum()+","+ ((ReceiveBox) box).getLevel()+","+box.getSize()+","+ ((ReceiveBox) box).getTracking()+","+box.getTime()+","+box.getNameofficer();
                 writer.append(line);
-                writer.newLine();
+                writer.newLine();}
             }
             writer.close();
         } catch (IOException e) {

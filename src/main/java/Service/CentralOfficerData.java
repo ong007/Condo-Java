@@ -1,5 +1,6 @@
 package Service;
 
+import Model.BucketCentralOfficer;
 import Model.CentralOfficer;
 
 import java.io.*;
@@ -7,7 +8,7 @@ import java.io.*;
 public class CentralOfficerData {
     private String fileDirectoryName;
     private String fileName;
-    private CentralOfficer centralList;
+    private BucketCentralOfficer centralList;
 
     public CentralOfficerData(String fileDirectoryName, String fileName) {
         this.fileDirectoryName = fileDirectoryName;
@@ -45,9 +46,9 @@ public class CentralOfficerData {
         reader.close();
     }
 
-    public CentralOfficer getCentralList() {
+    public BucketCentralOfficer getCentralList() {
         try {
-            centralList = new CentralOfficer();
+            centralList = new BucketCentralOfficer();
             readData();
         } catch (FileNotFoundException e) {
             System.err.println(this.fileName + " not found");
@@ -56,14 +57,14 @@ public class CentralOfficerData {
         }
         return centralList;
     }
-    public void setCentralList(CentralOfficer centrals) {
+    public void setCentralList(BucketCentralOfficer centrals) {
         String filePath = fileDirectoryName + File.separator + fileName;
         File file = new File(filePath);
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            for (CentralOfficer central:centrals.getUserList()) {
+            for (CentralOfficer central:centralList.getBucketCentralOfficer()) {
                 String line = central.getName()+","+central.getSurname()+","+central.getTel()+","+central.getEmail()+","+central.getUsername()+","+central.getPassword()+","+central.getTime()+","+central.getStatus()+","+central.getAttempt();
                 writer.append(line);
                 writer.newLine();

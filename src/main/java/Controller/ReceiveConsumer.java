@@ -3,7 +3,6 @@ package Controller;
 import Model.*;
 import Model.ReceiveBox;
 import Model.ReceiveMail;
-import Model.ReceiveText;
 import Service.*;
 import Service.ReceiveBoxData;
 import Service.ReceiveMailData;
@@ -25,19 +24,20 @@ import java.io.IOException;
 public class ReceiveConsumer {
     @FXML
     Button backbtn;
-    @FXML private TableView<ReceiveBox> tablereceivebox;
-    private ObservableList<ReceiveBox> receiveBoxObservableList;
+    @FXML private TableView<ReceiveMail> tablereceivebox;
+    private ObservableList<ReceiveMail> receiveBoxObservableList;
     @FXML private TableView<ReceiveMail> tablereceivemail;
     private ObservableList<ReceiveMail> receiveMailObservableList;
-    @FXML private TableView<ReceiveText> tablereceivetext;
-    private ObservableList<ReceiveText> receiveTextObservableList;
+    @FXML private TableView<ReceiveMail> tablereceivetext;
+    private ObservableList<ReceiveMail> receiveTextObservableList;
     private ReceiveMailData receiveMailData;
-    private ReceiveMail receiveMailList;
+    private BucketReceiveItem receiveMailList;
     private ReceiveTextData receiveTextData;
-    private ReceiveText receiveTextList;
+    private BucketReceiveItem receiveTextList;
     private ReceiveBoxData receiveBoxDataDataSource;
-    private ReceiveBox receiveBoxList;
-    private CustomerReader consumerList, consumer;
+    private BucketReceiveItem receiveBoxList;
+    private BucketCustomer consumerList;
+    private CustomerReader consumer;
     private CustomerData customerData;
     public void setConsumer(CustomerReader consumer){
         this.consumer = consumer;
@@ -70,8 +70,8 @@ public class ReceiveConsumer {
         tablereceivetext.setVisible(false);
         tablereceivebox.setVisible(true);
         tablereceivebox.getColumns().clear();
-        ReceiveBox matchedRoomNum = receiveBoxList.getListByRoomNum(consumer.getRoomnum());
-        receiveBoxObservableList = FXCollections.observableList(matchedRoomNum.getUserListBox());
+        BucketReceiveItem matchedRoomNum = receiveBoxList.getListByRoomNum(consumer.getRoomnum());
+        receiveBoxObservableList = FXCollections.observableList(matchedRoomNum.getBucketReceiveItem());
         tablereceivebox.setItems(receiveBoxObservableList);
 
         TableColumn sender = new TableColumn("SENDER");
@@ -103,8 +103,8 @@ public class ReceiveConsumer {
         tablereceivetext.setVisible(false);
         tablereceivebox.setVisible(false);
         tablereceivemail.getColumns().clear();
-        ReceiveMail matchedRoomNum = receiveMailList.getListByRoomNum(consumer.getRoomnum());
-        receiveMailObservableList = FXCollections.observableList(matchedRoomNum.getUserList1());
+        BucketReceiveItem matchedRoomNum = receiveMailList.getListByRoomNum(consumer.getRoomnum());
+        receiveMailObservableList = FXCollections.observableList(matchedRoomNum.getBucketReceiveItem());
         tablereceivemail.setItems(receiveMailObservableList);
 
         TableColumn sender = new TableColumn("SENDER");
@@ -132,8 +132,8 @@ public class ReceiveConsumer {
         tablereceivetext.setVisible(true);
         tablereceivebox.setVisible(false);
         tablereceivetext.getColumns().clear();
-        ReceiveText matchedRoomNum = receiveTextList.getListByRoomNum(consumer.getRoomnum());
-        receiveTextObservableList = FXCollections.observableList(matchedRoomNum.getUserList1());
+        BucketReceiveItem matchedRoomNum = receiveTextList.getListByRoomNum(consumer.getRoomnum());
+        receiveTextObservableList = FXCollections.observableList(matchedRoomNum.getBucketReceiveItem());
         tablereceivetext.setItems(receiveTextObservableList);
 
         TableColumn sender = new TableColumn("SENDER");

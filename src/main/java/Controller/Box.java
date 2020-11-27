@@ -1,5 +1,7 @@
 package Controller;
 
+import Model.BucketCustomer;
+import Model.BucketItem;
 import Model.CustomerReader;
 
 import Model.Item;
@@ -24,20 +26,20 @@ public class Box {
     @FXML TextField sizeboxbtn,nameboxbtn,companyboxbtn,trackingboxbtn,senderboxbtn;
     @FXML Button Backboxbtn,Summitboxbtn;
     private BoxData boxdata;
-    private Model.Box boxlist;
+    private BucketItem boxlist;
     private Item item;
     private CustomerData consumerdata;
-    private CustomerReader consumerlist;
+    private BucketCustomer consumerlist;
 
     public void initialize(){
         item = new Item();
-        boxlist = new Model.Box();
+        boxlist = new BucketItem();
         boxdata = new BoxData("data","/Box.csv");
         boxlist = boxdata.getBoxlist();
 
         consumerdata = new CustomerData("data","Customer.csv");
         consumerlist = consumerdata.getConsumerList();
-        for (CustomerReader customerReader1 : consumerlist.getUserList()){
+        for (CustomerReader customerReader1 : consumerlist.getBucketCustomer()){
 
             roomnumboxbtn.getItems().add(customerReader1.getName() + " : " + customerReader1.getRoomnum());
 
@@ -78,7 +80,7 @@ public class Box {
                 String[] roomNum = roomnumboxbtn.getValue().split(" : ");
 
                 Model.Box boxReader = new Model.Box(nameboxbtn.getText(),senderboxbtn.getText(),sizeboxbtn.getText(),companyboxbtn.getText(),roomNum[1],time,levelboxbtn.getText(),trackingboxbtn.getText());
-                boxlist.add(boxReader);
+                boxlist.addItem(boxReader);
                 item.add(boxReader);
                 boxdata.setBoxlist(boxlist);
                 Button a = (Button) event.getSource();

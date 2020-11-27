@@ -57,19 +57,19 @@
             <Font name="Franklin Gothic Medium" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="nameconsumertext" layoutX="679.0" layoutY="152.0" promptText="                   -" />
+      <TextField fx:id="nameconsumertext" editable="false" layoutX="679.0" layoutY="152.0" promptText="                   -" />
       <Label layoutX="719.0" layoutY="184.0" prefHeight="25.0" prefWidth="72.0" text="SURNAME">
          <font>
             <Font name="Franklin Gothic Medium" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="surnamecomsumertext" layoutX="679.0" layoutY="209.0" prefHeight="25.0" prefWidth="149.0" promptText="                   -" />
+      <TextField fx:id="surnamecomsumertext" editable="false" layoutX="679.0" layoutY="209.0" prefHeight="25.0" prefWidth="149.0" promptText="                   -" />
       <Label layoutX="712.0" layoutY="239.0" prefHeight="25.0" prefWidth="86.0" text="USERNAME">
          <font>
             <Font name="Franklin Gothic Medium" size="16.0" />
          </font>
       </Label>
-      <TextField fx:id="usernameconsumertext" layoutX="679.0" layoutY="264.0" prefHeight="25.0" prefWidth="149.0" promptText="                   -" />
+      <TextField fx:id="usernameconsumertext" editable="false" layoutX="679.0" layoutY="264.0" prefHeight="25.0" prefWidth="149.0" promptText="                   -" />
       <Button fx:id="Removeconsumerbtn" layoutX="718.0" layoutY="315.0" mnemonicParsing="false" onAction="#RemoveconsumerbtnOnaction" prefHeight="25.0" prefWidth="72.0" style="-fx-background-color: red; -fx-background-radius: 30 30 30;" text="REMOVE" textFill="#ebebeb">
          <font>
             <Font name="Franklin Gothic Medium Cond" size="12.0" />

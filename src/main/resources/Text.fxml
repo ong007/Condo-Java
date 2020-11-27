@@ -28,7 +28,7 @@
       </ImageView>
       <TextField fx:id="nametextbtn" layoutX="236.0" layoutY="207.0" prefHeight="25.0" prefWidth="178.0" promptText="NAME/USERNAME" />
       <TextField fx:id="companytextbtn" layoutX="236.0" layoutY="306.0" prefHeight="25.0" prefWidth="178.0" promptText="COMPANY" />
-      <Button fx:id="Summittextbtn" layoutX="738.0" layoutY="319.0" mnemonicParsing="false" onAction="#Summittextbtnonaction" prefHeight="25.0" prefWidth="63.0" text="SUBMIT" />
+      <Button fx:id="Summittextbtn" layoutX="746.0" layoutY="328.0" mnemonicParsing="false" onAction="#Summittextbtnonaction" prefHeight="25.0" prefWidth="86.0" text="SUBMIT" />
       <Button fx:id="Backtextbtn" layoutX="65.0" layoutY="318.0" mnemonicParsing="false" onAction="#BackTextBtnOnAcTion" prefHeight="25.0" prefWidth="57.0" text="BACK" />
       <TextField fx:id="Sizetextbtn" layoutX="545.0" layoutY="129.0" prefHeight="25.0" prefWidth="75.0" promptText="     SIZE" />
       <TextField fx:id="sendertextbtn" layoutX="236.0" layoutY="261.0" prefHeight="25.0" prefWidth="178.0" promptText="SENDER" />

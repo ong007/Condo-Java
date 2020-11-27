@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.BucketRoom;
 import Model.Room;
 import Service.RoomData;
 import javafx.event.ActionEvent;
@@ -15,7 +16,7 @@ import java.io.IOException;
 
 public class CreateRoom {
     private RoomData roomdata;
-    private Room roomlist;
+    private BucketRoom roomlist;
     @FXML ComboBox<String> buildbox,typebox,floorbox,roombtn;
 
     @FXML Button createnewroombtn,backcreateroombtn;
@@ -25,7 +26,7 @@ public class CreateRoom {
         typebox.getItems().addAll("STANDARD","LUXURY");
         floorbox.getItems().addAll("1","2","3","4","5","6","7","8");
         roombtn.getItems().addAll("1","2","3","4","5","6","7","8","9","10");
-        roomlist = new Room();
+        roomlist = new BucketRoom();
         roomdata = new RoomData("data","Room.csv");
         roomlist = roomdata.getRoomlist();
     }
@@ -38,14 +39,15 @@ public class CreateRoom {
         stage_backCreateRoom.show();}
 
     @FXML public void createnewroombtnonaction (ActionEvent event) throws IOException{
-        String roomNum = buildbox.getValue() + floorbox.getValue() + roombtn.getValue();
-        Room room = new Room(buildbox.getValue(),typebox.getValue(),floorbox.getValue(),roombtn.getValue(),"",typebox.getValue().equals("STANDARD") ? 2:3,typebox.getValue().equals("STANDARD") ? 2:3);
+
         if(buildbox.getValue() == null || typebox.getValue() == null || floorbox.getValue() == null || roombtn.getValue() == null){
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("ERROR");
             alert.setContentText("Please fill all information.");
             alert.showAndWait();}
-        else{
+
+        else {
+            String roomNum = buildbox.getValue() + floorbox.getValue() + roombtn.getValue();
             if(roomlist.checkAddRoom(roomNum)){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("");
@@ -53,13 +55,14 @@ public class CreateRoom {
             alert.setContentText("Can't reserve a room");
             alert.showAndWait();
             }else {
-            roomlist.add(room);
-            roomdata.setRoomlist(roomlist);
-            Button b = (Button) event.getSource();
-            Stage stage_createroom = (Stage) b.getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CentralHome.fxml"));
-            stage_createroom.setScene(new Scene(loader.load(), 882, 390));
-            stage_createroom.show();
+                Room room = new Room(buildbox.getValue(),typebox.getValue(),floorbox.getValue(),roombtn.getValue(),"",typebox.getValue().equals("STANDARD") ? 2:3,typebox.getValue().equals("STANDARD") ? 2:3);
+                roomlist.add(room);
+                roomdata.setRoomlist(roomlist);
+                Button b = (Button) event.getSource();
+                Stage stage_createroom = (Stage) b.getScene().getWindow();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/CentralHome.fxml"));
+                stage_createroom.setScene(new Scene(loader.load(), 882, 390));
+                stage_createroom.show();
         }}
     }
 }

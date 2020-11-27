@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.BucketCentralOfficer;
 import Model.CentralOfficer;
 import Service.CentralOfficerData;
 import javafx.application.Platform;
@@ -21,20 +22,21 @@ public class ListAdmin {
     @FXML Button HomeAdminbtn,Useradminsystembtn,banbtn,unbanbtn;
     @FXML
     TableView<CentralOfficer> table;
-    private CentralOfficer centralOfficer,selectedCentral;
+    private BucketCentralOfficer centralOfficer;
+    private CentralOfficer selectedCentral;
     private CentralOfficerData centralOfficerData;
     private ObservableList<CentralOfficer> list;
 
     public void initialize(){
         banbtn.setDisable(true);
         unbanbtn.setDisable(true);
-        centralOfficer = new CentralOfficer();
+        centralOfficer = new BucketCentralOfficer();
         centralOfficerData = new CentralOfficerData("data","CentralOfficer.csv");
         centralOfficer = centralOfficerData.getCentralList();
         Platform .runLater(new Runnable() {
             @Override
             public void run() {
-                if(!centralOfficer.getUserList().isEmpty()){
+                if(!centralOfficer.getBucketCentralOfficer().isEmpty()){
                     showData();
                 }
             }
@@ -92,10 +94,8 @@ public class ListAdmin {
     }
 
 
-
-
     public void showData(){
-        list = FXCollections.observableList(centralOfficer.getUserList());
+        list = FXCollections.observableList(centralOfficer.getBucketCentralOfficer());
         table.setItems(list);
 
         TableColumn username = new TableColumn("USERNAME");

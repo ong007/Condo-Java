@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -32,12 +33,23 @@ public class LoginAdmin {
         stage_HomeAdminloginPage.show();
     }
     @FXML public void LoginAdminBtnOnAction(ActionEvent event) throws IOException {
-        if(a.check(UserAdminbtn.getText(), PasswordAdminbtn.getText())){
+        if((UserAdminbtn.getText().equals("") || PasswordAdminbtn.getText().equals("")) ){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("ERROR");
+            alert.setContentText("Please fill all information.");
+            alert.showAndWait();}
+        else if (a.check(UserAdminbtn.getText(), PasswordAdminbtn.getText())){
             Button b = (Button) event.getSource();
             Stage stage_AdminloginPage = (Stage) b.getScene().getWindow();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/ListAdmin.fxml"));
             stage_AdminloginPage.setScene(new Scene(loader.load(), 882, 390));
             stage_AdminloginPage.show();
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("ERROR");
+            alert.setContentText("INCORRECT USERNAME OR PASSWORD");
+            alert.showAndWait();
         }
 
     }

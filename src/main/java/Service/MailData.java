@@ -1,5 +1,7 @@
 package Service;
 
+import Model.BucketItem;
+import Model.Item;
 import Model.Mail;
 
 import java.io.*;
@@ -7,7 +9,7 @@ import java.io.*;
 public class MailData {
     private String fileDirectoryNamebox;
     private String fileNamebox;
-    private Mail maillist;
+    private BucketItem maillist;
 
     public MailData(String fileDirectoryNamebox, String fileNamebox) {
         this.fileDirectoryNamebox = fileDirectoryNamebox;
@@ -40,14 +42,14 @@ public class MailData {
         while ((line = reader.readLine()) != null) {
             String[] data = line.split(",");
             Mail mail= new Mail(data[0], data[1], data[2], data[3], data[4],data[5]);
-            maillist.add(mail);
+            maillist.addItem(mail);
         }
         reader.close();
     }
 
-    public Mail getMaillist() {
+    public BucketItem getMaillist() {
         try {
-            maillist = new Mail();
+            maillist = new BucketItem();
             readData();
         } catch (FileNotFoundException e) {
             System.err.println(this.fileNamebox + " not found");
@@ -56,14 +58,14 @@ public class MailData {
         }
         return maillist;
     }
-    public void setMaillist(Mail maillist) {
+    public void setMaillist(BucketItem maillist) {
         String filePath = fileDirectoryNamebox + File.separator + fileNamebox;
         File file = new File(filePath);
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            for (Mail mail:maillist.getUserList()) {
+            for (Item mail:maillist.getBucketItem()) {
                 String line = mail.getUsername()+","+mail.getSender()+","+mail.getSize()+","+mail.getCompany()+","+mail.getRoomnum()+","+mail.getTime();
                 writer.append(line);
                 writer.newLine();

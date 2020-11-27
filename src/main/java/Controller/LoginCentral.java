@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.BucketCentralOfficer;
 import Model.CentralOfficer;
 import Service.CentralOfficerData;
 import javafx.event.ActionEvent;
@@ -18,7 +19,7 @@ import java.util.Calendar;
 
 public class LoginCentral {
     private CentralOfficerData centraldata;
-    private CentralOfficer centralList;
+    private BucketCentralOfficer centralList;
     @FXML TextField Userbtn;
     @FXML PasswordField Passwordbtn;
     @FXML Button backhomecentralbtn;
@@ -30,34 +31,47 @@ public class LoginCentral {
     }
 
     public void initialize(){
-        centralList = new CentralOfficer();
+        centralList = new BucketCentralOfficer();
         centraldata = new CentralOfficerData("data","CentralOfficer.csv");
         centralList = centraldata.getCentralList();
     }
 
     @FXML public void LoginBtnOnAction(ActionEvent event) throws IOException {
-        if(centralList.checkPassword(Userbtn.getText(),Passwordbtn.getText()) && centralList.checkStatus(Userbtn.getText())) {
-            nowCentral = centralList.getAcc(Userbtn.getText());
-            String time = new SimpleDateFormat("dd/MM/yy HH:mm:ss").format(Calendar.getInstance().getTime());
-            nowCentral.setTime(time);
-            centraldata.setCentralList(centralList);
-            Button c = (Button) event.getSource();
-            Stage stage_CentralloginPage = (Stage) c.getScene().getWindow();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/CentralHome.fxml"));
-            stage_CentralloginPage.setScene(new Scene(loader.load(), 882, 390));
+        if(Userbtn.getText().equals("") || Passwordbtn.getText().equals("") ){
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("ERROR");
+            alert.setContentText("Please fill all information.");
+            alert.showAndWait();}
+        else{
+            if(centralList.checkPassword(Userbtn.getText(),Passwordbtn.getText()) && centralList.checkStatus(Userbtn.getText())) {
+                nowCentral = centralList.getAcc(Userbtn.getText());
+                String time = new SimpleDateFormat("dd/MM/yy HH:mm:ss").format(Calendar.getInstance().getTime());
+                nowCentral.setTime(time);
+                centraldata.setCentralList(centralList);
+                Button c = (Button) event.getSource();
+                Stage stage_CentralloginPage = (Stage) c.getScene().getWindow();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/CentralHome.fxml"));
+                stage_CentralloginPage.setScene(new Scene(loader.load(), 882, 390));
 
-            stage_CentralloginPage.show();
+                stage_CentralloginPage.show();
+            }
+            else if (!centralList.checkStatus(Userbtn.getText())){
+                centralList.getAcc(Userbtn.getText()).setAttempt(centralList.getAcc(Userbtn.getText()).getAttempt()+1);
+                centraldata.setCentralList(centralList);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setHeaderText("");
+                alert.setTitle("Please contact admin");
+                alert.setContentText("Your user has been ban");
+                alert.showAndWait();
+            }
+            else{
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("ERROR");
+                alert.setContentText("INCORRECT USERNAME OR PASSWORD");
+                alert.showAndWait();
+            }
         }
-        else if (!centralList.checkStatus(Userbtn.getText())){
-            centralList.getAcc(Userbtn.getText()).setAttempt(centralList.getAcc(Userbtn.getText()).getAttempt()+1);
-            centraldata.setCentralList(centralList);
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setHeaderText("");
-            alert.setTitle("Please contact admin");
-            alert.setContentText("Your user has been ban");
-            alert.showAndWait();
 
-        }
     }
 
     @FXML public void backhomecentralbtnonaction(ActionEvent event) throws IOException {

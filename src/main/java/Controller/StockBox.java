@@ -1,21 +1,23 @@
 package Controller;
 
-import Model.Box;
-import Model.CentralOfficer;
-import Model.CustomerReader;
+import Model.*;
 
+import Model.Box;
 import Model.ReceiveBox;
 import Service.BoxData;
 import Service.CentralOfficerData;
 import Service.CustomerData;
 import Service.ReceiveBoxData;
 import javafx.application.Platform;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Optional;
@@ -23,25 +25,26 @@ import java.util.Optional;
 public class StockBox {
 
     @FXML
-    private TableView<Box> tablestockbox;
-    private ObservableList<Box> list;
+    private TableView<Item> tablestockbox;
+    private ObservableList<Item> list;
     private BoxData boxData;
-    private Box boxList,selectedBox;
-    private CustomerReader consumerList;
+    private Box selectedBox;
+    private BucketCustomer consumerList;
     private CustomerData customerData;
-    private CentralOfficer centralList;
+    private BucketCentralOfficer centralList;
     private CentralOfficerData centralOfficerData;
     private ReceiveBoxData receiveBoxDataDataSource;
-    private ReceiveBox receiveboxlist;
-
+    private BucketReceiveItem receiveboxlist;
+    private BucketItem boxList;
+    private Sortby sortby;
     @FXML
     private TextField searchstockbtn, usernamestockbtn;
     @FXML
-    private ComboBox<String> officestockbtn;
+    private ComboBox<String> officestockbtn,sortstock;
     @FXML
     private PasswordField passwordstockbtn;
     @FXML
-    private Button okstockbtn,recievestockbtn;
+    private Button recievestockbtn;
 
 
     public void initialize (){
@@ -56,30 +59,58 @@ public class StockBox {
         centralList = centralOfficerData.getCentralList();
         Platform.runLater(()->{
             showBoxData("");
-            for(CentralOfficer central : centralList.getUserList()) {
+            for(CentralOfficer central : centralList.getBucketCentralOfficer()) {
                 officestockbtn.getItems().add(central.getName());
             }
         });
         tablestockbox.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> {
             if (newValue != null){
-                showSelectData(newValue);
+                showSelectData((Box) newValue);
             }
         }));
+        sortstock.getItems().addAll("early date", "last date", "First Room number","Last Room number");
+        sortstock.valueProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (sortstock.getValue().equals("early date")) {
+                    sortby = null;
+                    sortby = new SortByEarlyTime();
+                } else if (sortstock.getValue().equals("last date")) {
+                    sortby = null;
+                    sortby = new SortByLastTime();
+                } else if (sortstock.getValue().equals("First Room number")) {
+                    sortby = null;
+                    sortby = new SortByFirstRoom();
+                }else if (sortstock.getValue().equals("Last Room number")) {
+                    sortby = null;
+                    sortby = new SortByLastRoom();
+                }
+            }
+        });
     }
-
+    public void handleSortBtn() throws ParseException {
+        if(sortby!=null){
+            sortby.sort(boxList);
+            showBoxData("");
+        }else{
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setContentText("Please select orders");
+            alert.showAndWait();
+        }
+    }
     public void showBoxData(String search){
-        Box boxes = new Box();
+        BucketItem box = new BucketItem();
         tablestockbox.getColumns().clear();
-        for (Box box : boxList.getUserList()){
-            if (box.getRoomnum().contains(search)){
-                boxes.add(box);
+        for (Item boxItem : boxList.getBucketItem()){
+            if (boxItem.getRoomnum().contains(search)){
+                box.addItem(boxItem);
             }
         }
         if (search.equals("searchstockbtn") || search.equals("")){
-            list = FXCollections.observableList(boxList.getUserList());
+            list = FXCollections.observableList(boxList.getBucketItem());
         }
         else{
-            list = FXCollections.observableList(boxes.getUserList());
+            list = FXCollections.observableList(box.getBucketItem());
         }
 
         tablestockbox.setItems(list);
@@ -104,7 +135,6 @@ public class StockBox {
 
         roomnum.setSortType(TableColumn.SortType.ASCENDING);
         tablestockbox.getColumns().addAll(sender,username,company,roomnum,level,size,tracking,time);
-        tablestockbox.getSortOrder().add(roomnum);
     }
     @FXML public void okstockboxbtnonaction(){
         showBoxData(searchstockbtn.getText());
@@ -141,13 +171,18 @@ public class StockBox {
                     String time = new SimpleDateFormat("dd/MM/yy HH:mm:ss").format(Calendar.getInstance().getTime());
                     ReceiveBox box = new ReceiveBox(selectedBox.getSender(),selectedBox.getUsername(),selectedBox.getCompany(), selectedBox.getRoomnum(), selectedBox.getLevel(),selectedBox.getSize(), selectedBox.getTacking(), time,officestockbtn.getValue());
 
-                    receiveboxlist.add(box);
+                    receiveboxlist.addItem(box);
                     receiveBoxDataDataSource.setlist(receiveboxlist);
-                    boxList.removeBox(selectedBox);
+                    boxList.removeItem(selectedBox);
                     this.boxData.setBoxlist(boxList);
                     clearData();
                     tablestockbox.refresh();
                 }
+            }else {
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Incorrect");
+                alert.setContentText("Incorrect username or password.");
+                alert.showAndWait();
             }
         }
     }

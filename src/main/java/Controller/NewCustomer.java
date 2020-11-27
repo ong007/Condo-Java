@@ -1,7 +1,6 @@
 package Controller;
 
-import Model.CentralOfficer;
-import Model.CustomerReader;
+import Model.*;
 import Model.Room;
 import Service.CentralOfficerData;
 import Service.CustomerData;
@@ -21,10 +20,10 @@ import java.io.IOException;
 
 public class NewCustomer {
     private CustomerData consumerdata;
-    private CustomerReader consumerlist;
-    private CentralOfficer centrallist;
+    private BucketCustomer consumerlist;
+    private BucketCentralOfficer centrallist;
     private CentralOfficerData centraldata;
-    private Room roomlist;
+    private BucketRoom roomlist;
     private RoomData roomdata;
     @FXML Button backnewconsumerbtn, summitnewconsumerbtn;
     @FXML TextField nameconsumerbtn, surnameconsumerbtn, Newuserconsumerbtn, Newpasswordconsumerbtn, Newconfirmpasswordconsumerbtn;
@@ -32,14 +31,14 @@ public class NewCustomer {
 
 
     public void initialize(){
-        consumerlist = new CustomerReader();
+        consumerlist = new BucketCustomer();
         consumerdata = new CustomerData("data","Customer.csv");
         consumerlist = consumerdata.getConsumerList();
         roomdata = new RoomData("data","Room.csv");
         roomlist = roomdata.getRoomlist();
         centraldata = new CentralOfficerData("data","CentralOfficer.csv");
         centrallist = centraldata.getCentralList();
-        for (Room room1: roomlist.getUserList()){
+        for (Room room1: roomlist.getBucketRoom()){
             if(room1.getNowarrival() > 0) {
                 roomconsumerbtn.getItems().add(room1.getBuilding() + room1.getFloor() + room1.getRoom() + " : " + room1.getType());
             }

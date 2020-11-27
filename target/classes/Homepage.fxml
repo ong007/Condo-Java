@@ -55,14 +55,14 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="121.0" layoutY="152.0" prefHeight="27.0" prefWidth="324.0" text="พบกับคอนโดที่สะดวกสบายที่สุดบนทำเลที่ดีที่สุด" textFill="#908a8a">
+      <Label layoutX="145.0" layoutY="152.0" prefHeight="27.0" prefWidth="425.0" text="พบกับคอนโดที่สะดวกสบายที่สุดบนทำเลที่ดีที่สุด" textFill="#908a8a">
          <font>
-            <Font size="18.0" />
+            <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="96.0" layoutY="187.0" prefHeight="27.0" prefWidth="374.0" text="ใกล้มหาวิทยาลัยเกษตรศาสตร์ บางเขน เเละเเนวบีทีเอส" textFill="#868585">
+      <Label layoutX="130.0" layoutY="194.0" prefHeight="27.0" prefWidth="439.0" text="ใกล้มหาวิทยาลัยเกษตรศาสตร์ บางเขน เเละเเนวบีทีเอส" textFill="#868585">
          <font>
-            <Font size="18.0" />
+            <Font size="15.0" />
          </font>
       </Label>
       <Button fx:id="Adminbtn" layoutX="790.0" layoutY="353.0" mnemonicParsing="false" onAction="#AdminBtnOnAction" style="-fx-background-color: #FF3333; -fx-background-radius: 10 10 10;" text=" Admin &gt;" textFill="#d3d2d2" />

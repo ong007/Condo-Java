@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="390.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CustomerInfo">
    <children>
       <ImageView fitHeight="446.0" fitWidth="739.0" layoutY="-11.0" opacity="0.33" pickOnBounds="true" preserveRatio="true">
@@ -29,17 +28,17 @@
          <children>
             <Label prefHeight="51.0" prefWidth="530.0" text="1. สามารถเปลี่ยนรหัสผ่านของลูกบ้านเองได้">
                <font>
-                  <Font size="25.0" />
+                  <Font size="20.0" />
                </font>
             </Label>
             <Label layoutY="102.0" prefHeight="51.0" prefWidth="530.0" text="3. สามารถดูของที่รับได้เเล้วได้">
                <font>
-                  <Font size="23.0" />
+                  <Font size="20.0" />
                </font>
             </Label>
             <Label layoutY="51.0" prefHeight="51.0" prefWidth="530.0" text="2. สามารถดูของที่เข้ามาส่งได้เฉพาะห้องตัวเอง">
                <font>
-                  <Font size="25.0" />
+                  <Font size="20.0" />
                </font>
             </Label>
          </children>

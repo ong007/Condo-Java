@@ -21,10 +21,6 @@ public class ReceiveMail {
         this.nameofficer = nameofficer;
     }
 
-    public ReceiveMail(){
-        userListMail = new ArrayList<>();
-    }
-
     public String getSender() {
         return sender;
     }
@@ -77,33 +73,5 @@ public class ReceiveMail {
         return nameofficer;
     }
 
-    public void setNameofficer(String nameofficer) {
-        this.nameofficer = nameofficer;
-    }
-
-    private ArrayList<ReceiveMail> userListMail;
-
-    public ArrayList<ReceiveMail> getUserList1() {
-        return userListMail;
-    }
-
-    public void setUserList1(ArrayList<ReceiveMail> userList1) {
-        this.userListMail = userList1;
-    }
-
-    public void add(ReceiveMail box){
-        userListMail.add(box);
-    }
-
-    public ReceiveMail getListByRoomNum(String roomNum) {
-        String[] room = roomNum.split(" : ");
-        ReceiveMail receiveMailList = new ReceiveMail();
-        for (ReceiveMail mail : userListMail) {
-            if (mail.getRoomnum().equals(room[0])) {
-                receiveMailList.add(mail);
-            }
-        }
-        return receiveMailList;
-    }
 }
 

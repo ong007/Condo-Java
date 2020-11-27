@@ -1,5 +1,6 @@
 package Service;
 
+import Model.BucketRoom;
 import Model.Room;
 
 import java.io.*;
@@ -7,7 +8,7 @@ import java.io.*;
 public class RoomData {
     private String fileDirectoryName1;
     private String fileName;
-    private Room roomlist;
+    private BucketRoom roomlist;
 
     public RoomData(String fileDirectoryName1, String fileName1) {
         this.fileDirectoryName1 = fileDirectoryName1;
@@ -45,9 +46,9 @@ public class RoomData {
         reader.close();
     }
 
-    public Room getRoomlist() {
+    public BucketRoom getRoomlist() {
         try {
-            roomlist = new Room();
+            roomlist = new BucketRoom();
             readData();
         } catch (FileNotFoundException e) {
             System.err.println(this.fileName + " not found");
@@ -56,14 +57,14 @@ public class RoomData {
         }
         return roomlist;
     }
-    public void setRoomlist(Room roomlist) {
+    public void setRoomlist(BucketRoom roomlist) {
         String filePath = fileDirectoryName1 + File.separator + fileName;
         File file = new File(filePath);
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            for (Room room:roomlist.getUserList()) {
+            for (Room room:roomlist.getBucketRoom()) {
                 String line = room.getBuilding()+","+room.getType()+","+room.getFloor()+","+room.getRoom()+","+(room.getBuilding()+room.getFloor()+room.getRoom())+","+room.getMaxarrival()+","+room.getNowarrival();
                 writer.append(line);
                 writer.newLine();

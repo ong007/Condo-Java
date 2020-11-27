@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.BucketRoom;
 import Model.CentralOfficer;
 import Model.Room;
 import Service.RoomData;
@@ -20,12 +21,12 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class ListRoom {
-    @FXML Button okroomlistbtn,backroomlistbtn;
+    @FXML Button backroomlistbtn;
     @FXML TextField searchroomlistbtn;
     @FXML TableView<Room> tableroomlistbtn;
     private ObservableList<Room> list;
 
-    private Room roomlist;
+    private BucketRoom roomlist;
     private RoomData roomdata;
 
     public void initialize(){
@@ -35,7 +36,7 @@ public class ListRoom {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                if(!roomlist.getUserList().isEmpty()){
+                if(!roomlist.getBucketRoom().isEmpty()){
                     showData("");
                 }
             }
@@ -52,18 +53,18 @@ public class ListRoom {
     }
 
     public void showData(String search){
-        Room room = new Room();
+        BucketRoom room = new BucketRoom();
         tableroomlistbtn.getColumns().clear();
-        for (Room room1:roomlist.getUserList()){
+        for (Room room1:roomlist.getBucketRoom()){
             if (room1.getRoomnum().contains(search)){
                 room.add(room1);
             }
         }
         if (search.equals("Search") || search.equals("")){
-            list = FXCollections.observableList(roomlist.getUserList());
+            list = FXCollections.observableList(roomlist.getBucketRoom());
         }
         else{
-            list = FXCollections.observableList(room.getUserList());
+            list = FXCollections.observableList(room.getBucketRoom());
         }
 
         tableroomlistbtn.setItems(list);

@@ -1,5 +1,7 @@
 package Controller;
 
+import Model.BucketCentralOfficer;
+import Model.BucketCustomer;
 import Model.CentralOfficer;
 import Model.CustomerReader;
 import Service.CentralOfficerData;
@@ -19,8 +21,8 @@ import java.io.IOException;
 
 public class NewUserCentral {
     private CentralOfficerData centraldata;
-    private CentralOfficer centralList;
-    private CustomerReader consumerlist;
+    private BucketCentralOfficer centralList;
+    private BucketCustomer consumerlist;
     private CustomerData consumerdata;
     @FXML
     TextField Newuseradminbtn,nameuserbtn,surnameuserbtn,teluserbtn,emailuserbtn;
@@ -29,7 +31,7 @@ public class NewUserCentral {
     @FXML
     Button backcentralbtn;
     public void initialize(){
-        centralList = new CentralOfficer();
+        centralList = new BucketCentralOfficer();
         centraldata = new CentralOfficerData("data","CentralOfficer.csv");
         centralList = centraldata.getCentralList();
         consumerdata = new CustomerData("data","Customer.csv");

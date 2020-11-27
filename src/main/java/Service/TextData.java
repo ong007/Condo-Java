@@ -1,5 +1,7 @@
 package Service;
 
+import Model.BucketItem;
+import Model.Item;
 import Model.Text;
 
 import java.io.*;
@@ -7,7 +9,7 @@ import java.io.*;
 public class TextData {
     private String fileDirectoryNamebox;
     private String fileNamebox;
-    private Text textlist;
+    private BucketItem textlist;
 
     public TextData(String fileDirectoryNamebox, String fileNamebox) {
         this.fileDirectoryNamebox = fileDirectoryNamebox;
@@ -40,14 +42,14 @@ public class TextData {
         while ((line = reader.readLine()) != null) {
             String[] data = line.split(",");
             Text text= new Text(data[0], data[1], data[2], data[3], data[4], data[5],data[6]);
-            textlist.add(text);
+            textlist.addItem(text);
         }
         reader.close();
     }
 
-    public Text getTextlist() {
+    public BucketItem getTextlist() {
         try {
-            textlist = new Text();
+            textlist = new BucketItem();
             readData();
         } catch (FileNotFoundException e) {
             System.err.println(this.fileNamebox + " not found");
@@ -56,7 +58,7 @@ public class TextData {
         }
         return textlist;
     }
-    public void setTextlist(Text textlist) {
+    public void setTextlist(BucketItem textlist) {
         String filePath = fileDirectoryNamebox + File.separator + fileNamebox;
         File file = new File(filePath);
         FileWriter fileWriter = null;
@@ -64,11 +66,11 @@ public class TextData {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
 
-            for (Text text:textlist.getUserList()) {
-
-                String line = text.getUsername()+","+text.getSender()+","+text.getSize()+","+text.getCompany()+","+text.getRoomnum()+","+text.getTime()+","+text.getLevel();
-                writer.append(line);
-                writer.newLine();
+            for (Item text:textlist.getBucketItem()) {
+                if (text instanceof Text){
+                    String line = text.getUsername()+","+text.getSender()+","+text.getSize()+","+text.getCompany()+","+text.getRoomnum()+","+text.getTime()+","+ ((Text) text).getLevel();
+                    writer.append(line);
+                    writer.newLine();}
             }
             writer.close();
         } catch (IOException e) {

@@ -1,5 +1,6 @@
 package Service;
 
+import Model.BucketCustomer;
 import Model.CustomerReader;
 
 import java.io.*;
@@ -7,7 +8,7 @@ import java.io.*;
 public class CustomerData {
     private String fileDirectoryName1;
     private String fileName;
-    private CustomerReader consumerList;
+    private BucketCustomer consumerList;
 
     public CustomerData(String fileDirectoryName1, String fileName1) {
         this.fileDirectoryName1 = fileDirectoryName1;
@@ -45,9 +46,9 @@ public class CustomerData {
         reader.close();
     }
 
-    public CustomerReader getConsumerList() {
+    public BucketCustomer getConsumerList() {
         try {
-            consumerList = new CustomerReader();
+            consumerList = new BucketCustomer();
             readData();
         } catch (FileNotFoundException e) {
             System.err.println(this.fileName + " not found");
@@ -56,14 +57,14 @@ public class CustomerData {
         }
         return consumerList;
     }
-    public void setConsumerList(CustomerReader consumerList) {
+    public void setConsumerList(BucketCustomer consumerList) {
         String filePath = fileDirectoryName1 + File.separator + fileName;
         File file = new File(filePath);
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            for (CustomerReader consumer:consumerList.getUserList()) {
+            for (CustomerReader consumer:consumerList.getBucketCustomer()) {
                 String line = consumer.getName()+","+consumer.getSurname()+","+consumer.getRoom()+","+consumer.getFloor()+","+consumer.getBuilding()+","+(consumer.getBuilding()+consumer.getFloor()+consumer.getRoom())+","+consumer.getUsername()+","+consumer.getPassword();
                 writer.append(line);
                 writer.newLine();

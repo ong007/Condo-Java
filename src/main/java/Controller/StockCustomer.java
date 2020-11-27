@@ -1,8 +1,7 @@
 package Controller;
 
+import Model.*;
 import Model.Box;
-import Model.CustomerReader;
-import Model.Mail;
 import Model.Text;
 import Service.BoxData;
 import Service.CustomerData;
@@ -21,22 +20,24 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.HashMap;
 
 public class StockCustomer {
     @FXML Button backbtn;
-    @FXML private TableView<Box> tablestockbox;
-    private ObservableList<Box> boxObservableList;
-    @FXML private TableView<Mail> tablestockmail;
-    private ObservableList<Mail> mailObservableList;
-    @FXML private TableView<Text> tablestocktext;
-    private ObservableList<Text> textObservableList;
+    @FXML private TableView<Item> tablestockbox;
+    private ObservableList<Item> boxObservableList;
+    @FXML private TableView<Item> tablestockmail;
+    private ObservableList<Item> mailObservableList;
+    @FXML private TableView<Item> tablestocktext;
+    private ObservableList<Item> textObservableList;
     private MailData mailData;
-    private Mail maillist;
+    private BucketItem maillist;
     private TextData textData;
-    private Text textList;
+    private BucketItem textList;
     private BoxData boxData;
-    private Box boxList;
-    private CustomerReader consumerList, consumer;
+    private BucketItem boxList;
+    private BucketCustomer consumerList;
+    private CustomerReader consumer;
     private CustomerData customerData;
     public void setConsumer(CustomerReader consumer){
         this.consumer = consumer;
@@ -69,8 +70,8 @@ public class StockCustomer {
         tablestocktext.setVisible(false);
         tablestockbox.setVisible(true);
         tablestockbox.getColumns().clear();
-        Box matchedRoomNum = boxList.getListByRoomNum(consumer.getRoomnum());
-        boxObservableList = FXCollections.observableList(matchedRoomNum.getUserList());
+        BucketItem matchedRoomNum = boxList.getListByRoomNum(consumer.getRoomnum());
+        boxObservableList = FXCollections.observableList(matchedRoomNum.getBucketItem());
         tablestockbox.setItems(boxObservableList);
 
         TableColumn sender = new TableColumn("SENDER");
@@ -100,8 +101,8 @@ public class StockCustomer {
         tablestocktext.setVisible(false);
         tablestockbox.setVisible(false);
         tablestockmail.getColumns().clear();
-        Mail matchedRoomNum = maillist.getListByRoomNum(consumer.getRoomnum());
-        mailObservableList = FXCollections.observableList(matchedRoomNum.getUserList());
+        BucketItem matchedRoomNum = maillist.getListByRoomNum(consumer.getRoomnum());
+        mailObservableList = FXCollections.observableList(matchedRoomNum.getBucketItem());
         tablestockmail.setItems(mailObservableList);
 
         TableColumn sender = new TableColumn("SENDER");
@@ -129,8 +130,8 @@ public class StockCustomer {
         tablestocktext.setVisible(true);
         tablestockbox.setVisible(false);
         tablestocktext.getColumns().clear();
-        Text matchedRoomNum = textList.getListByRoomNum(consumer.getRoomnum());
-        textObservableList = FXCollections.observableList(matchedRoomNum.getUserList());
+        BucketItem matchedRoomNum = textList.getListByRoomNum(consumer.getRoomnum());
+        textObservableList = FXCollections.observableList(matchedRoomNum.getBucketItem());
         tablestocktext.setItems(textObservableList);
 
         TableColumn sender = new TableColumn("SENDER");
@@ -154,12 +155,16 @@ public class StockCustomer {
     }
 
     @FXML public void textbtnonaction(ActionEvent event) throws IOException {
-        showTextData();}
+        showTextData();
+    }
 
     @FXML public void boxbtnonaction(ActionEvent event) throws IOException {
-        showBoxData();}
+        showBoxData();
+    }
 
     @FXML public void mailbtnonaction(ActionEvent event) throws IOException {
-        showMailData();}
+        showMailData();
+    }
+
 }
 

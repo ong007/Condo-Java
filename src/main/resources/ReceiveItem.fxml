@@ -20,13 +20,13 @@
       <Button fx:id="backreceivebtn" layoutX="37.0" layoutY="349.0" mnemonicParsing="false" onAction="#backrecievebtnonaction" text="BACK" />
       <AnchorPane fx:id="showliststock" layoutX="38.0" layoutY="90.0" prefHeight="243.0" prefWidth="840.0">
          <children>
-            <Label layoutX="204.0" layoutY="90.0" text="Select List down below" textFill="WHITE">
+            <Label layoutX="197.0" layoutY="91.0" text="Select List down below" textFill="WHITE">
                <font>
                   <Font size="43.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <ComboBox fx:id="selectlist" layoutX="385.0" layoutY="349.0" prefWidth="150.0" />
+      <ComboBox fx:id="selectlist" layoutX="378.0" layoutY="350.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

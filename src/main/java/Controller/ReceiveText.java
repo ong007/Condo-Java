@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.BucketReceiveItem;
 import Model.ReceiveBox;
 import Model.ReceiveMail;
 import Service.BoxData;
@@ -16,15 +17,15 @@ import javafx.scene.control.cell.PropertyValueFactory;
 
 public class ReceiveText {
     @FXML
-    private TableView<Model.ReceiveText> tablestockbox;
-    private ObservableList<Model.ReceiveText> list;
+    private TableView<ReceiveMail> tablestockbox;
+    private ObservableList<ReceiveMail> list;
     private BoxData boxData;
     private ReceiveMail boxList;
     private Model.ReceiveText selectedBox;
 
 
     private ReceiveTextData receiveTextData;
-    private Model.ReceiveText receiveTextlist;
+    private BucketReceiveItem receiveTextlist;
 
     @FXML private TextField searchreceivebtn, namebtn,surnamenamestockbtn,nameofficerreceive;
     @FXML private Button okreceivrbtn;
@@ -37,32 +38,32 @@ public class ReceiveText {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                if(!receiveTextlist.getUserList1().isEmpty()){
+                if(!receiveTextlist.getBucketReceiveItem().isEmpty()){
                     showData("");
                 }
             }
         });
         tablestockbox.getSelectionModel().selectedItemProperty().addListener(((observable, oldValue, newValue) -> {
             if (newValue != null){
-                showSelectData(newValue);
+                showSelectData((Model.ReceiveText) newValue);
             }
         }));
     }
 
 
     public void showData(String search){
-        Model.ReceiveText text = new Model.ReceiveText();
+        BucketReceiveItem text = new BucketReceiveItem();
         tablestockbox.getColumns().clear();
-        for (Model.ReceiveText consumerreader1:receiveTextlist.getUserList1()){
+        for (ReceiveMail consumerreader1:receiveTextlist.getBucketReceiveItem()){
             if (consumerreader1.getRoomnum().contains(search)){
-                text.add(consumerreader1);
+                text.addItem(consumerreader1);
             }
         }
         if (search.equals("Search") || search.equals("")){
-            list = FXCollections.observableList(receiveTextlist.getUserList1());
+            list = FXCollections.observableList(receiveTextlist.getBucketReceiveItem());
         }
         else{
-            list = FXCollections.observableList(text.getUserList1());
+            list = FXCollections.observableList(text.getBucketReceiveItem());
         }
 
         tablestockbox.setItems(list);

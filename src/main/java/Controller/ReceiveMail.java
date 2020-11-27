@@ -1,6 +1,8 @@
 package Controller;
 
+import Model.BucketReceiveItem;
 import Model.ReceiveBox;
+import Model.ReceiveText;
 import Service.BoxData;
 import Service.ReceiveMailData;
 import javafx.application.Platform;
@@ -18,11 +20,12 @@ public class ReceiveMail {
     private TableView<Model.ReceiveMail> tablestockbox;
     private ObservableList<Model.ReceiveMail> list;
     private BoxData boxData;
-    private Model.ReceiveMail boxList,selectedBox;
+    private ReceiveMail boxList;
+    private Model.ReceiveMail selectedBox;
 
 
     private ReceiveMailData receiveMailData;
-    private Model.ReceiveMail receiveMaillist;
+    private BucketReceiveItem receiveMaillist;
 
     @FXML private TextField searchreceivebtn, namebtn,surnamenamestockbtn,nameofficerreceive;
     @FXML private Button okreceivrbtn;
@@ -35,8 +38,9 @@ public class ReceiveMail {
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                if(!receiveMaillist.getUserList1().isEmpty()){
+                if(!receiveMaillist.getBucketReceiveItem().isEmpty()){
                     showData("");
+
                 }
             }
         });
@@ -49,18 +53,18 @@ public class ReceiveMail {
 
 
     public void showData(String search){
-        Model.ReceiveMail box = new Model.ReceiveMail();
+        BucketReceiveItem mail = new BucketReceiveItem();
         tablestockbox.getColumns().clear();
-        for (Model.ReceiveMail consumerreader1:receiveMaillist.getUserList1()){
+        for (Model.ReceiveMail consumerreader1:receiveMaillist.getBucketReceiveItem()){
             if (consumerreader1.getRoomnum().contains(search)){
-                box.add(consumerreader1);
+                mail.addItem(consumerreader1);
             }
         }
         if (search.equals("Search") || search.equals("")){
-            list = FXCollections.observableList(receiveMaillist.getUserList1());
+            list = FXCollections.observableList(receiveMaillist.getBucketReceiveItem());
         }
         else{
-            list = FXCollections.observableList(box.getUserList1());
+            list = FXCollections.observableList(mail.getBucketReceiveItem());
         }
 
         tablestockbox.setItems(list);

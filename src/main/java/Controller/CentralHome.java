@@ -1,7 +1,6 @@
 package Controller;
 
-import Model.CentralOfficer;
-import Model.CustomerReader;
+import Model.*;
 
 import Model.Room;
 import Service.CustomerData;
@@ -25,17 +24,18 @@ public class CentralHome {
     TableView<CustomerReader> table;
     @FXML Button Newmessengerbtn,Homecentralhomebtn,Newconsumerbtn,Removeconsumerbtn,Newpasswordcentralhomebtn;
     @FXML TextField nameconsumertext,surnamecomsumertext,usernameconsumertext,searchCentralhomebtn;
-    private CustomerReader customerReader,selectedCentral;
+    private BucketCustomer customerReader;
+    private CustomerReader selectedCentral;
     private CustomerData customerData;
     private ObservableList<CustomerReader> list;
-    private Room roomlist;
+    private BucketRoom roomlist;
     private RoomData roomdata;
 
 
 
     public void initialize(){
         Removeconsumerbtn.setDisable(true);
-        customerReader = new CustomerReader();
+        customerReader = new BucketCustomer();
         customerData = new CustomerData("data" , "Customer.csv");
         customerReader = customerData.getConsumerList();
         roomdata = new RoomData("data","Room.csv");
@@ -43,7 +43,7 @@ public class CentralHome {
      Platform.runLater(new Runnable() {
             @Override
             public void run() {
-                if(!customerReader.getUserList().isEmpty()){
+                if(!customerReader.getBucketCustomer().isEmpty()){
                     showData("");
                 }
             }
@@ -119,18 +119,18 @@ public class CentralHome {
     }
 
     public void showData(String search){
-        CustomerReader consumer = new CustomerReader();
+        BucketCustomer consumer = new BucketCustomer();
         table.getColumns().clear();
-        for (CustomerReader customerReader1 : customerReader.getUserList()){
+        for (CustomerReader customerReader1 : customerReader.getBucketCustomer()){
             if (customerReader1.getRoomnum().contains(search)){
                 consumer.add(customerReader1);
             }
         }
         if (search.equals("Search") || search.equals("")){
-            list = FXCollections.observableList(customerReader.getUserList());
+            list = FXCollections.observableList(customerReader.getBucketCustomer());
         }
         else{
-            list = FXCollections.observableList(consumer.getUserList());
+            list = FXCollections.observableList(consumer.getBucketCustomer());
         }
 
         table.setItems(list);

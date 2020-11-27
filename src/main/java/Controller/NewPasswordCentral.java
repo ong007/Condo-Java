@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.BucketCentralOfficer;
 import Model.CentralOfficer;
 import Service.CentralOfficerData;
 import javafx.event.ActionEvent;
@@ -15,7 +16,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class NewPasswordCentral {
-    private CentralOfficer central;
+    private BucketCentralOfficer central;
     private CentralOfficerData centralData;
     @FXML Button backnewpasswordcentralbtn,submitnewpasswordcentralbtn;
     @FXML
@@ -23,7 +24,7 @@ public class NewPasswordCentral {
     @FXML
     PasswordField passwordnewcentralbtn,newpasswordnewcentral;
     public void initialize(){
-        central = new CentralOfficer();
+        central = new BucketCentralOfficer();
         centralData = new CentralOfficerData("data","CentralOfficer.csv");
         central = centralData.getCentralList();
     }
@@ -35,34 +36,26 @@ public class NewPasswordCentral {
         stage_back.show();}
 
     @FXML public void submitnewpasswordcentralbtnonaction(ActionEvent event) throws IOException {
-        if(usernamenewcentralbtn.getText().equals("") || passwordnewcentralbtn.getText().equals("") || newpasswordnewcentral.getText().equals("") ){
+        if (usernamenewcentralbtn.getText().equals("") || passwordnewcentralbtn.getText().equals("") || newpasswordnewcentral.getText().equals("")) {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("ERROR");
             alert.setContentText("Please fill all information.");
-            alert.showAndWait();}
-        else{
-            if (central.checkPassword(usernamenewcentralbtn.getText(),passwordnewcentralbtn.getText())){
-                central.changePassword(usernamenewcentralbtn.getText(),passwordnewcentralbtn.getText(),newpasswordnewcentral.getText());
+            alert.showAndWait();
+        } else {
+            if (central.checkPassword(usernamenewcentralbtn.getText(), passwordnewcentralbtn.getText())) {
+                central.changePassword(usernamenewcentralbtn.getText(), passwordnewcentralbtn.getText(), newpasswordnewcentral.getText());
                 centralData.setCentralList(central);
                 Button b = (Button) event.getSource();
                 Stage stage_submit = (Stage) b.getScene().getWindow();
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/Homepage.fxml"));
                 stage_submit.setScene(new Scene(loader.load(), 882, 390));
                 stage_submit.show();
-            }
-            else {
+            } else {
                 Alert alert = new Alert(Alert.AlertType.WARNING);
                 alert.setTitle("ERROR");
                 alert.setContentText("INCORRECT USERNAME OR PASSWORD");
                 alert.showAndWait();
             }
         }
-//        central.changePassword(usernamenewcentralbtn.getText(),passwordnewcentralbtn.getText(),newpasswordnewcentral.getText());
-//        centralData.setCentralList(central);
-//        Button b = (Button) event.getSource();
-//        Stage stage_submit = (Stage) b.getScene().getWindow();
-//        FXMLLoader loader = new FXMLLoader(getClass().getResource("/CentralHome.fxml"));
-//        stage_submit.setScene(new Scene(loader.load(), 882, 390));
-//        stage_submit.show();
     }
 }

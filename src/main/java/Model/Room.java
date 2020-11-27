@@ -11,11 +11,6 @@ public class Room {
     private int maxarrival;
     private int nowarrival;
 
-    private ArrayList<Room> userList1;
-
-    public Room(){
-        userList1 = new ArrayList<Room>();
-    }
 
     public Room(String building, String type, String floor, String room, String roomnum, int maxarrival, int nowarrival){
         this.building = building;
@@ -26,33 +21,17 @@ public class Room {
         this.maxarrival = maxarrival;
         this.nowarrival = nowarrival;
     }
-    public void add(Room room){
-
-        userList1.add(room);
-    }
 
     public String getBuilding() {
         return building;
-    }
-
-    public void setBuilding(String building) {
-        this.building = building;
     }
 
     public String getType() {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public String getFloor() {
         return floor;
-    }
-
-    public void setFloor(String floor) {
-        this.floor = floor;
     }
 
     public String getRoom() {
@@ -63,16 +42,8 @@ public class Room {
         this.room = room;
     }
 
-    public  ArrayList<Room> getUserList() {
-        return userList1;
-    }
-
     public int getMaxarrival() {
         return maxarrival;
-    }
-
-    public void setMaxarrival(int maxarrival) {
-        this.maxarrival = maxarrival;
     }
 
     public int getNowarrival() {
@@ -91,27 +62,5 @@ public class Room {
         this.nowarrival = nowarrival;
     }
 
-    public boolean checkAddRoom(String roomNumber){
-        for(Room room : userList1){
-            if(room.getRoomnum().equals(roomNumber)){
-                return true;
-            }
-        }return false;
-    }
 
-    public void setMaxRoom(String roomNumber){
-        for(Room room : userList1){
-            if(room.getRoomnum().equals(roomNumber)){
-                room.setNowarrival(room.getNowarrival() - 1);
-            }
-        }
-    }
-
-    public void setRemoveRoom(String roomNumber){
-        for(Room room : userList1){
-            if(room.getRoomnum().equals(roomNumber)){
-                room.setNowarrival(room.getNowarrival() + 1);
-            }
-        }
-    }
 }

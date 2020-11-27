@@ -1,4 +1,6 @@
 package Controller;
+import Model.BucketCustomer;
+import Model.BucketItem;
 import Model.Item;
 import Model.CustomerReader;
 
@@ -27,18 +29,18 @@ public class Mail {
     @FXML Button Backmailbtn,Summitmailbtn;
 
     private MailData maildata;
-    private Model.Mail maillist,nowmail;
+    private BucketItem maillist;
     private CustomerData consumerdata;
-    private CustomerReader consumerlist;
+    private BucketCustomer consumerlist;
     private Item item;
     public void initialize(){
         item = new Item();
-        maillist = new Model.Mail();
+        maillist = new BucketItem();
         maildata = new MailData("data","/Mail.csv");
         maillist = maildata.getMaillist();
         consumerdata = new CustomerData("data","Customer.csv");
         consumerlist = consumerdata.getConsumerList();
-        for (CustomerReader customerReader1 : consumerlist.getUserList()){
+        for (CustomerReader customerReader1 : consumerlist.getBucketCustomer()){
 
             roomconsumermailbtn.getItems().add(customerReader1.getName() + " : " + customerReader1.getRoomnum());
 
@@ -65,7 +67,7 @@ public class Mail {
             String[] roomNum = roomconsumermailbtn.getValue().split(" : ");
 
             Model.Mail mail = new Model.Mail(namemailbtn.getText(),sendermailbtn.getText(),sizemailbtn.getText(),companymailbtn.getText(),roomNum[1],time);
-            maillist.add(mail);
+            maillist.addItem(mail);
             item.add(mail);
             maildata.setMaillist(maillist);
             Button a = (Button) event.getSource();

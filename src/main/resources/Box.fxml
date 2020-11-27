@@ -36,7 +36,7 @@
             <MenuItem fx:id="option3boxbtn" mnemonicParsing="false" onAction="#option3boxbtnonaction" text="RECEIVED" />
          </items>
       </MenuButton>
-      <Button fx:id="Summitboxbtn" layoutX="746.0" layoutY="328.0" mnemonicParsing="false" onAction="#Summitboxbtnonaction" prefHeight="25.0" prefWidth="63.0" text="SUMMIT" />
+      <Button fx:id="Summitboxbtn" layoutX="746.0" layoutY="328.0" mnemonicParsing="false" onAction="#Summitboxbtnonaction" prefHeight="25.0" prefWidth="86.0" text="SUMMIT" />
       <Button fx:id="Backboxbtn" layoutX="75.0" layoutY="328.0" mnemonicParsing="false" onAction="#BackBoxBtnOnAcTion" prefHeight="25.0" prefWidth="57.0" text="BACK" />
       <TextField fx:id="sizeboxbtn" layoutX="555.0" layoutY="139.0" prefHeight="25.0" prefWidth="75.0" promptText="     SIZE" />
       <TextField fx:id="trackingboxbtn" layoutX="43.0" layoutY="259.0" prefHeight="25.0" prefWidth="178.0" promptText="TRACKING" />

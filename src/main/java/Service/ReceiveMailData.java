@@ -1,13 +1,15 @@
 package Service;
 
+import Model.BucketReceiveItem;
 import Model.ReceiveMail;
+import Model.ReceiveText;
 
 import java.io.*;
 
 public class ReceiveMailData {
     private String fileDirectoryNamebox;
     private String fileNamebox;
-    private ReceiveMail receivemaillist;
+    private BucketReceiveItem receivemaillist;
 
     public ReceiveMailData(String fileDirectoryNamebox, String fileNamebox) {
         this.fileDirectoryNamebox = fileDirectoryNamebox;
@@ -40,14 +42,14 @@ public class ReceiveMailData {
         while ((line = reader.readLine()) != null) {
             String[] data = line.split(",");
             ReceiveMail mail= new ReceiveMail(data[0], data[1], data[2], data[3], data[4],data[5],data[6]);
-            receivemaillist.add(mail);
+            receivemaillist.addItem(mail);
         }
         reader.close();
     }
 
-    public ReceiveMail getReceivemaillist() {
+    public BucketReceiveItem getReceivemaillist() {
         try {
-            receivemaillist = new ReceiveMail();
+            receivemaillist = new BucketReceiveItem();
             readData();
         } catch (FileNotFoundException e) {
             System.err.println(this.fileNamebox + " not found");
@@ -56,14 +58,14 @@ public class ReceiveMailData {
         }
         return receivemaillist;
     }
-    public void setMaillist(ReceiveMail maillist) {
+    public void setMaillist(BucketReceiveItem maillist) {
         String filePath = fileDirectoryNamebox + File.separator + fileNamebox;
         File file = new File(filePath);
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            for (ReceiveMail mail:receivemaillist.getUserList1()) {
+            for (ReceiveMail mail:receivemaillist.getBucketReceiveItem()) {
                 String line = mail.getSender()+","+mail.getUsername()+","+mail.getCompany()+","+mail.getRoomnum()+","+mail.getSize()+","+mail.getTime()+","+mail.getNameofficer();
                 writer.append(line);
                 writer.newLine();

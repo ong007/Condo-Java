@@ -38,8 +38,8 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <Button fx:id="createroombtn" layoutX="760.0" layoutY="322.0" mnemonicParsing="false" onAction="#createroombtnonaction" prefHeight="25.0" prefWidth="57.0" text="CREATE" />
+      <Button fx:id="createroombtn" layoutX="760.0" layoutY="322.0" mnemonicParsing="false" onAction="#createroombtnonaction" prefHeight="25.0" prefWidth="80.0" text="CREATE" />
       <Button fx:id="backroombtn" layoutX="65.0" layoutY="322.0" mnemonicParsing="false" onAction="#backroombtnonaction" prefHeight="25.0" prefWidth="57.0" text="BACK" />
-      <Button fx:id="checkroombtn" layoutX="677.0" layoutY="322.0" mnemonicParsing="false" onAction="#checkroombtnonaction" prefHeight="25.0" prefWidth="57.0" text="CHECK" />
+      <Button fx:id="checkroombtn" layoutX="654.0" layoutY="322.0" mnemonicParsing="false" onAction="#checkroombtnonaction" prefHeight="25.0" prefWidth="80.0" text="CHECK" />
    </children>
 </AnchorPane>

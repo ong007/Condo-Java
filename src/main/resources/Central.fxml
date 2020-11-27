@@ -53,7 +53,7 @@
       <AnchorPane layoutY="277.0" prefHeight="103.0" prefWidth="890.0">
          <children>
             <Button fx:id="Backcentralmessagebtn" layoutX="53.0" layoutY="39.0" mnemonicParsing="false" onAction="#BackCentralMessageBtnOnAction" text="BACK" />
-            <Button fx:id="checkcentralbtn" layoutX="769.0" layoutY="35.0" mnemonicParsing="false" onAction="#checkcentralbtnonaction" prefHeight="25.0" prefWidth="57.0" text="CHECK" />
+            <Button fx:id="checkcentralbtn" layoutX="769.0" layoutY="35.0" mnemonicParsing="false" onAction="#checkcentralbtnonaction" prefHeight="25.0" prefWidth="74.0" text="CHECK" />
          </children>
       </AnchorPane>
    </children>

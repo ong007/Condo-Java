@@ -1,5 +1,7 @@
 package Controller;
 
+import Model.BucketCustomer;
+import Model.BucketItem;
 import Model.CustomerReader;
 import Model.Item;
 import Service.CustomerData;
@@ -23,18 +25,18 @@ public class Text {
     @FXML TextField nametextbtn,Sizetextbtn,sendertextbtn,companytextbtn;
     @FXML Button Backtextbtn,Summittextbtn;
     private CustomerData consumerdata;
-    private CustomerReader consumerlist;
+    private BucketCustomer consumerlist;
     private TextData textdata;
-    private Model.Text textlist;
+    private BucketItem textlist;
     private Item item;
     public void initialize(){
         item = new Item();
-        textlist = new Model.Text();
+        textlist = new BucketItem();
         textdata = new TextData("data","/Text.csv");
         textlist = textdata.getTextlist();
         consumerdata = new CustomerData("data","Customer.csv");
         consumerlist = consumerdata.getConsumerList();
-        for (CustomerReader customerReader1 : consumerlist.getUserList()){
+        for (CustomerReader customerReader1 : consumerlist.getBucketCustomer()){
 
             roomconsumertextbtn.getItems().add(customerReader1.getName() + " : " + customerReader1.getRoomnum());
 
@@ -72,7 +74,7 @@ public class Text {
             String time = new SimpleDateFormat("dd/MM/yy HH:mm:ss").format(Calendar.getInstance().getTime());
             String[] roomNum = roomconsumertextbtn.getValue().split(" : ");
             Model.Text textReader = new Model.Text(nametextbtn.getText(),sendertextbtn.getText(), Sizetextbtn.getText(),companytextbtn.getText(),roomNum[1],time,leveltextbtn.getText());
-            textlist.add(textReader);
+            textlist.addItem(textReader);
             item.add(textReader);
             textdata.setTextlist(textlist);
             Button a = (Button) event.getSource();

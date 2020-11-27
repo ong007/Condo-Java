@@ -1,5 +1,8 @@
 package Service;
 
+import Model.BucketReceiveItem;
+import Model.ReceiveBox;
+import Model.ReceiveMail;
 import Model.ReceiveText;
 
 import java.io.*;
@@ -7,7 +10,7 @@ import java.io.*;
 public class ReceiveTextData {
     private String fileDirectoryNamebox;
     private String fileNamebox;
-    private ReceiveText receivetextlist;
+    private BucketReceiveItem receivetextlist;
 
     public ReceiveTextData(String fileDirectoryNamebox, String fileNamebox) {
         this.fileDirectoryNamebox = fileDirectoryNamebox;
@@ -40,14 +43,14 @@ public class ReceiveTextData {
         while ((line = reader.readLine()) != null) {
             String[] data = line.split(",");
             ReceiveText text= new ReceiveText(data[0], data[1], data[2], data[3], data[4],data[5],data[6],data[7]);
-            receivetextlist.add(text);
+            receivetextlist.addItem(text);
         }
         reader.close();
     }
 
-    public ReceiveText getReceiveTextlist() {
+    public BucketReceiveItem getReceiveTextlist() {
         try {
-            receivetextlist = new ReceiveText();
+            receivetextlist = new BucketReceiveItem();
             readData();
         } catch (FileNotFoundException e) {
             System.err.println(this.fileNamebox + " not found");
@@ -56,17 +59,18 @@ public class ReceiveTextData {
         }
         return receivetextlist;
     }
-    public void setTextlist(ReceiveText textlist) {
+    public void setTextlist(BucketReceiveItem textlist) {
         String filePath = fileDirectoryNamebox + File.separator + fileNamebox;
         File file = new File(filePath);
         FileWriter fileWriter = null;
         try {
             fileWriter = new FileWriter(file);
             BufferedWriter writer = new BufferedWriter(fileWriter);
-            for (ReceiveText text:receivetextlist.getUserList1()) {
-                String line = text.getSender()+","+text.getUsername()+","+text.getCompany()+","+text.getRoomnum()+","+text.getLevel()+","+text.getSize()+","+text.getTime()+","+text.getNameofficer();
+            for (ReceiveMail text:receivetextlist.getBucketReceiveItem()) {
+                if (text instanceof ReceiveText){
+                String line = text.getSender()+","+text.getUsername()+","+text.getCompany()+","+text.getRoomnum()+","+ ((ReceiveText) text).getLevel()+","+text.getSize()+","+text.getTime()+","+text.getNameofficer();
                 writer.append(line);
-                writer.newLine();
+                writer.newLine();}
             }
             writer.close();
         } catch (IOException e) {

@@ -50,6 +50,9 @@
          </image>
       </ImageView>
       <Button fx:id="newpasswordbtn" layoutX="377.0" layoutY="254.0" mnemonicParsing="false" onAction="#newpasswordbtnonaction" prefHeight="27.0" prefWidth="134.0" style="-fx-background-color: blue; -fx-background-radius: 40 40 40;" text="NEW PASSWORD" textFill="#b5b5b5" />
-      <Button fx:id="homebtn" layoutX="69.0" layoutY="341.0" mnemonicParsing="false" onAction="#homebtnonaction" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: #FF9980; -fx-background-radius: 10 10 10;" text="LOG OUT" />
+      <Button fx:id="homebtn" layoutX="69.0" layoutY="341.0" mnemonicParsing="false" onAction="#homebtnonaction" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #FF9980; -fx-background-radius: 10 10 10;" text="LOG OUT">
+         <font>
+            <Font size="9.0" />
+         </font></Button>
    </children>
 </AnchorPane>

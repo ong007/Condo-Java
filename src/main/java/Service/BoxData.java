@@ -1,6 +1,8 @@
 package Service;
 
 import Model.Box;
+import Model.BucketItem;
+import Model.Item;
 
 import java.io.*;
 
@@ -8,7 +10,7 @@ public class BoxData {
 
         private String fileDirectoryNamebox;
         private String fileNamebox;
-        private Box boxlist;
+        private BucketItem boxlist;
 
         public BoxData(String fileDirectoryNamebox, String fileNamebox) {
             this.fileDirectoryNamebox = fileDirectoryNamebox;
@@ -41,14 +43,14 @@ public class BoxData {
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(",");
                 Box box = new Box(data[0], data[1], data[2], data[3], data[4], data[5],data[6],data[7]);
-                boxlist.add(box);
+                boxlist.addItem(box);
             }
             reader.close();
         }
 
-        public Box getBoxlist() {
+        public BucketItem getBoxlist() {
             try {
-                boxlist = new Box();
+                boxlist = new BucketItem();
                 readData();
             } catch (FileNotFoundException e) {
                 System.err.println(this.fileNamebox + " not found");
@@ -57,17 +59,18 @@ public class BoxData {
             }
             return boxlist;
         }
-        public void setBoxlist(Box boxlist) {
+        public void setBoxlist(BucketItem boxlist) {
             String filePath = fileDirectoryNamebox + File.separator + fileNamebox;
             File file = new File(filePath);
             FileWriter fileWriter = null;
             try {
                 fileWriter = new FileWriter(file);
                 BufferedWriter writer = new BufferedWriter(fileWriter);
-                for (Box box:boxlist.getUserList()) {
-                    String line = box.getUsername()+","+box.getSender()+","+box.getSize()+","+box.getCompany()+","+box.getRoomnum()+","+box.getTime()+","+box.getLevel()+","+box.getTacking();
+                for (Item box:boxlist.getBucketItem()) {
+                    if (box instanceof Box){
+                    String line = box.getUsername()+","+box.getSender()+","+box.getSize()+","+box.getCompany()+","+box.getRoomnum()+","+box.getTime()+","+ ((Box) box).getLevel()+","+ ((Box) box).getTacking();
                     writer.append(line);
-                    writer.newLine();
+                    writer.newLine();}
                 }
                 writer.close();
             } catch (IOException e) {

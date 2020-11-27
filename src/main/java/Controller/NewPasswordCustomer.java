@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.BucketCustomer;
 import Model.CustomerReader;
 import Service.CustomerData;
 import javafx.event.ActionEvent;
@@ -15,14 +16,14 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class NewPasswordCustomer {
-    private CustomerReader consumer;
+    private BucketCustomer consumer;
     private CustomerData consumerData;
     @FXML Button backbtn,submitbtn;
     @FXML TextField username;
     @FXML PasswordField password,newpassword;
 
     public void initialize(){
-        consumer = new CustomerReader();
+        consumer = new BucketCustomer();
         consumerData = new CustomerData("data","Customer.csv");
         consumer = consumerData.getConsumerList();
     }
