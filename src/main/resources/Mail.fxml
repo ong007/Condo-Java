@@ -13,7 +13,7 @@
    <children>
       <AnchorPane prefHeight="74.0" prefWidth="890.0" style="-fx-background-color: white;">
          <children>
-            <Label layoutX="41.0" layoutY="11.0" prefHeight="52.0" prefWidth="96.0" style="-fx-background-color: white;" text="MAIL">
+            <Label layoutX="41.0" layoutY="11.0" prefHeight="52.0" prefWidth="617.0" style="-fx-background-color: white;" text="MAIL">
                <font>
                   <Font name="Franklin Gothic Medium Cond" size="45.0" />
                </font>
