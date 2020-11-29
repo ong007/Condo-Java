@@ -112,5 +112,10 @@ Condo Application  โปรเเกรมคอนโดสำหรับร�
 
 > **27.11.2020**
 * [9ec01d0](https://bitbucket.org/6210406572/6210406572/commits/9ec01d0fee704bbd8872fe2a5b670cfeed6513bf)
-                **make new polymorphism*
+                **make new polymorphism**
                          -ทำ polymorphism ใหม่โดยการใช้ strategy pattern หลายส่วน
+                         
+> **29.11.2020**
+* [ffd58b8](https://bitbucket.org/6210406572/6210406572/commits/ffd58b8b54f947891cfc0e9a5d5adb95471c176d)
+                **Add Font**
+                         -เพิ่มเติม font สำหรับ dowload          

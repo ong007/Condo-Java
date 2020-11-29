@@ -22,46 +22,46 @@
             <TextField fx:id="Newuserconsumerbtn" layoutX="481.0" layoutY="146.0" prefHeight="25.0" prefWidth="181.0" />
             <PasswordField fx:id="Newpasswordconsumerbtn" layoutX="481.0" layoutY="180.0" prefHeight="25.0" prefWidth="181.0" />
             <PasswordField fx:id="Newconfirmpasswordconsumerbtn" layoutX="481.0" layoutY="214.0" prefHeight="25.0" prefWidth="181.0" />
-            <Button fx:id="summitnewconsumerbtn" layoutX="764.0" layoutY="319.0" mnemonicParsing="false" onAction="#summitnewconsumerbtnonaction" text="SUBMIT" />
-            <Button fx:id="backnewconsumerbtn" layoutX="85.0" layoutY="319.0" mnemonicParsing="false" onAction="#backnewconsumerbtnonaction" prefHeight="25.0" prefWidth="57.0" text="Back" />
-            <Label layoutX="37.0" layoutY="172.0" prefHeight="39.0" prefWidth="231.0" text="NEW-CUSTOMER" textFill="#dddbdb">
+            <Button fx:id="summitnewconsumerbtn" layoutX="764.0" layoutY="319.0" mnemonicParsing="false" onAction="#summitnewconsumerbtnonaction" style="-fx-font-family: Monospace;" text="SUBMIT" />
+            <Button fx:id="backnewconsumerbtn" layoutX="85.0" layoutY="319.0" mnemonicParsing="false" onAction="#backnewconsumerbtnonaction" prefHeight="25.0" prefWidth="57.0" style="-fx-font-family: Monospace;" text="Back" />
+            <Label layoutX="47.0" layoutY="173.0" prefHeight="39.0" prefWidth="191.0" style="-fx-font-family: Monospace;" text="NEW-CUSTOMER" textFill="#dddbdb">
                <font>
                   <Font size="19.0" />
                </font>
             </Label>
-            <Label layoutX="286.0" layoutY="81.0" prefHeight="26.0" prefWidth="50.0" text="NAME" textFill="#eeeeee">
+            <Label layoutX="286.0" layoutY="81.0" prefHeight="26.0" prefWidth="50.0" style="-fx-font-family: Monospace;" text="NAME" textFill="#eeeeee">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
             <TextField fx:id="nameconsumerbtn" layoutX="353.0" layoutY="82.0" prefHeight="25.0" prefWidth="170.0" />
-            <Label layoutX="549.0" layoutY="82.0" prefHeight="26.0" prefWidth="81.0" text="SURNAME" textFill="WHITE">
+            <Label layoutX="549.0" layoutY="82.0" prefHeight="26.0" prefWidth="81.0" style="-fx-font-family: Monospace;" text="SURNAME" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
             <TextField fx:id="surnameconsumerbtn" layoutX="640.0" layoutY="82.0" prefHeight="25.0" prefWidth="170.0" />
-            <Label layoutX="286.0" layoutY="145.0" prefHeight="26.0" prefWidth="96.0" text="USERNAME" textFill="#f5f5f5">
+            <Label layoutX="286.0" layoutY="145.0" prefHeight="26.0" prefWidth="96.0" style="-fx-font-family: Monospace;" text="USERNAME" textFill="#f5f5f5">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
-            <Label layoutX="286.0" layoutY="179.0" prefHeight="26.0" prefWidth="96.0" text="PASSWORD" textFill="#f5f5f5">
+            <Label layoutX="286.0" layoutY="179.0" prefHeight="26.0" prefWidth="96.0" style="-fx-font-family: Monospace;" text="PASSWORD" textFill="#f5f5f5">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
-            <Label layoutX="285.0" layoutY="213.0" prefHeight="26.0" prefWidth="181.0" text="CONFIRM-PASSWORD" textFill="#e8e8e8">
+            <Label layoutX="285.0" layoutY="213.0" prefHeight="26.0" prefWidth="181.0" style="-fx-font-family: Monospace;" text="CONFIRM-PASSWORD" textFill="#e8e8e8">
                <font>
                   <Font size="17.0" />
                </font>
             </Label>
-            <Label layoutX="61.0" layoutY="218.0" prefHeight="39.0" prefWidth="109.0" text="SIGN-UP" textFill="#e8e5e5">
+            <Label layoutX="61.0" layoutY="218.0" prefHeight="39.0" prefWidth="109.0" style="-fx-font-family: Monospace;" text="SIGN-UP" textFill="#e8e5e5">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label layoutX="285.0" layoutY="248.0" prefHeight="33.0" prefWidth="81.0" text="ROOM" textFill="#f5f5f5">
+            <Label layoutX="285.0" layoutY="248.0" prefHeight="33.0" prefWidth="81.0" style="-fx-font-family: Monospace;" text="ROOM" textFill="#f5f5f5">
                <font>
                   <Font size="21.0" />
                </font>

@@ -13,7 +13,7 @@
    <children>
       <AnchorPane prefHeight="74.0" prefWidth="890.0" style="-fx-background-color: white;">
          <children>
-            <Label layoutX="41.0" layoutY="11.0" prefHeight="52.0" prefWidth="617.0" style="-fx-background-color: white;" text="MAIL">
+            <Label layoutX="41.0" layoutY="11.0" prefHeight="52.0" prefWidth="617.0" style="-fx-background-color: white; -fx-font-family: Monospace;" text="MAIL">
                <font>
                   <Font name="Franklin Gothic Medium Cond" size="45.0" />
                </font>
@@ -28,8 +28,8 @@
       <TextField fx:id="sizemailbtn" layoutX="555.0" layoutY="142.0" prefHeight="25.0" prefWidth="75.0" promptText="     SIZE" />
       <TextField fx:id="namemailbtn" layoutX="246.0" layoutY="217.0" prefHeight="25.0" prefWidth="178.0" promptText="NAME/USERNAME" />
       <TextField fx:id="companymailbtn" layoutX="246.0" layoutY="316.0" prefHeight="25.0" prefWidth="178.0" promptText="COMPANY" />
-      <Button fx:id="Backmailbtn" layoutX="75.0" layoutY="328.0" mnemonicParsing="false" onAction="#BackmailBtnOnAcTion" prefHeight="25.0" prefWidth="57.0" text="BACK" />
-      <Button fx:id="Summitmailbtn" layoutX="746.0" layoutY="328.0" mnemonicParsing="false" onAction="#Summitmailbtnonaction" prefHeight="25.0" prefWidth="86.0" text="SUBMIT" />
+      <Button fx:id="Backmailbtn" layoutX="75.0" layoutY="328.0" mnemonicParsing="false" onAction="#BackmailBtnOnAcTion" prefHeight="25.0" prefWidth="57.0" style="-fx-font-family: Monospace;" text="BACK" />
+      <Button fx:id="Summitmailbtn" layoutX="746.0" layoutY="328.0" mnemonicParsing="false" onAction="#Summitmailbtnonaction" prefHeight="25.0" prefWidth="86.0" style="-fx-font-family: Monospace;" text="SUBMIT" />
       <TextField fx:id="sendermailbtn" layoutX="246.0" layoutY="263.0" prefHeight="25.0" prefWidth="178.0" promptText="SENDER" />
       <ComboBox fx:id="roomconsumermailbtn" editable="true" layoutX="492.0" layoutY="217.0" prefHeight="25.0" prefWidth="276.0" promptText="ROOM CUSTOMER" />
    </children>

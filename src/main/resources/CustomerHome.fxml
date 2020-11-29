@@ -16,8 +16,8 @@
       </ImageView>
       <AnchorPane layoutX="69.0" layoutY="64.0" prefHeight="231.0" prefWidth="251.0" style="-fx-background-color: #9C2B27;">
          <children>
-            <Button fx:id="checkreceivebtn" layoutX="20.0" layoutY="190.0" mnemonicParsing="false" onAction="#checkreceivebtnonaction" prefHeight="25.0" prefWidth="211.0" style="-fx-background-color: #FF3333; -fx-background-radius: 10 10 10;" text="CHECK" textFill="#b5b5b5" />
-            <Label layoutX="98.0" layoutY="35.0" text="RECEIVE" textFill="#e1dfdf">
+            <Button fx:id="checkreceivebtn" layoutX="20.0" layoutY="190.0" mnemonicParsing="false" onAction="#checkreceivebtnonaction" prefHeight="25.0" prefWidth="211.0" style="-fx-background-color: #FF3333; -fx-background-radius: 10 10 10; -fx-font-family: Monospace;" text="CHECK" textFill="#b5b5b5" />
+            <Label layoutX="87.0" layoutY="35.0" style="-fx-font-family: Monospace;" text="RECEIVE" textFill="#e1dfdf">
                <font>
                   <Font size="18.0" />
                </font>
@@ -31,8 +31,8 @@
       </AnchorPane>
       <AnchorPane layoutX="566.0" layoutY="64.0" prefHeight="231.0" prefWidth="251.0" style="-fx-background-color: #9C2B27;">
          <children>
-            <Button fx:id="checkstockbtn" layoutX="20.0" layoutY="190.0" mnemonicParsing="false" onAction="#checkstockbtnonaction" prefHeight="25.0" prefWidth="211.0" style="-fx-background-color: #FF3333; -fx-background-radius: 10 10 10;" text="CHECK" textFill="#b5b5b5" />
-            <Label layoutX="98.0" layoutY="35.0" text="STOCK" textFill="#e1dfdf">
+            <Button fx:id="checkstockbtn" layoutX="20.0" layoutY="190.0" mnemonicParsing="false" onAction="#checkstockbtnonaction" prefHeight="25.0" prefWidth="211.0" style="-fx-background-color: #FF3333; -fx-background-radius: 10 10 10; -fx-font-family: Monospace;" text="CHECK" textFill="#b5b5b5" />
+            <Label layoutX="103.0" layoutY="35.0" style="-fx-font-family: Monospace;" text="STOCK" textFill="#e1dfdf">
                <font>
                   <Font size="18.0" />
                </font>
@@ -49,8 +49,8 @@
             <Image url="@images/Bolt_Line_Mix_-04-256.png" />
          </image>
       </ImageView>
-      <Button fx:id="newpasswordbtn" layoutX="377.0" layoutY="254.0" mnemonicParsing="false" onAction="#newpasswordbtnonaction" prefHeight="27.0" prefWidth="134.0" style="-fx-background-color: blue; -fx-background-radius: 40 40 40;" text="NEW PASSWORD" textFill="#b5b5b5" />
-      <Button fx:id="homebtn" layoutX="69.0" layoutY="341.0" mnemonicParsing="false" onAction="#homebtnonaction" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: #FF9980; -fx-background-radius: 10 10 10;" text="LOG OUT">
+      <Button fx:id="newpasswordbtn" layoutX="377.0" layoutY="254.0" mnemonicParsing="false" onAction="#newpasswordbtnonaction" prefHeight="27.0" prefWidth="134.0" style="-fx-background-color: blue; -fx-background-radius: 40 40 40; -fx-font-family: Monospace;" text="NEW PASSWORD" textFill="#b5b5b5" />
+      <Button fx:id="homebtn" layoutX="69.0" layoutY="341.0" mnemonicParsing="false" onAction="#homebtnonaction" prefHeight="25.0" prefWidth="108.0" style="-fx-background-color: #FF9980; -fx-background-radius: 10 10 10; -fx-font-family: Monospace;" text="LOG OUT">
          <font>
             <Font size="9.0" />
          </font></Button>

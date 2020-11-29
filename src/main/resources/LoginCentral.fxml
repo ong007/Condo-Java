@@ -18,27 +18,27 @@
                   <Image url="@images/S__8962638.jpg" />
                </image>
             </ImageView>
-            <Label layoutX="41.0" layoutY="163.0" prefHeight="27.0" prefWidth="217.0" text=" Welcome back Central" textFill="#aeaeae">
+            <Label layoutX="11.0" layoutY="171.0" prefHeight="27.0" prefWidth="262.0" style="-fx-font-family: Monospace;" text=" Welcome back Central" textFill="#aeaeae">
                <font>
                   <Font name="Bauhaus 93" size="20.0" />
                </font>
             </Label>
-            <Label layoutX="67.0" layoutY="233.0" prefHeight="20.0" prefWidth="191.0" text="space make possible" textFill="#5e5e5e">
+            <Label layoutX="33.0" layoutY="233.0" prefHeight="23.0" prefWidth="225.0" style="-fx-font-family: Monospace;" text="space make possible" textFill="#5e5e5e">
                <font>
                   <Font name="Bauhaus 93" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="74.0" layoutY="262.0" text="The best 3 locations" textFill="#686868">
+            <Label layoutX="35.0" layoutY="262.0" style="-fx-font-family: Monospace;" text="The best 3 locations" textFill="#686868">
                <font>
                   <Font name="Bauhaus 93" size="17.0" />
                </font>
             </Label>
-            <Label layoutX="105.0" layoutY="295.0" text="Condo X" textFill="#6f6f6f">
+            <Label layoutX="102.0" layoutY="295.0" style="-fx-font-family: Monospace;" text="Condo X" textFill="#6f6f6f">
                <font>
                   <Font name="Bauhaus 93" size="20.0" />
                </font>
             </Label>
-            <Button fx:id="backhomecentralbtn" layoutY="341.0" mnemonicParsing="false" onAction="#backhomecentralbtnonaction" prefHeight="37.0" prefWidth="284.0" style="-fx-background-color: white;" text="HOME" textFill="#d78d8d">
+            <Button fx:id="backhomecentralbtn" layoutY="341.0" mnemonicParsing="false" onAction="#backhomecentralbtnonaction" prefHeight="37.0" prefWidth="284.0" style="-fx-background-color: white; -fx-font-family: Monospace;" text="HOME" textFill="#d78d8d">
                <font>
                   <Font name="Bauhaus 93" size="19.0" />
                </font>
@@ -52,7 +52,7 @@
                   <Image url="@images/63541.png" />
                </image>
             </ImageView>
-            <Label layoutX="257.0" layoutY="117.0" prefHeight="37.0" prefWidth="98.0" text="Sign in" textFill="#f5f4f4">
+            <Label layoutX="234.0" layoutY="116.0" prefHeight="39.0" prefWidth="151.0" style="-fx-font-family: Monospace;" text="Sign in" textFill="#f5f4f4">
                <font>
                   <Font name="Bauhaus 93" size="33.0" />
                </font>
@@ -61,7 +61,7 @@
       </AnchorPane>
       <TextField fx:id="Userbtn" layoutX="505.0" layoutY="195.0" promptText="username" />
       <PasswordField fx:id="Passwordbtn" layoutX="505.0" layoutY="241.0" promptText="password" />
-      <Button fx:id="Loginbtn" layoutX="505.0" layoutY="281.0" mnemonicParsing="false" onAction="#LoginBtnOnAction" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white;" text="Login" textFill="#111010">
+      <Button fx:id="Loginbtn" layoutX="505.0" layoutY="281.0" mnemonicParsing="false" onAction="#LoginBtnOnAction" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: white; -fx-font-family: Monospace;" text="Login" textFill="#111010">
          <font>
             <Font name="Bodoni MT" size="13.0" />
          </font>

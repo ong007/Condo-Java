@@ -15,14 +15,14 @@
          <children>
             <Pane layoutX="-2.0" prefHeight="71.0" prefWidth="200.0" style="-fx-background-color: black;">
                <children>
-                  <Label layoutX="26.0" layoutY="36.0" prefHeight="17.0" prefWidth="148.0" text="    Admin System" textFill="#d0cdcd">
+                  <Label layoutX="-6.0" layoutY="36.0" prefHeight="23.0" prefWidth="180.0" style="-fx-font-family: Monospace;" text="    Admin System" textFill="#d0cdcd">
                      <font>
                         <Font name="Franklin Gothic Medium" size="18.0" />
                      </font>
                   </Label>
                </children>
             </Pane>
-            <Button fx:id="Useradminsystembtn" alignment="BASELINE_LEFT" layoutY="131.0" mnemonicParsing="false" onAction="#UserAdminSystemBtnOnAction" prefHeight="25.0" prefWidth="198.0" style="-fx-background-color: black;" text="  New-User" textFill="#c6c4c4">
+            <Button fx:id="Useradminsystembtn" alignment="BASELINE_LEFT" layoutY="131.0" mnemonicParsing="false" onAction="#UserAdminSystemBtnOnAction" prefHeight="25.0" prefWidth="198.0" style="-fx-background-color: black; -fx-font-family: Monospace;" text="  New-User" textFill="#c6c4c4">
                <font>
                   <Font name="Georgia" size="14.0" />
                </font>
@@ -34,7 +34,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="banbtn" alignment="BASELINE_LEFT" layoutY="162.0" mnemonicParsing="false" onAction="#banbtnonaction" prefHeight="25.0" prefWidth="198.0" style="-fx-background-color: black;" text="  Ban" textFill="#b5b1b1">
+            <Button fx:id="banbtn" alignment="BASELINE_LEFT" layoutY="162.0" mnemonicParsing="false" onAction="#banbtnonaction" prefHeight="25.0" prefWidth="198.0" style="-fx-background-color: black; -fx-font-family: Monospace;" text="  Ban" textFill="#b5b1b1">
                <font>
                   <Font name="Georgia" size="14.0" />
                </font>
@@ -46,7 +46,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="unbanbtn" alignment="BASELINE_LEFT" layoutY="190.0" mnemonicParsing="false" onAction="#unbanbtnonaction" prefHeight="25.0" prefWidth="198.0" style="-fx-background-color: black;" text="  Unban" textFill="#b5b0b0">
+            <Button fx:id="unbanbtn" alignment="BASELINE_LEFT" layoutX="-2.0" layoutY="195.0" mnemonicParsing="false" onAction="#unbanbtnonaction" prefHeight="25.0" prefWidth="198.0" style="-fx-background-color: black; -fx-font-family: Monospace;" text="  Unban" textFill="#b5b0b0">
                <font>
                   <Font name="Georgia" size="14.0" />
                </font>
@@ -58,7 +58,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button fx:id="HomeAdminbtn" alignment="BASELINE_LEFT" layoutX="-1.0" layoutY="344.0" mnemonicParsing="false" onAction="#HomeAdminBtnOnAction" prefHeight="25.0" prefWidth="198.0" style="-fx-background-color: black;" text="LOG OUT" textFill="#cdcccc">
+            <Button fx:id="HomeAdminbtn" alignment="BASELINE_LEFT" layoutX="-1.0" layoutY="344.0" mnemonicParsing="false" onAction="#HomeAdminBtnOnAction" prefHeight="25.0" prefWidth="198.0" style="-fx-background-color: black; -fx-font-family: Monospace;" text="LOG OUT" textFill="#cdcccc">
                <font>
                   <Font name="Georgia" size="14.0" />
                </font>
@@ -76,7 +76,7 @@
          <children>
             <Pane layoutY="-10.0" prefHeight="129.0" prefWidth="682.0">
                <children>
-                  <Label layoutX="53.0" layoutY="38.0" prefHeight="53.0" prefWidth="304.0" text="TIMETABLE">
+                  <Label layoutX="53.0" layoutY="38.0" prefHeight="53.0" prefWidth="304.0" style="-fx-font-family: Monospace;" text="TIMETABLE">
                      <font>
                         <Font name="Franklin Gothic Medium Cond" size="42.0" />
                      </font>
@@ -84,7 +84,7 @@
                </children>
             </Pane>
             <TableView fx:id="table" layoutX="20.0" layoutY="119.0" prefHeight="200.0" prefWidth="643.0" />
-            <Label layoutX="19.0" layoutY="328.0" prefHeight="38.0" prefWidth="80.0" text="NAME">
+            <Label layoutX="19.0" layoutY="328.0" prefHeight="38.0" prefWidth="80.0" style="-fx-font-family: Monospace;" text="NAME">
                <font>
                   <Font size="26.0" />
                </font>
@@ -94,7 +94,7 @@
                   <Font size="26.0" />
                </font>
             </Label>
-            <Label layoutX="338.0" layoutY="328.0" prefHeight="38.0" prefWidth="127.0" text="SURNAME">
+            <Label layoutX="338.0" layoutY="328.0" prefHeight="38.0" prefWidth="127.0" style="-fx-font-family: Monospace;" text="SURNAME">
                <font>
                   <Font size="26.0" />
                </font>

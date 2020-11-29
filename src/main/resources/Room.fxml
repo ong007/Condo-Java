@@ -11,7 +11,7 @@
    <children>
       <AnchorPane prefHeight="74.0" prefWidth="893.0" style="-fx-background-color: white;">
          <children>
-            <Label layoutX="41.0" layoutY="11.0" prefHeight="52.0" prefWidth="553.0" style="-fx-background-color: white;" text="ROOM">
+            <Label layoutX="41.0" layoutY="11.0" prefHeight="52.0" prefWidth="553.0" style="-fx-background-color: white; -fx-font-family: Monospace;" text="ROOM">
                <font>
                   <Font name="Franklin Gothic Medium Cond" size="45.0" />
                </font>
@@ -28,18 +28,18 @@
             <Image url="@images/luxuryroom.jpg" />
          </image>
       </ImageView>
-      <Label layoutX="182.0" layoutY="271.0" prefHeight="35.0" prefWidth="148.0" text="STANDARD ROOM" textFill="#e4e4e4">
+      <Label layoutX="182.0" layoutY="271.0" prefHeight="35.0" prefWidth="148.0" style="-fx-font-family: Monospace;" text="STANDARD ROOM" textFill="#e4e4e4">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="568.0" layoutY="271.0" prefHeight="35.0" prefWidth="118.0" text="LUXURY ROOM" textFill="#e4e4e4">
+      <Label layoutX="576.0" layoutY="271.0" prefHeight="35.0" prefWidth="118.0" style="-fx-font-family: Monospace;" text="LUXURY ROOM" textFill="#e4e4e4">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Button fx:id="createroombtn" layoutX="760.0" layoutY="322.0" mnemonicParsing="false" onAction="#createroombtnonaction" prefHeight="25.0" prefWidth="80.0" text="CREATE" />
-      <Button fx:id="backroombtn" layoutX="65.0" layoutY="322.0" mnemonicParsing="false" onAction="#backroombtnonaction" prefHeight="25.0" prefWidth="57.0" text="BACK" />
-      <Button fx:id="checkroombtn" layoutX="654.0" layoutY="322.0" mnemonicParsing="false" onAction="#checkroombtnonaction" prefHeight="25.0" prefWidth="80.0" text="CHECK" />
+      <Button fx:id="createroombtn" layoutX="760.0" layoutY="322.0" mnemonicParsing="false" onAction="#createroombtnonaction" prefHeight="25.0" prefWidth="80.0" style="-fx-font-family: Monospace;" text="CREATE" />
+      <Button fx:id="backroombtn" layoutX="65.0" layoutY="322.0" mnemonicParsing="false" onAction="#backroombtnonaction" prefHeight="25.0" prefWidth="57.0" style="-fx-font-family: Monospace;" text="BACK" />
+      <Button fx:id="checkroombtn" layoutX="654.0" layoutY="322.0" mnemonicParsing="false" onAction="#checkroombtnonaction" prefHeight="25.0" prefWidth="80.0" style="-fx-font-family: Monospace;" text="CHECK" />
    </children>
 </AnchorPane>

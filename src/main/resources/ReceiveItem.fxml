@@ -10,17 +10,17 @@
    <children>
       <AnchorPane prefHeight="74.0" prefWidth="900.0" style="-fx-background-color: white;">
          <children>
-            <Label layoutX="74.0" layoutY="11.0" prefHeight="52.0" prefWidth="147.0" style="-fx-background-color: white;" text="RECEIVE">
+            <Label layoutX="74.0" layoutY="11.0" prefHeight="54.0" prefWidth="211.0" style="-fx-background-color: white; -fx-font-family: Monospace;" text="RECEIVE">
                <font>
                   <Font name="Franklin Gothic Medium Cond" size="45.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <Button fx:id="backreceivebtn" layoutX="37.0" layoutY="349.0" mnemonicParsing="false" onAction="#backrecievebtnonaction" text="BACK" />
+      <Button fx:id="backreceivebtn" layoutX="37.0" layoutY="349.0" mnemonicParsing="false" onAction="#backrecievebtnonaction" style="-fx-font-family: Monospace;" text="BACK" />
       <AnchorPane fx:id="showliststock" layoutX="38.0" layoutY="90.0" prefHeight="243.0" prefWidth="840.0">
          <children>
-            <Label layoutX="197.0" layoutY="91.0" text="Select List down below" textFill="WHITE">
+            <Label layoutX="136.0" layoutY="96.0" style="-fx-font-family: Monospace;" text="Select List down below" textFill="WHITE">
                <font>
                   <Font size="43.0" />
                </font>

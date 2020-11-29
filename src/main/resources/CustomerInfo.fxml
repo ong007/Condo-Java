@@ -19,30 +19,30 @@
             <Image url="@images/iconfinder_18-man_4714992.png" />
          </image>
       </ImageView>
-      <Label layoutX="201.0" layoutY="59.0" prefHeight="51.0" prefWidth="480.0" text="Information for Customer">
+      <Label layoutX="201.0" layoutY="59.0" prefHeight="51.0" prefWidth="518.0" style="-fx-font-family: Monospace;" text="Information for Customer">
          <font>
             <Font size="35.0" />
          </font>
       </Label>
       <AnchorPane layoutX="180.0" layoutY="125.0" prefHeight="144.0" prefWidth="537.0" style="-fx-background-color: white;">
          <children>
-            <Label prefHeight="51.0" prefWidth="530.0" text="1. สามารถเปลี่ยนรหัสผ่านของลูกบ้านเองได้">
+            <Label prefHeight="51.0" prefWidth="530.0" style="-fx-font-family: Monospace;" text="1. สามารถเปลี่ยนรหัสผ่านของลูกบ้านเองได้">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutY="102.0" prefHeight="51.0" prefWidth="530.0" text="3. สามารถดูของที่รับได้เเล้วได้">
+            <Label layoutY="102.0" prefHeight="51.0" prefWidth="530.0" style="-fx-font-family: Monospace;" text="3. สามารถดูของที่รับได้เเล้วได้">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutY="51.0" prefHeight="51.0" prefWidth="530.0" text="2. สามารถดูของที่เข้ามาส่งได้เฉพาะห้องตัวเอง">
+            <Label layoutY="51.0" prefHeight="51.0" prefWidth="530.0" style="-fx-font-family: Monospace;" text="2. สามารถดูของที่เข้ามาส่งได้เฉพาะห้องตัวเอง">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <Button layoutX="99.0" layoutY="343.0" mnemonicParsing="false" onAction="#BackBtnOnAction" text="Back" />
+      <Button layoutX="99.0" layoutY="343.0" mnemonicParsing="false" onAction="#BackBtnOnAction" style="-fx-font-family: Monospace;" text="Back" />
    </children>
 </AnchorPane>

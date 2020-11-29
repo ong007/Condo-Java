@@ -10,7 +10,7 @@
    <children>
       <AnchorPane prefHeight="74.0" prefWidth="898.0" style="-fx-background-color: white;">
          <children>
-            <Label layoutX="41.0" layoutY="11.0" prefHeight="52.0" prefWidth="250.0" style="-fx-background-color: white;" text="CREATE ROOM">
+            <Label layoutX="41.0" layoutY="11.0" prefHeight="54.0" prefWidth="337.0" style="-fx-background-color: white; -fx-font-family: Monospace;" text="CREATE ROOM">
                <font>
                   <Font name="Franklin Gothic Medium Cond" size="45.0" />
                </font>
@@ -20,28 +20,28 @@
       <ComboBox fx:id="buildbox" layoutX="411.0" layoutY="126.0" prefWidth="150.0" promptText="select building" />
       <ComboBox fx:id="typebox" layoutX="411.0" layoutY="183.0" prefWidth="150.0" promptText="type" />
       <ComboBox fx:id="floorbox" layoutX="411.0" layoutY="245.0" prefWidth="150.0" promptText="floor" />
-      <Label layoutX="267.0" layoutY="122.0" prefHeight="34.0" prefWidth="90.0" text="BUILDING" textFill="#f2ebeb">
+      <Label layoutX="267.0" layoutY="122.0" prefHeight="34.0" prefWidth="90.0" style="-fx-font-family: Monospace;" text="BUILDING" textFill="#f2ebeb">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="282.0" layoutY="179.0" prefHeight="34.0" prefWidth="61.0" text="TYPE" textFill="#f2ebeb">
+      <Label layoutX="282.0" layoutY="179.0" prefHeight="34.0" prefWidth="61.0" style="-fx-font-family: Monospace;" text="TYPE" textFill="#f2ebeb">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="275.0" layoutY="241.0" prefHeight="34.0" prefWidth="61.0" text="FLOOR" textFill="#f2ebeb">
+      <Label layoutX="275.0" layoutY="241.0" prefHeight="34.0" prefWidth="61.0" style="-fx-font-family: Monospace;" text="FLOOR" textFill="#f2ebeb">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="275.0" layoutY="297.0" prefHeight="34.0" prefWidth="61.0" text="ROOM" textFill="#f2ebeb">
+      <Label layoutX="280.0" layoutY="297.0" prefHeight="34.0" prefWidth="61.0" style="-fx-font-family: Monospace;" text="ROOM" textFill="#f2ebeb">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="backcreateroombtn" layoutX="72.0" layoutY="331.0" mnemonicParsing="false" onAction="#backcreateroombtn" text="BACK" />
-      <Button fx:id="createnewroombtn" layoutX="758.0" layoutY="331.0" mnemonicParsing="false" onAction="#createnewroombtnonaction" text="CREATE" />
+      <Button fx:id="backcreateroombtn" layoutX="72.0" layoutY="331.0" mnemonicParsing="false" onAction="#backcreateroombtn" style="-fx-font-family: Monospace;" text="BACK" />
+      <Button fx:id="createnewroombtn" layoutX="758.0" layoutY="331.0" mnemonicParsing="false" onAction="#createnewroombtnonaction" style="-fx-font-family: Monospace;" text="CREATE" />
       <ComboBox fx:id="roombtn" layoutX="411.0" layoutY="302.0" prefWidth="150.0" promptText="room" />
    </children>
 </AnchorPane>

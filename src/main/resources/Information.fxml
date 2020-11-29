@@ -16,12 +16,12 @@
                   <Image url="@images/989f26bb992f6426fb6a50845ef329d9.png" />
                </image>
             </ImageView>
-            <Label layoutX="143.0" layoutY="14.0" prefHeight="82.0" prefWidth="564.0" text="INFORMATION CONDO X">
+            <Label layoutX="112.0" layoutY="14.0" prefHeight="82.0" prefWidth="564.0" style="-fx-font-family: Monospace;" text="INFORMATION CONDO X">
                <font>
                   <Font name="HP Simplified Hans Regular" size="43.0" />
                </font>
             </Label>
-            <Button layoutX="43.0" layoutY="344.0" mnemonicParsing="false" onAction="#BackBtnOnAction" prefHeight="25.0" prefWidth="78.0" style="-fx-background-radius: 30 30 30; -fx-background-color: brown;" text="BACK" textFill="WHITE" />
+            <Button layoutX="43.0" layoutY="344.0" mnemonicParsing="false" onAction="#BackBtnOnAction" prefHeight="25.0" prefWidth="78.0" style="-fx-background-radius: 30 30 30; -fx-background-color: brown; -fx-font-family: Monospace;" text="BACK" textFill="WHITE" />
             <AnchorPane layoutX="121.0" layoutY="127.0" prefHeight="200.0" prefWidth="494.0">
                <children>
                   <ImageView fitHeight="233.0" fitWidth="507.0" layoutX="38.0" layoutY="-28.0" pickOnBounds="true" preserveRatio="true">
@@ -58,15 +58,15 @@
             </ImageView>
          </graphic>
       </Button>
-      <Label layoutX="803.0" layoutY="105.0" prefHeight="17.0" prefWidth="71.0" text="ADMIN" textFill="#e8e5e5">
+      <Label layoutX="803.0" layoutY="105.0" prefHeight="17.0" prefWidth="71.0" style="-fx-font-family: Monospace;" text="ADMIN" textFill="#e8e5e5">
          <font>
             <Font size="9.0" />
          </font></Label>
-      <Label layoutX="803.0" layoutY="197.0" prefHeight="17.0" prefWidth="78.0" text="OFFICER" textFill="WHITE">
+      <Label layoutX="803.0" layoutY="197.0" prefHeight="17.0" prefWidth="78.0" style="-fx-font-family: Monospace;" text="OFFICER" textFill="WHITE">
          <font>
             <Font size="9.0" />
          </font></Label>
-      <Label layoutX="802.0" layoutY="298.0" prefHeight="17.0" prefWidth="85.0" text="CUSTOMER" textFill="#eeeded">
+      <Label layoutX="802.0" layoutY="298.0" prefHeight="17.0" prefWidth="85.0" style="-fx-font-family: Monospace;" text="CUSTOMER" textFill="#eeeded">
          <font>
             <Font size="9.0" />
          </font></Label>

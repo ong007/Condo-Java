@@ -9,50 +9,50 @@
 
 <AnchorPane prefHeight="390.0" prefWidth="882.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CentralInfo">
    <children>
-      <ImageView fitHeight="395.0" fitWidth="706.0" opacity="0.33" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="394.0" fitWidth="759.0" opacity="0.33" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/989f26bb992f6426fb6a50845ef329d9.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="103.0" fitWidth="131.0" layoutX="64.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="103.0" fitWidth="131.0" layoutX="24.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@images/iconfinder_woman_people_job_officer_police_6217230.png" />
          </image>
       </ImageView>
-      <Label layoutX="187.0" layoutY="40.0" prefHeight="51.0" prefWidth="480.0" text="Information for Central Officer">
+      <Label layoutX="154.0" layoutY="45.0" prefHeight="51.0" prefWidth="549.0" style="-fx-font-family: Monospace;" text="Information for Central Officer">
          <font>
-            <Font size="35.0" />
+            <Font size="29.0" />
          </font>
       </Label>
-      <AnchorPane layoutX="159.0" layoutY="103.0" prefHeight="253.0" prefWidth="537.0" style="-fx-background-color: white;">
+      <AnchorPane layoutX="118.0" layoutY="96.0" prefHeight="255.0" prefWidth="531.0" style="-fx-background-color: white;">
          <children>
-            <Label prefHeight="51.0" prefWidth="530.0" text="1. สามารถลงทะเบียนให้ลูกบ้านได้">
+            <Label prefHeight="51.0" prefWidth="542.0" style="-fx-font-family: Monospace;" text="1. สามารถลงทะเบียนให้ลูกบ้านได้">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutY="102.0" prefHeight="51.0" prefWidth="530.0" text="3. สามารถรับของที่มาส่งให้ลูกบ้านเเละเเสดงสถานะขึ้นตาราง">
+            <Label layoutY="102.0" prefHeight="51.0" prefWidth="584.0" style="-fx-font-family: Monospace;" text="3. สามารถรับของที่มาส่งให้ลูกบ้านเเละเเสดงสถานะขึ้นตาราง">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutY="51.0" prefHeight="51.0" prefWidth="530.0" text="2. สร้างห้องเเละเพิ่งลูกบ้านเข้าพร้องพร้อมเเสดงสถานะ">
+            <Label layoutY="51.0" prefHeight="51.0" prefWidth="584.0" style="-fx-font-family: Monospace;" text="2. สร้างห้องเเละเพิ่งลูกบ้านเข้าพร้องพร้อมเเสดงสถานะ">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutY="153.0" prefHeight="51.0" prefWidth="530.0" text="4. สามารถลบลูกบ้านเพื่อออกจากห้องได้">
+            <Label layoutY="153.0" prefHeight="51.0" prefWidth="572.0" style="-fx-font-family: Monospace;" text="4. สามารถลบลูกบ้านเพื่อออกจากห้องได้">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutY="204.0" prefHeight="51.0" prefWidth="530.0" text="5. สามารถเปลี่ยนรหัสผ่านของเจ้าหน้าที่ส่วนกลางได้">
+            <Label layoutY="204.0" prefHeight="51.0" prefWidth="559.0" style="-fx-font-family: Monospace;" text="5. สามารถเปลี่ยนรหัสผ่านของเจ้าหน้าที่ส่วนกลางได้">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <Button layoutX="95.0" layoutY="358.0" mnemonicParsing="false" onAction="#BackBtnOnAction" text="Back" />
+      <Button layoutX="95.0" layoutY="358.0" mnemonicParsing="false" onAction="#BackBtnOnAction" style="-fx-font-family: Monospace;" text="Back" />
    </children>
 </AnchorPane>

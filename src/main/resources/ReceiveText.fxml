@@ -9,28 +9,28 @@
 
 <AnchorPane prefHeight="243.0" prefWidth="840.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ReceiveText">
    <children>
-      <Label layoutX="614.0" layoutY="170.0" prefHeight="38.0" prefWidth="190.0" text="CENTRAL OFFICER" textFill="WHITE">
+      <Label layoutX="601.0" layoutY="170.0" prefHeight="38.0" prefWidth="220.0" style="-fx-font-family: Monospace;" text="CENTRAL OFFICER" textFill="WHITE">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
-      <Label layoutX="647.0" layoutY="15.0" prefHeight="38.0" prefWidth="124.0" text="CUSTOMER" textFill="WHITE">
+      <Label layoutX="647.0" layoutY="15.0" prefHeight="38.0" prefWidth="124.0" style="-fx-font-family: Monospace;" text="CUSTOMER" textFill="WHITE">
          <font>
             <Font size="23.0" />
          </font>
       </Label>
       <TextField fx:id="namebtn" editable="false" layoutX="614.0" layoutY="90.0" prefHeight="25.0" prefWidth="190.0" text="                          -" />
       <TextField fx:id="searchreceivebtn" layoutX="283.0" layoutY="21.0" prefHeight="25.0" prefWidth="220.0" promptText="Search" style="-fx-background-radius: 30 30 30;" />
-      <Button fx:id="okreceivrbtn" layoutX="522.0" layoutY="21.0" mnemonicParsing="false" onAction="#okreceivrbtnonaction" text="OK" />
+      <Button fx:id="okreceivrbtn" layoutX="522.0" layoutY="21.0" mnemonicParsing="false" onAction="#okreceivrbtnonaction" style="-fx-font-family: Monospace;" text="OK" />
       <TableView fx:id="tablestockbox" layoutX="-3.0" layoutY="56.0" prefHeight="197.0" prefWidth="557.0" />
       <TextField fx:id="surnamenamestockbtn" editable="false" layoutX="614.0" layoutY="142.0" prefHeight="25.0" prefWidth="190.0" text="                          -" />
       <TextField fx:id="nameofficerreceive" editable="false" layoutX="614.0" layoutY="208.0" prefHeight="25.0" prefWidth="190.0" text="                          -" />
-      <Label layoutX="686.0" layoutY="53.0" prefHeight="25.0" prefWidth="47.0" text="NAME" textFill="WHITE">
+      <Label layoutX="686.0" layoutY="53.0" prefHeight="25.0" prefWidth="47.0" style="-fx-font-family: Monospace;" text="NAME" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="673.0" layoutY="114.0" prefHeight="25.0" prefWidth="73.0" text="SURNAME" textFill="WHITE">
+      <Label layoutX="679.0" layoutY="114.0" prefHeight="25.0" prefWidth="73.0" style="-fx-font-family: Monospace;" text="SENDER" textFill="WHITE">
          <font>
             <Font size="14.0" />
          </font>

@@ -19,30 +19,30 @@
             <Image url="@images/iconfinder_teacher_5267445.png" />
          </image>
       </ImageView>
-      <Label layoutX="230.0" layoutY="62.0" prefHeight="44.0" prefWidth="356.0" text="Information for Admin">
+      <Label layoutX="211.0" layoutY="62.0" prefHeight="44.0" prefWidth="450.0" style="-fx-font-family: Monospace;" text="Information for Admin">
          <font>
             <Font size="35.0" />
          </font>
       </Label>
       <AnchorPane layoutX="156.0" layoutY="145.0" prefHeight="156.0" prefWidth="530.0" style="-fx-background-color: white;">
          <children>
-            <Label prefHeight="51.0" prefWidth="519.0" text="1. สามารถ ลงทะเบียนให้เจ้าหน้าที่ส่วนกลางได้">
+            <Label prefHeight="51.0" prefWidth="519.0" style="-fx-font-family: Monospace;" text="1. สามารถ ลงทะเบียนให้เจ้าหน้าที่ส่วนกลางได้">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutY="102.0" prefHeight="51.0" prefWidth="519.0" text="3. สามารถ BAN เเละ UNBAN เจ้าหน้าที่ส่วนกลางได้">
+            <Label layoutY="102.0" prefHeight="51.0" prefWidth="519.0" style="-fx-font-family: Monospace;" text="3. สามารถ BAN เเละ UNBAN เจ้าหน้าที่ส่วนกลางได้">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <Label layoutY="51.0" prefHeight="51.0" prefWidth="519.0" text="2. ดู รายละเอียดเเละสถานะของเจ้าหน้าที่ส่วนกลางได้">
+            <Label layoutY="51.0" prefHeight="51.0" prefWidth="519.0" style="-fx-font-family: Monospace;" text="2. ดู รายละเอียดเเละสถานะของเจ้าหน้าที่ส่วนกลางได้">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <Button layoutX="115.0" layoutY="335.0" mnemonicParsing="false" onAction="#BackBtnOnAction" text="Back" />
+      <Button layoutX="115.0" layoutY="335.0" mnemonicParsing="false" onAction="#BackBtnOnAction" style="-fx-font-family: Monospace;" text="Back" />
    </children>
 </AnchorPane>

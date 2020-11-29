@@ -11,12 +11,12 @@
    <children>
       <AnchorPane prefHeight="103.0" prefWidth="890.0" style="-fx-background-color: black;">
          <children>
-            <Label layoutX="474.0" layoutY="36.0" prefHeight="39.0" prefWidth="74.0" text="\@condo X" textFill="#8a8a8a">
+            <Label layoutX="474.0" layoutY="36.0" prefHeight="39.0" prefWidth="103.0" style="-fx-font-family: Monospace;" text="\@condo X" textFill="#8a8a8a">
                <font>
                   <Font size="16.0" />
                </font>
             </Label>
-            <Label layoutX="335.0" layoutY="28.0" text="CENTRAL" textFill="#979595">
+            <Label layoutX="335.0" layoutY="28.0" style="-fx-font-family: Monospace;" text="CENTRAL" textFill="#979595">
                <font>
                   <Font size="32.0" />
                </font>
@@ -30,9 +30,9 @@
       </AnchorPane>
       <AnchorPane layoutY="103.0" prefHeight="163.0" prefWidth="890.0">
          <children>
-            <Button fx:id="Mailbtn" layoutX="415.0" layoutY="137.0" mnemonicParsing="false" onAction="#MailBtnOnAction" prefHeight="25.0" prefWidth="74.0" text="MAIL" />
-            <Button fx:id="Boxbtn" layoutX="690.0" layoutY="137.0" mnemonicParsing="false" onAction="#BoxBtnOnAction" prefHeight="25.0" prefWidth="74.0" text="BOX" />
-            <Button fx:id="Textbtn" layoutX="133.0" layoutY="137.0" mnemonicParsing="false" onAction="#TextBtnOnAction" prefHeight="25.0" prefWidth="74.0" text="TEXT" />
+            <Button fx:id="Mailbtn" layoutX="415.0" layoutY="137.0" mnemonicParsing="false" onAction="#MailBtnOnAction" prefHeight="25.0" prefWidth="74.0" style="-fx-font-family: Monospace;" text="MAIL" />
+            <Button fx:id="Boxbtn" layoutX="690.0" layoutY="137.0" mnemonicParsing="false" onAction="#BoxBtnOnAction" prefHeight="25.0" prefWidth="74.0" style="-fx-font-family: Monospace;" text="BOX" />
+            <Button fx:id="Textbtn" layoutX="133.0" layoutY="137.0" mnemonicParsing="false" onAction="#TextBtnOnAction" prefHeight="25.0" prefWidth="74.0" style="-fx-font-family: Monospace;" text="TEXT" />
             <ImageView fitHeight="103.0" fitWidth="132.0" layoutX="119.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/text-131979013508994476.png" />
@@ -52,8 +52,8 @@
       </AnchorPane>
       <AnchorPane layoutY="277.0" prefHeight="103.0" prefWidth="890.0">
          <children>
-            <Button fx:id="Backcentralmessagebtn" layoutX="53.0" layoutY="39.0" mnemonicParsing="false" onAction="#BackCentralMessageBtnOnAction" text="BACK" />
-            <Button fx:id="checkcentralbtn" layoutX="769.0" layoutY="35.0" mnemonicParsing="false" onAction="#checkcentralbtnonaction" prefHeight="25.0" prefWidth="74.0" text="CHECK" />
+            <Button fx:id="Backcentralmessagebtn" layoutX="53.0" layoutY="39.0" mnemonicParsing="false" onAction="#BackCentralMessageBtnOnAction" style="-fx-font-family: Monospace;" text="BACK" />
+            <Button fx:id="checkcentralbtn" layoutX="769.0" layoutY="35.0" mnemonicParsing="false" onAction="#checkcentralbtnonaction" prefHeight="25.0" prefWidth="74.0" style="-fx-font-family: Monospace;" text="CHECK" />
          </children>
       </AnchorPane>
    </children>

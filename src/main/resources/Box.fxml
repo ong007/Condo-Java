@@ -15,7 +15,7 @@
    <children>
       <AnchorPane layoutX="-1.0" prefHeight="74.0" prefWidth="890.0" style="-fx-background-color: white;">
          <children>
-            <Label layoutX="47.0" layoutY="11.0" prefHeight="52.0" prefWidth="374.0" style="-fx-background-color: white;" text="BOX">
+            <Label layoutX="47.0" layoutY="11.0" prefHeight="52.0" prefWidth="374.0" style="-fx-background-color: white; -fx-font-family: Monospace;" text="BOX">
                <font>
                   <Font name="Franklin Gothic Medium Cond" size="45.0" />
                </font>
@@ -36,8 +36,8 @@
             <MenuItem fx:id="option3boxbtn" mnemonicParsing="false" onAction="#option3boxbtnonaction" text="RECEIVED" />
          </items>
       </MenuButton>
-      <Button fx:id="Summitboxbtn" layoutX="746.0" layoutY="328.0" mnemonicParsing="false" onAction="#Summitboxbtnonaction" prefHeight="25.0" prefWidth="86.0" text="SUMMIT" />
-      <Button fx:id="Backboxbtn" layoutX="75.0" layoutY="328.0" mnemonicParsing="false" onAction="#BackBoxBtnOnAcTion" prefHeight="25.0" prefWidth="57.0" text="BACK" />
+      <Button fx:id="Summitboxbtn" layoutX="746.0" layoutY="328.0" mnemonicParsing="false" onAction="#Summitboxbtnonaction" prefHeight="25.0" prefWidth="86.0" style="-fx-font-family: Monospace;" text="SUMMIT" />
+      <Button fx:id="Backboxbtn" layoutX="75.0" layoutY="328.0" mnemonicParsing="false" onAction="#BackBoxBtnOnAcTion" prefHeight="25.0" prefWidth="57.0" style="-fx-font-family: Monospace;" text="BACK" />
       <TextField fx:id="sizeboxbtn" layoutX="555.0" layoutY="139.0" prefHeight="25.0" prefWidth="75.0" promptText="     SIZE" />
       <TextField fx:id="trackingboxbtn" layoutX="43.0" layoutY="259.0" prefHeight="25.0" prefWidth="178.0" promptText="TRACKING" />
       <TextField fx:id="senderboxbtn" layoutX="246.0" layoutY="259.0" prefHeight="25.0" prefWidth="178.0" promptText="SENDER" />

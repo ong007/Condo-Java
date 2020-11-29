@@ -14,7 +14,7 @@
          <children>
             <ImageView fitHeight="140.0" fitWidth="152.0" layoutX="102.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../profile.png" />
+                  <Image url="@images/profile.png" />
                </image>
             </ImageView>
             <Label layoutX="297.0" layoutY="49.0" prefHeight="41.0" prefWidth="265.0" text="DULYAWAT VISITRUANGRIT" textFill="#bcb9b9">

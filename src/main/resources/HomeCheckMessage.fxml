@@ -11,7 +11,7 @@
    <children>
       <AnchorPane prefHeight="74.0" prefWidth="895.0" style="-fx-background-color: white;">
          <children>
-            <Label layoutX="47.0" layoutY="11.0" prefHeight="52.0" prefWidth="232.0" style="-fx-background-color: white;" text="CHECK ITEMS">
+            <Label layoutX="47.0" layoutY="11.0" prefHeight="54.0" prefWidth="318.0" style="-fx-background-color: white; -fx-font-family: Monospace;" text="CHECK ITEMS">
                <font>
                   <Font name="Franklin Gothic Medium Cond" size="45.0" />
                </font>
@@ -28,8 +28,8 @@
             <Image url="@images/istockphoto-1169953588-170667a.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="recievecheckitembtn" layoutX="281.0" layoutY="257.0" mnemonicParsing="false" onAction="#recievecheckitembtnonaction" prefHeight="27.0" prefWidth="76.0" text="RECEIVE" />
-      <Button fx:id="stockcheckitembtn" layoutX="511.0" layoutY="257.0" mnemonicParsing="false" onAction="#stockcheckitembtnonaction" prefHeight="27.0" prefWidth="76.0" text="STOCK" />
-      <Button fx:id="backcheckitembtn" layoutX="80.0" layoutY="320.0" mnemonicParsing="false" onAction="#backcheckitembtnonaction" text="BACK" />
+      <Button fx:id="recievecheckitembtn" layoutX="281.0" layoutY="257.0" mnemonicParsing="false" onAction="#recievecheckitembtnonaction" prefHeight="27.0" prefWidth="76.0" style="-fx-font-family: Monospace;" text="RECEIVE" />
+      <Button fx:id="stockcheckitembtn" layoutX="511.0" layoutY="257.0" mnemonicParsing="false" onAction="#stockcheckitembtnonaction" prefHeight="27.0" prefWidth="76.0" style="-fx-font-family: Monospace;" text="STOCK" />
+      <Button fx:id="backcheckitembtn" layoutX="80.0" layoutY="320.0" mnemonicParsing="false" onAction="#backcheckitembtnonaction" style="-fx-font-family: Monospace;" text="BACK" />
    </children>
 </AnchorPane>
