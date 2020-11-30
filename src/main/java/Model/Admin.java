@@ -1,10 +1,10 @@
 package Model;
 
-public class SetPasswordAdmin implements CheckAccount {
+public class Admin implements CheckAccount {
     public String AdminUser;
     public String AdminPassword;
 
-    public SetPasswordAdmin() {
+    public Admin() {
         this.AdminUser = "6210406572";
         this.AdminPassword = "0000";
     }

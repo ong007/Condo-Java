@@ -44,7 +44,7 @@ public class BucketCentralOfficer {
         }
     }
     public boolean checkUser(String username, BucketCustomer consumer){
-        if (username.equals(new SetPasswordAdmin().getUser())){
+        if (username.equals(new Admin().getUser())){
             return  false;
         }
         for(CustomerReader acc : consumer.getBucketCustomer()){

@@ -19,7 +19,7 @@ public class BucketCustomer {
 
     public boolean checkUser(String username, BucketCentralOfficer central){
 
-        if (username.equals(new SetPasswordAdmin().getUser())){
+        if (username.equals(new Admin().getUser())){
             return  false;
         }
         for(CentralOfficer acc : central.getBucketCentralOfficer()){
